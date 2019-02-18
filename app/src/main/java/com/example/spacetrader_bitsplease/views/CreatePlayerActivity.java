@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
 import android.widget.TextView;
+import android.content.Context;
+import android.widget.Toast;
 
 import com.example.spacetrader_bitsplease.R;
 import com.example.spacetrader_bitsplease.entity.Player;
@@ -25,25 +27,50 @@ public class CreatePlayerActivity extends AppCompatActivity{
    Data for student being edited.
    */
     private Player player;
-
+    private int remainingPoints;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_creation);
 
-
         usernameText = findViewById(R.id.username_Text);
-
-
 
         player = new Player("Ryan Pratt");
 
-
         usernameText.setText(player.getUsername());
 
+    }
+    final private Button create = findViewById(R.id.create_char);
+
+    private void onCreateClick(View view) {
+        create.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View view) {
+                  if (remainingPoints > 0) {
+                      Context context = getApplicationContext();
+                      CharSequence text = "Must use allocate all 16 points for player creation.";
+                      int duration = Toast.LENGTH_SHORT;
+                      Toast toast = Toast.makeText(context, text, duration);
+                      toast.show();
+                  } else {
+                      player.setTraderSkill(player.getTraderSkill());
+                      player.setEngineerSkill(player.getEngineerSkill());
+                      player.setFighterSkill(player.getFighterSkill());
+                      player.setPilotSkill(player.getPilotSkill());
+                      player.setDifficulty(player.getDifficulty());
+
+                      Context context = getApplicationContext();
+                      CharSequence text = player.toString();
+                      int duration = Toast.LENGTH_SHORT;
+                      Toast toast = Toast.makeText(context, text, duration);
+                      toast.show();
+                  }
+              }
+        });
+
+        finish();
 
     }
-
 
 }
