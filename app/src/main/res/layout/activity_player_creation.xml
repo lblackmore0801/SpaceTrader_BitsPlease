@@ -252,7 +252,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/create_char"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
