@@ -2,7 +2,7 @@ package com.example.spacetrader_bitsplease.entity;
 
 public class Player {
     private String username;
-    private int difficulty;
+    private Difficulty difficulty;
     private int pilotSkill;
     private int engineerSkill;
     private int fighterSkill;
@@ -17,6 +17,27 @@ public class Player {
         username = name;
     }
 
+
+    /**
+     * Constructor required for making the new object
+     *
+     * @param name name of the student
+     * @param difficulty Difficulty level
+     * @param pilotSkill pilot skill level
+     * @param fighterSkill fighter skill level
+     * @param engineerSkill engineering skill level
+     * @param traderSkill trader skill level
+     */
+    public Player(String name, Difficulty difficulty, int pilotSkill, int engineerSkill,
+                  int fighterSkill, int traderSkill) {
+        username = name;
+        this.difficulty = difficulty;
+        this.pilotSkill = pilotSkill;
+        this.fighterSkill = fighterSkill;
+        this.engineerSkill = engineerSkill;
+        this.traderSkill = traderSkill;
+    }
+
     public void setUsername(String name) {
         this.username = name;
     }
@@ -25,10 +46,10 @@ public class Player {
         return username;
     }
 
-    public void setDifficulty(int difficulty) {
+    public void setDifficulty(Difficulty difficulty) {
         this.difficulty = difficulty;
     }
-    public int getDifficulty() {
+    public Difficulty getDifficulty() {
         return difficulty;
     }
 
