@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
 import android.widget.TextView;
-import android.content.Context;
-import android.widget.Toast;
 
 import com.example.spacetrader_bitsplease.R;
 import com.example.spacetrader_bitsplease.entity.Player;
@@ -27,7 +25,7 @@ public class CreatePlayerActivity extends AppCompatActivity{
    Data for student being edited.
    */
     private Player player;
-    private int remainingPoints;
+
 
 
     @Override
@@ -35,9 +33,13 @@ public class CreatePlayerActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_creation);
 
+
         usernameText = findViewById(R.id.username_Text);
 
+
+
         player = new Player("Ryan Pratt");
+
 
         usernameText.setText(player.getUsername());
 
@@ -70,5 +72,6 @@ public class CreatePlayerActivity extends AppCompatActivity{
 
         });
     }
+
 
 }
