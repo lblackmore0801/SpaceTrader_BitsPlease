@@ -14,7 +14,7 @@ public class Player {
      * @param name name of the student
      */
     public Player(String name) {
-        username = name;
+        this(name, Difficulty.EASY, 4,4,4,4);
     }
 
 
@@ -30,7 +30,7 @@ public class Player {
      */
     public Player(String name, Difficulty difficulty, int pilotSkill, int engineerSkill,
                   int fighterSkill, int traderSkill) {
-        username = name;
+        this.username = name;
         this.difficulty = difficulty;
         this.pilotSkill = pilotSkill;
         this.fighterSkill = fighterSkill;
