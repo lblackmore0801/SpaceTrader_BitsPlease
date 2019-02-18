@@ -8,9 +8,19 @@ public class Player {
     private int fighterSkill;
     private int traderSkill;
 
-    public void setUsername(String username) {
-        this.username = username;
+    /**
+     * Constructor required for making the new object
+     *
+     * @param name name of the student
+     */
+    public Player(String name) {
+        username = name;
     }
+
+    public void setUsername(String name) {
+        this.username = name;
+    }
+
     public String getUsername() {
         return username;
     }
