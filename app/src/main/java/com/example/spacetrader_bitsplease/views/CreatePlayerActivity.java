@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.content.Context;
 
 import com.example.spacetrader_bitsplease.R;
 import com.example.spacetrader_bitsplease.entity.Player;
@@ -25,6 +27,7 @@ public class CreatePlayerActivity extends AppCompatActivity{
    Data for student being edited.
    */
     private Player player;
+    private int remainingPoints;
 
 
 
