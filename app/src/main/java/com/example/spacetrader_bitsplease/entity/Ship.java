@@ -6,4 +6,8 @@ public class Ship {
     public Ship() {
         type = ShipType.GNAT;
     }
+
+    public String toString() {
+        return type.toString();
+    }
 }
