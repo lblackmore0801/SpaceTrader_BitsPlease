@@ -228,7 +228,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_difficulty"
+        android:id="@+id/difficulty_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -238,6 +238,17 @@
         android:text="Difficulty"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/major_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="144dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
 
     <TextView
         android:id="@+id/text_username"
@@ -292,7 +303,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Choose a username!"
-        app:layout_constraintBottom_toTopOf="@+id/text_difficulty"
+        app:layout_constraintBottom_toTopOf="@+id/difficulty_header"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_username" />
