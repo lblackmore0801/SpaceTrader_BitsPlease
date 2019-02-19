@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.view.View;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.content.Context;
 
 import com.example.spacetrader_bitsplease.R;
 import com.example.spacetrader_bitsplease.entity.Difficulty;
@@ -28,11 +30,12 @@ public class CreatePlayerActivity extends AppCompatActivity{
    Data for student being edited.
    */
     private Player player;
+    private int remainingPoints;
 
-    /* ***********************
-    Spinner for difficulty level
-     */
+
     private Spinner difficultySpinner;
+
+
 
 
 
@@ -44,13 +47,43 @@ public class CreatePlayerActivity extends AppCompatActivity{
 
         usernameText = findViewById(R.id.username_Text);
 
-        difficultySpinner = findViewById(R.id.difficulty_spinner);
 
 
         player = new Player("Ryan Pratt");
 
+        difficultySpinner = findViewById(R.id.difficulty_spinner);
+
 
         usernameText.setText(player.getUsername());
+
+
+        final Button createButton = findViewById(R.id.create_char);
+        createButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (remainingPoints > 0) {
+                  Context context = getApplicationContext();
+                  CharSequence text = "Must use allocate all 16 points for player creation.";
+                  int duration = Toast.LENGTH_SHORT;
+                  Toast toast = Toast.makeText(context, text, duration);
+                  toast.show();
+                } else {
+                  player.setTraderSkill(player.getTraderSkill());
+                  player.setEngineerSkill(player.getEngineerSkill());
+                  player.setFighterSkill(player.getFighterSkill());
+                  player.setPilotSkill(player.getPilotSkill());
+                  player.setDifficulty(player.getDifficulty());
+
+                  Context context = getApplicationContext();
+                  CharSequence text = player.toString();
+                  int duration = Toast.LENGTH_SHORT;
+                  Toast toast = Toast.makeText(context, text, duration);
+                  toast.show();
+                }
+                finish();
+        }
+
+        });
 
 
                 /*
