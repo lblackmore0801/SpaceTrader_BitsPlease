@@ -24,6 +24,10 @@ public class CreatePlayerActivity extends AppCompatActivity{
     Widgets we will need for binding and getting information
     */
     private TextView usernameText;
+    private Spinner difficultySpinner;
+    private Button createButton;
+    private Button planetSelect;
+
 
 
     /* ***********************
@@ -33,12 +37,6 @@ public class CreatePlayerActivity extends AppCompatActivity{
     private int remainingPoints;
 
 
-    private Spinner difficultySpinner;
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,18 +44,13 @@ public class CreatePlayerActivity extends AppCompatActivity{
 
 
         usernameText = findViewById(R.id.username_Text);
-
-
-
         player = new Player("Ryan Pratt");
-
         difficultySpinner = findViewById(R.id.difficulty_spinner);
-
-
         usernameText.setText(player.getUsername());
+        createButton= findViewById(R.id.create_char);
+        planetSelect = findViewById(R.id.planet_select);
 
 
-        final Button createButton = findViewById(R.id.create_char);
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,6 +67,9 @@ public class CreatePlayerActivity extends AppCompatActivity{
                   player.setPilotSkill(player.getPilotSkill());
                   player.setDifficulty(player.getDifficulty());
 
+                  planetSelect.setEnabled(true);
+                  createButton.setEnabled(false);
+
                   Context context = getApplicationContext();
                   CharSequence text = player.toString();
                   int duration = Toast.LENGTH_SHORT;
@@ -84,6 +80,16 @@ public class CreatePlayerActivity extends AppCompatActivity{
         }
 
         });
+
+
+        planetSelect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CreatePlayerActivity.this, PlanetSelection.class);
+                startActivityForResult(intent, START_REQUEST_ID);
+            }
+        });
+
 
 
                 /*
