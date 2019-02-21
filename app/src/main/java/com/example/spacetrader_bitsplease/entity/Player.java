@@ -15,7 +15,7 @@ public class Player {
      * @param name name of the student
      */
     public Player(String name) {
-        this(name, Difficulty.EASY, 4,4,4,4, new Ship());
+        this(name, Difficulty.EASY, 0,0,0,0, new Ship());
     }
 
 
