@@ -3,7 +3,7 @@ package com.example.spacetrader_bitsplease.entity;
 public class Ship {
     ShipType type;
 
-    public Ship() {
+    Ship() {
         type = ShipType.GNAT;
     }
 
