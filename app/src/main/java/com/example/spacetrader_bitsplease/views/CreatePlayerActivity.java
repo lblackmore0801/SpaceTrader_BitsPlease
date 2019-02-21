@@ -31,6 +31,7 @@ public class CreatePlayerActivity extends AppCompatActivity{
     private Spinner difficultySpinner;
     private Button createButton;
     private Button planetSelect;
+    private TextView remainingSkill;
 
 
     /* ***********************
@@ -52,70 +53,105 @@ public class CreatePlayerActivity extends AppCompatActivity{
         pilotSkill = findViewById(R.id.int_pilot_skill);
         engineeringSkill = findViewById(R.id.int_engineering_skill);
         traderSkill = findViewById(R.id.int_trader_skill);
+        remainingPoints = 16;
+        remainingSkill = findViewById(R.id.int_RemainingPoints);
 
 
         final Button addFighter = findViewById(R.id.AddFighterSkill);
         addFighter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                player.setFighterSkill(player.getFighterSkill()+1);
-                fighterSkill.setText(Integer.toString(player.getFighterSkill()));
+                if (remainingPoints > 0) {
+                    player.setFighterSkill(player.getFighterSkill() + 1);
+                    fighterSkill.setText(Integer.toString(player.getFighterSkill()));
+                    remainingPoints--;
+                    remainingSkill.setText(String.format("%d", remainingPoints));
+
+                }
             }
         });
         final Button addPilot = findViewById(R.id.AddPilotSkill);
         addPilot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                player.setPilotSkill(player.getPilotSkill()+1);
-                pilotSkill.setText(Integer.toString(player.getPilotSkill()));
+                if (remainingPoints > 0) {
+                    player.setPilotSkill(player.getPilotSkill() + 1);
+                    pilotSkill.setText(Integer.toString(player.getPilotSkill()));
+                    remainingPoints--;
+                    remainingSkill.setText(String.format("%d", remainingPoints));
+                }
             }
         });
         final Button addEngineer = findViewById(R.id.AddEngineeringSkill);
         addEngineer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                player.setEngineerSkill(player.getEngineerSkill()+1);
-                engineeringSkill.setText(Integer.toString(player.getEngineerSkill()));
+                if (remainingPoints > 0) {
+                    player.setEngineerSkill(player.getEngineerSkill() + 1);
+                    engineeringSkill.setText(Integer.toString(player.getEngineerSkill()));
+                    remainingPoints--;
+                    remainingSkill.setText(String.format("%d", remainingPoints));
+                }
             }
         });
         final Button addTrader = findViewById(R.id.AddTraderSkill);
         addTrader.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                player.setTraderSkill(player.getTraderSkill()+1);
-                traderSkill.setText(Integer.toString(player.getTraderSkill()));
+                if (remainingPoints > 0) {
+                    player.setTraderSkill(player.getTraderSkill() + 1);
+                    traderSkill.setText(Integer.toString(player.getTraderSkill()));
+                    remainingPoints--;
+                    remainingSkill.setText(String.format("%d", remainingPoints));
+                }
             }
         });
         final Button minusFighter = findViewById(R.id.MinusFighterSkill);
         minusFighter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                player.setFighterSkill(player.getFighterSkill()-1);
-                fighterSkill.setText(Integer.toString(player.getFighterSkill()));
+                if (player.getFighterSkill() != 0) {
+                    player.setFighterSkill(player.getFighterSkill() - 1);
+                    fighterSkill.setText(Integer.toString(player.getFighterSkill()));
+                    remainingPoints++;
+                    remainingSkill.setText(String.format("%d", remainingPoints));
+                }
             }
         });
         final Button minusPilot = findViewById(R.id.MinusPilotSkill);
         minusPilot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                player.setPilotSkill(player.getPilotSkill()-1);
-                pilotSkill.setText(Integer.toString(player.getPilotSkill()));
+                if (player.getPilotSkill() != 0) {
+                    player.setPilotSkill(player.getPilotSkill() - 1);
+                    pilotSkill.setText(Integer.toString(player.getPilotSkill()));
+                    remainingPoints++;
+                    remainingSkill.setText(String.format("%d", remainingPoints));
+                }
             }
         });
         final Button minusEngineer = findViewById(R.id.MinusEngineeringSkill);
         minusEngineer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                player.setEngineerSkill(player.getEngineerSkill()-1);
-                engineeringSkill.setText(Integer.toString(player.getEngineerSkill()));
+                if (player.getEngineerSkill() != 0) {
+                    player.setEngineerSkill(player.getEngineerSkill() - 1);
+                    engineeringSkill.setText(Integer.toString(player.getEngineerSkill()));
+                    remainingPoints++;
+                    remainingSkill.setText(String.format("%d", remainingPoints));
+                }
             }
         });
         final Button minusTrader = findViewById(R.id.MinusTraderSkill);
         minusTrader.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                player.setTraderSkill(player.getTraderSkill()-1);
-                traderSkill.setText(Integer.toString(player.getTraderSkill()));
+                if (player.getTraderSkill() != 0) {
+                    player.setTraderSkill(player.getTraderSkill() - 1);
+                    traderSkill.setText(Integer.toString(player.getTraderSkill()));
+                    remainingPoints++;
+                    remainingSkill.setText(String.format("%d", remainingPoints));
+                }
             }
         });
 
