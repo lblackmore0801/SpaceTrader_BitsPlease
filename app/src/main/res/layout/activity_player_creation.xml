@@ -11,6 +11,32 @@
 
     ]]>
 
+    <Button
+        android:id="@+id/minusEngineeringSkill"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginLeft="124dp"
+        android:layout_marginTop="370dp"
+        android:text="-"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/text_pilotSkill"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/MinusTraderSkill"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginLeft="124dp"
+        android:layout_marginTop="450dp"
+        android:text="-"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/text_pilotSkill"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/int_RemainingPoints"
         android:layout_width="wrap_content"
@@ -50,11 +76,11 @@
 
     <Button
         android:id="@+id/AddPilotSkill"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="49dp"
+        android:layout_height="51dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="28dp"
         android:text="+"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -67,7 +93,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="28dp"
         android:text="+"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -88,7 +114,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/MinusFighterSkill"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="124dp"
@@ -104,18 +130,7 @@
         app:layout_constraintStart_toEndOf="@+id/text_pilotSkill"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/MinusTraderSkill"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginLeft="124dp"
-        android:layout_marginTop="36dp"
-        android:text="-"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/text_pilotSkill"
-        app:layout_constraintTop_toBottomOf="@+id/MinusEngineeringSkill" />
+
 
     <Button
         android:id="@+id/MinusEngineeringSkill"
@@ -130,29 +145,16 @@
         app:layout_constraintStart_toEndOf="@+id/text_pilotSkill"
         app:layout_constraintTop_toBottomOf="@+id/MinusFighterSkill" />
 
-    <Button
-        android:id="@+id/MinusPilotSkill"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginLeft="124dp"
-        android:layout_marginTop="24dp"
-        android:text="-"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/text_pilotSkill"
-        app:layout_constraintTop_toBottomOf="@+id/MinusFighterSkill" />
-
     <TextView
         android:id="@+id/int_trader_skill"
-        android:layout_width="wrap_content"
+        android:layout_width="9dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="465dp"
+        android:layout_marginStart="196dp"
+        android:layout_marginLeft="196dp"
+        android:layout_marginTop="472dp"
         android:text="0"
-        app:layout_constraintStart_toEndOf="@+id/MinusTraderSkill"
+        app:layout_constraintStart_toEndOf="@+id/text_pilotSkill2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -160,11 +162,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginLeft="164dp"
         android:layout_marginTop="380dp"
         android:text="0"
-        app:layout_constraintStart_toEndOf="@+id/MinusEngineeringSkill"
+        app:layout_constraintStart_toEndOf="@+id/text_pilotSkill3"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -172,11 +174,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
+        android:layout_marginStart="212dp"
+        android:layout_marginLeft="212dp"
         android:layout_marginTop="300dp"
         android:text="0"
-        app:layout_constraintStart_toEndOf="@+id/MinusFighterSkill"
+        app:layout_constraintStart_toEndOf="@+id/text_pilotSkill4"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -186,9 +188,9 @@
         android:layout_gravity="center"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="224dp"
+        android:layout_marginTop="228dp"
         android:text="0"
-        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintStart_toEndOf="@+id/MinusFighterSkill"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -302,7 +304,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/MinusFighterSkill"
+        android:id="@+id/planet_select"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -318,12 +320,12 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/MinusPilotSkill"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="124dp"
         android:layout_marginLeft="124dp"
-        android:layout_marginTop="208dp"
+        android:layout_marginTop="290dp"
         android:text="-"
         android:textSize="24sp"
         android:textStyle="bold"
