@@ -30,7 +30,7 @@ public class CreatePlayerActivity extends AppCompatActivity{
     private TextView traderSkill;
     private Spinner difficultySpinner;
     private Button createButton;
-    private Button planetSelect;
+    final private Button planetSelect = findViewById(R.id.planet_select);
     private TextView remainingSkill;
 
 
@@ -160,7 +160,6 @@ public class CreatePlayerActivity extends AppCompatActivity{
         difficultySpinner = findViewById(R.id.difficulty_spinner);
         usernameText.setText(player.getUsername());
         createButton= findViewById(R.id.create_char);
-        planetSelect = findViewById(R.id.planet_select);
 
 
         createButton.setOnClickListener(new View.OnClickListener() {
