@@ -56,6 +56,10 @@ public class CreatePlayerActivity extends AppCompatActivity{
         remainingPoints = 16;
         remainingSkill = findViewById(R.id.int_RemainingPoints);
 
+        player = new Player("Ryan Pratt");
+        difficultySpinner = findViewById(R.id.difficulty_spinner);
+        usernameText.setText(player.getUsername());
+        createButton= findViewById(R.id.create_char);
 
         final Button addFighter = findViewById(R.id.AddFighterSkill);
         addFighter.setOnClickListener(new View.OnClickListener() {
@@ -155,13 +159,6 @@ public class CreatePlayerActivity extends AppCompatActivity{
             }
         });
 
-
-        player = new Player("Ryan Pratt");
-        difficultySpinner = findViewById(R.id.difficulty_spinner);
-        usernameText.setText(player.getUsername());
-        createButton= findViewById(R.id.create_char);
-
-
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -177,9 +174,11 @@ public class CreatePlayerActivity extends AppCompatActivity{
                   player.setFighterSkill(player.getFighterSkill());
                   player.setPilotSkill(player.getPilotSkill());
                   player.setDifficulty((Difficulty) difficultySpinner.getSelectedItem());
+                  usernameText = findViewById(R.id.username_Text);
+                  player.setUsername(usernameText.getText().toString());
 
                   planetSelect.setEnabled(true);
-                  createButton.setEnabled(false);
+                  //createButton.setEnabled(false);
 
                   Context context = getApplicationContext();
                   CharSequence text = player.toString();
