@@ -7,9 +7,10 @@ import android.widget.Button;
 import android.view.View;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.content.Context;
 import android.content.Intent;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 
 import com.example.spacetrader_bitsplease.R;
 import com.example.spacetrader_bitsplease.entity.Difficulty;
@@ -30,7 +31,6 @@ public class CreatePlayerActivity extends AppCompatActivity{
     private TextView traderSkill;
     private Spinner difficultySpinner;
     private Button createButton;
-    private Button planetSelect;
     private TextView remainingSkill;
 
     /* ***********************
@@ -47,7 +47,6 @@ public class CreatePlayerActivity extends AppCompatActivity{
 
 
         usernameText = findViewById(R.id.username_Text);
-        planetSelect = findViewById(R.id.planet_select);
 
         fighterSkill = findViewById(R.id.int_fighter_skill);
         pilotSkill = findViewById(R.id.int_pilot_skill);
@@ -163,11 +162,20 @@ public class CreatePlayerActivity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 if (remainingPoints > 0) {
-                  Context context = getApplicationContext();
-                  CharSequence text = "Must use allocate all 16 points for player creation.";
-                  int duration = Toast.LENGTH_SHORT;
-                  Toast toast = Toast.makeText(context, text, duration);
-                  toast.show();
+                    Context context = CreatePlayerActivity.this;
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    builder.setTitle("Error.");
+                    builder.setMessage("Cannot create player. Must allocate all 16 skill points.");
+                    builder.setCancelable(true);
+                    builder.setNegativeButton(
+                            "Cancel",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+                    AlertDialog alert = builder.create();
+                    alert.show();
                 } else {
                   player.setTraderSkill(player.getTraderSkill());
                   player.setEngineerSkill(player.getEngineerSkill());
@@ -177,40 +185,45 @@ public class CreatePlayerActivity extends AppCompatActivity{
                   usernameText = findViewById(R.id.username_Text);
                   player.setUsername(usernameText.getText().toString());
 
-                  planetSelect.setEnabled(true);
-                  //createButton.setEnabled(false);
+                  Context context = CreatePlayerActivity.this;
+                  AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                  builder.setTitle("Player Created.");
+                  builder.setMessage("Player successfully created with the following stats:\n\n" + player.toString() +
+                                  "\n\nPress next to begin the game.\nPress cancel to edit stats.");
+                  builder.setCancelable(true);
+                  builder.setNegativeButton(
+                          "Cancel",
+                          new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+                  builder.setPositiveButton(
+                          "Next",
+                          new DialogInterface.OnClickListener() {
+                              public void onClick(DialogInterface dialog, int id) {
+                                  setContentView(R.layout.activity_player_creation);
 
-                  Context context = getApplicationContext();
-                  CharSequence text = player.toString();
-                  int duration = Toast.LENGTH_SHORT;
-                  Toast toast = Toast.makeText(context, text, duration);
-                  toast.show();
+                                  Intent intent = new Intent(CreatePlayerActivity.this, PlanetSelectionActivity.class);
+                                  startActivityForResult(intent, START_REQUEST_ID);
+                              }
+                          });
+                  AlertDialog alert = builder.create();
+                  alert.show();
                 }
         }
 
         });
 
 
-        planetSelect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(CreatePlayerActivity.this, PlanetSelection.class);
-                startActivityForResult(intent, START_REQUEST_ID);
-            }
-        });
-
-
-
-                /*
-          Set up the adapter to display the difficulty of the game in the spinner
-         */
-
+        /*
+        Set up the adapter to display the class standings in the spinner
+        */
 
         ArrayAdapter<Difficulty> adapterCS = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Difficulty.values());
         adapterCS.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         difficultySpinner.setAdapter(adapterCS);
 
     }
-
 
 }

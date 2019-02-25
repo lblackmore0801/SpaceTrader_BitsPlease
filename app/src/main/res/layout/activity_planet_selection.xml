@@ -105,4 +105,113 @@
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/planet_spinner"
+        android:layout_width="122dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/target_planet" />
+
+    <TextView
+        android:id="@+id/curr_name"
+        android:layout_width="116dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/planets_name"
+        app:layout_constraintTop_toBottomOf="@+id/curr_planet" />
+
+    <TextView
+        android:id="@+id/curr_size"
+        android:layout_width="116dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="12dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/planets_size"
+        app:layout_constraintTop_toBottomOf="@+id/curr_name" />
+
+    <TextView
+        android:id="@+id/next_size"
+        android:layout_width="116dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="11dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/curr_size"
+        app:layout_constraintTop_toBottomOf="@+id/planet_spinner" />
+
+    <TextView
+        android:id="@+id/curr_resource"
+        android:layout_width="116dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="6dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/planets_res"
+        app:layout_constraintTop_toBottomOf="@+id/curr_size" />
+
+    <TextView
+        android:id="@+id/curr_tech"
+        android:layout_width="116dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="9dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/planets_tech"
+        app:layout_constraintTop_toBottomOf="@+id/curr_resource" />
+
+    <TextView
+        android:id="@+id/curr_coordinates"
+        android:layout_width="116dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="9dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/planets_coord"
+        app:layout_constraintTop_toBottomOf="@+id/curr_tech" />
+
+    <TextView
+        android:id="@+id/next_coordinates"
+        android:layout_width="116dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="9dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/curr_coordinates"
+        app:layout_constraintTop_toBottomOf="@+id/next_tech" />
+
+    <TextView
+        android:id="@+id/next_tech"
+        android:layout_width="116dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="9dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/curr_tech"
+        app:layout_constraintTop_toBottomOf="@+id/next_resource" />
+
+    <TextView
+        android:id="@+id/next_resource"
+        android:layout_width="116dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="6dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/curr_resource"
+        app:layout_constraintTop_toBottomOf="@+id/next_size" />
 </android.support.constraint.ConstraintLayout>
