@@ -216,13 +216,9 @@ public class CreatePlayerActivity extends AppCompatActivity{
         });
 
 
-
-
-
-                /*
-          Set up the adapter to display the difficulty of the game in the spinner
-         */
-
+        /*
+        Set up the adapter to display the class standings in the spinner
+        */
 
         ArrayAdapter<Difficulty> adapterCS = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Difficulty.values());
         adapterCS.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
