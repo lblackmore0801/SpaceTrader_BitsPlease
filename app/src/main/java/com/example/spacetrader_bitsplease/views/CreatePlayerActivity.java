@@ -30,7 +30,7 @@ public class CreatePlayerActivity extends AppCompatActivity{
     private TextView traderSkill;
     private Spinner difficultySpinner;
     private Button createButton;
-    final private Button planetSelect = findViewById(R.id.planet_select);
+    private Button planetSelect;
     private TextView remainingSkill;
 
 
@@ -48,6 +48,7 @@ public class CreatePlayerActivity extends AppCompatActivity{
 
 
         usernameText = findViewById(R.id.username_Text);
+        planetSelect = findViewById(R.id.planet_select);
 
         fighterSkill = findViewById(R.id.int_fighter_skill);
         pilotSkill = findViewById(R.id.int_pilot_skill);
@@ -187,7 +188,6 @@ public class CreatePlayerActivity extends AppCompatActivity{
                   Toast toast = Toast.makeText(context, text, duration);
                   toast.show();
                 }
-                finish();
         }
 
         });
