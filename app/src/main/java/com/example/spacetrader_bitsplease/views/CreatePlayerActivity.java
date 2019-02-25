@@ -33,7 +33,6 @@ public class CreatePlayerActivity extends AppCompatActivity{
     private Button createButton;
     private TextView remainingSkill;
 
-
     /* ***********************
    Data for student being edited.
    */
@@ -56,6 +55,10 @@ public class CreatePlayerActivity extends AppCompatActivity{
         remainingPoints = 16;
         remainingSkill = findViewById(R.id.int_RemainingPoints);
 
+        player = new Player("Ryan Pratt");
+        difficultySpinner = findViewById(R.id.difficulty_spinner);
+        usernameText.setText(player.getUsername());
+        createButton= findViewById(R.id.create_char);
 
         final Button addFighter = findViewById(R.id.AddFighterSkill);
         addFighter.setOnClickListener(new View.OnClickListener() {
@@ -155,13 +158,6 @@ public class CreatePlayerActivity extends AppCompatActivity{
             }
         });
 
-
-        player = new Player("Ryan Pratt");
-        difficultySpinner = findViewById(R.id.difficulty_spinner);
-        usernameText.setText(player.getUsername());
-        createButton= findViewById(R.id.create_char);
-
-
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -185,7 +181,9 @@ public class CreatePlayerActivity extends AppCompatActivity{
                   player.setEngineerSkill(player.getEngineerSkill());
                   player.setFighterSkill(player.getFighterSkill());
                   player.setPilotSkill(player.getPilotSkill());
-                  player.setDifficulty(player.getDifficulty());
+                  player.setDifficulty((Difficulty) difficultySpinner.getSelectedItem());
+                  usernameText = findViewById(R.id.username_Text);
+                  player.setUsername(usernameText.getText().toString());
 
                   Context context = CreatePlayerActivity.this;
                   AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -218,9 +216,14 @@ public class CreatePlayerActivity extends AppCompatActivity{
         });
 
 
-        /*
-        Set up the adapter to display the class standings in the spinner
-        */
+
+
+
+                /*
+          Set up the adapter to display the difficulty of the game in the spinner
+         */
+
+
         ArrayAdapter<Difficulty> adapterCS = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Difficulty.values());
         adapterCS.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         difficultySpinner.setAdapter(adapterCS);

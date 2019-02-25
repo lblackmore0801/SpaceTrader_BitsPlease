@@ -3,7 +3,7 @@ package com.example.spacetrader_bitsplease.entity;
 public enum Difficulty {
     BEGINNER("Beginner"),
     EASY("Easy"),
-    MEDIUM ("Mediium"),
+    MEDIUM ("Medium"),
     HARD("Hard"),
     IMPOSSIBLE("Impossible");
 

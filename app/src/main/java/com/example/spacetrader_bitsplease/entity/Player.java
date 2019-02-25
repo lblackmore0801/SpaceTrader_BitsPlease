@@ -85,7 +85,7 @@ public class Player {
     }
 
     public String toString() {
-        return String.format("Username: %s \nDifficulty: %s \nPilot Skill: %s \nEngineering Skill: %s \nFighter Skill: %s \nTrader Skill: %s \nShip: %s",
-                                username, difficulty.toString(), pilotSkill, engineerSkill, fighterSkill, traderSkill, ship.toString());
+        return String.format("Username: %s \nDifficulty: %s \nFighter Skill: %s \nPilot Skill: %s \nEngineering Skill: %s \nTrader Skill: %s \nShip: %s",
+                                username, difficulty.toString(), fighterSkill, pilotSkill, engineerSkill, traderSkill, ship.toString());
     }
 }
