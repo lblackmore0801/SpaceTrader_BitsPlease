@@ -20,5 +20,9 @@
             android:name=".views.CreatePlayerActivity"
             android:parentActivityName=".views.MainActivity">
         </activity>
+        <activity
+            android:name=".views.PlanetSelectionActivity"
+            android:parentActivityName=".views.CreatePlayerActivity">
+        </activity>
     </application>
 </manifest>
