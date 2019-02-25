@@ -33,7 +33,6 @@ public class CreatePlayerActivity extends AppCompatActivity{
     private Button planetSelect;
     private TextView remainingSkill;
 
-
     /* ***********************
    Data for student being edited.
    */
@@ -177,7 +176,7 @@ public class CreatePlayerActivity extends AppCompatActivity{
                   player.setEngineerSkill(player.getEngineerSkill());
                   player.setFighterSkill(player.getFighterSkill());
                   player.setPilotSkill(player.getPilotSkill());
-                  player.setDifficulty(player.getDifficulty());
+                  player.setDifficulty((Difficulty) difficultySpinner.getSelectedItem());
 
                   planetSelect.setEnabled(true);
                   createButton.setEnabled(false);
@@ -204,8 +203,10 @@ public class CreatePlayerActivity extends AppCompatActivity{
 
 
                 /*
-          Set up the adapter to display the class standings in the spinner
+          Set up the adapter to display the difficulty of the game in the spinner
          */
+
+
         ArrayAdapter<Difficulty> adapterCS = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Difficulty.values());
         adapterCS.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         difficultySpinner.setAdapter(adapterCS);
