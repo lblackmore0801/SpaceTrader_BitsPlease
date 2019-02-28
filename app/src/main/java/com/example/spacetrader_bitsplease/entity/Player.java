@@ -8,6 +8,7 @@ public class Player {
     private int fighterSkill;
     private int traderSkill;
     private Ship ship;
+    private int money;
 
     /**
      * Constructor required for making the new object
@@ -15,7 +16,7 @@ public class Player {
      * @param name name of the student
      */
     public Player(String name) {
-        this(name, Difficulty.EASY, 0,0,0,0, new Ship());
+        this(name, Difficulty.EASY, 0,0,0,0, new Ship(), 1000);
     }
 
 
@@ -29,9 +30,10 @@ public class Player {
      * @param engineerSkill engineering skill level
      * @param traderSkill trader skill level
      * @param ship type of ship
+     * @param money starting money
      */
     public Player(String name, Difficulty difficulty, int pilotSkill, int engineerSkill,
-                  int fighterSkill, int traderSkill, Ship ship) {
+                  int fighterSkill, int traderSkill, Ship ship, int money) {
         this.username = name;
         this.difficulty = difficulty;
         this.pilotSkill = pilotSkill;
@@ -39,6 +41,7 @@ public class Player {
         this.engineerSkill = engineerSkill;
         this.traderSkill = traderSkill;
         this.ship = ship;
+        this.money = money;
     }
 
     public void setUsername(String name) {
@@ -85,7 +88,7 @@ public class Player {
     }
 
     public String toString() {
-        return String.format("Username: %s \nDifficulty: %s \nFighter Skill: %s \nPilot Skill: %s \nEngineering Skill: %s \nTrader Skill: %s \nShip: %s",
-                                username, difficulty.toString(), fighterSkill, pilotSkill, engineerSkill, traderSkill, ship.toString());
+        return String.format("Username: %s \nDifficulty: %s \nFighter Skill: %s \nPilot Skill: %s \nEngineering Skill: %s \nTrader Skill: %s \nShip: %s \nMoney: %d",
+                                username, difficulty.toString(), fighterSkill, pilotSkill, engineerSkill, traderSkill, ship.toString(), money);
     }
 }
