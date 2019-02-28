@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemSelectedListener;
 
 import com.example.spacetrader_bitsplease.R;
 import com.example.spacetrader_bitsplease.entity.Planet;
@@ -43,12 +45,6 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         currentCoordinates = findViewById(R.id.curr_coordinates);
         nextCoordinates = findViewById(R.id.next_coordinates);
 
-        //create and populate spinner for target planets
-        planetSpinner = findViewById(R.id.planet_spinner);
-        ArrayAdapter<PlanetName> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, PlanetName.values());
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        planetSpinner.setAdapter(adapter);
-
         //set current planet stats
         Planet currentPlanet = new Planet();
         currentName.setText(currentPlanet.getPlanetName().toString());
@@ -57,12 +53,28 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         currentTech.setText(currentPlanet.getTechLevel().toString());
         currentCoordinates.setText(currentPlanet.getCoordinates());
 
-        //set target planet stats
-        Planet targetPlanet = new Planet(planetSpinner.getSelectedItem().toString());
-        nextSize.setText(targetPlanet.getSize().toString());
-        nextResource.setText(targetPlanet.getResource().toString());
-        nextTech.setText(targetPlanet.getTechLevel().toString());
-        nextCoordinates.setText(targetPlanet.getCoordinates());
+        //create and populate spinner for target planets
+        ArrayAdapter<PlanetName> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, PlanetName.values());
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        planetSpinner = findViewById(R.id.planet_spinner);
+        planetSpinner.setAdapter(adapter);
+
+        planetSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
+                PlanetName target = (PlanetName) adapterView.getItemAtPosition(position);
+                //set target planet stats
+                Planet targetPlanet = new Planet(target);
+                nextSize.setText(targetPlanet.getSize().toString());
+                nextResource.setText(targetPlanet.getResource().toString());
+                nextTech.setText(targetPlanet.getTechLevel().toString());
+                nextCoordinates.setText(targetPlanet.getCoordinates());
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+
+        });
 
     }
 }
