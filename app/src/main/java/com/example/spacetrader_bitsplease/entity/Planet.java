@@ -16,18 +16,16 @@ public class Planet {
         resource = Resource.ARTISTIC;
         techLevel = TechLevel.AGRICULTURE;
     }
-    public Planet(String name) {
-        xcoordinate = 100;
-        ycoordinate = 100;
-        size = Size.MEDIUM;
-        planetName = PlanetName.ANDEVIAN;
-        resource = Resource.ARTISTIC;
-        techLevel = TechLevel.AGRICULTURE;
+    public Planet(PlanetName name) {
+        this.planetName = name;
+        this.xcoordinate = Game.xCoordinate(name);
+        this.ycoordinate = Game.yCoordinate(name);
+        this.size = Game.size(name);
+        this.resource = Game.resource(name);
+        this.techLevel = Game.techLevel(name);
     }
 
-
-
-        public void setXcoordinate() { xcoordinate = this.xcoordinate; }
+    public void setXcoordinate() { xcoordinate = this.xcoordinate; }
     public void setYcoordinate() { ycoordinate = this.ycoordinate; }
     public int getXcoordinate() { return xcoordinate; }
     public int getYcoordinate() { return ycoordinate; }
