@@ -16,7 +16,7 @@ public class MarketPlace {
         if (price > money || quantity > remainingStorageCapacity) {
             //do not buy
         } else {
-            remainingStorageCapacity -= remainingStorageCapacity * quantity;
+            remainingStorageCapacity -= quantity;
             money -= price * quantity;
         }
 
