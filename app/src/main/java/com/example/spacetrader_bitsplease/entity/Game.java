@@ -242,4 +242,12 @@ public class Game extends Planet{
             planet.setRobotResource(robot);
         }
     }
+
+    public static int buyingPrice(Planet planet) {
+       return 0;
+    }
+
+    public static int sellingPrice(Planet planet) {
+        return buyingPrice(planet) / 2;
+    }
 }
