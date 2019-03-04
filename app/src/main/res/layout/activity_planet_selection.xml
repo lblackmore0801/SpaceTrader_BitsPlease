@@ -5,6 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/Travel_button"
+        android:layout_width="68dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:text="Travel"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/Sell_text"
+        app:layout_constraintTop_toBottomOf="@+id/next_coordinates" />
+
     <TextView
         android:id="@+id/MachinePriceSell"
         android:layout_width="41dp"
