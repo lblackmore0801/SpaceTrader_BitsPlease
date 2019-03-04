@@ -8,7 +8,7 @@ public class Player {
     private int fighterSkill;
     private int traderSkill;
     private Ship ship;
-    private int money;
+    private static int money;
 
     /**
      * Constructor required for making the new object
@@ -86,6 +86,9 @@ public class Player {
     public int getFighterSkill() {
         return fighterSkill;
     }
+
+    public void setMoney(int money) { this.money = money; }
+    public static int getMoney() { return money; }
 
     public String toString() {
         return String.format("Username: %s \nDifficulty: %s \nFighter Skill: %s \nPilot Skill: %s \nEngineering Skill: %s \nTrader Skill: %s \nShip: %s \nMoney: %d",
