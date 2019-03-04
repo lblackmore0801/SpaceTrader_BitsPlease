@@ -174,4 +174,72 @@ public class Game extends Planet{
         }
         return TechLevel.AGRICULTURE;
     }
+
+    public static void assignProductQuantity(Planet planet) {
+        if (planet.resource == Resource.WEIRDMUSHROOMS || planet.resource == Resource.RICHSOIL
+                || planet.resource == Resource.LOTSOFHERBS || planet.resource == Resource.LOTSOFWATER
+                || planet.resource == Resource.RICHFAUNA || planet.techLevel == TechLevel.AGRICULTURE) {
+            int water = (planet.size.ordinal() * (planet.resource.ordinal() + planet.techLevel.ordinal()));
+            planet.setWaterResource(water);
+        }
+
+        if (planet.resource == Resource.RICHFAUNA || planet.techLevel == TechLevel.MEDIEVAL
+            || planet.techLevel == TechLevel.RENAISSANCE || planet.techLevel == TechLevel.EARLY) {
+            int fur = (planet.size.ordinal() * (planet.resource.ordinal() + planet.techLevel.ordinal()));
+            planet.setFurResource(fur);
+        }
+
+        if (planet.resource == Resource.WEIRDMUSHROOMS || planet.resource == Resource.RICHSOIL
+                || planet.resource == Resource.LOTSOFHERBS || planet.resource == Resource.LOTSOFWATER
+                || planet.resource == Resource.RICHFAUNA || planet.techLevel == TechLevel.AGRICULTURE) {
+            int food = (planet.size.ordinal() * (planet.resource.ordinal() + planet.techLevel.ordinal()));
+            planet.setFoodResource(food);
+        }
+
+        if (planet.resource == Resource.DESERT || planet.resource == Resource.LIFELESS
+                || planet.resource == Resource.MINERALRICH || planet.resource == Resource.LOTSOFHERBS) {
+            int ore = (planet.size.ordinal() * (planet.resource.ordinal() + planet.techLevel.ordinal()));
+            planet.setOreResource(ore);
+        }
+
+        if (planet.techLevel == TechLevel.HITECH || planet.techLevel == TechLevel.POSTINDUSTRIAL
+                || planet.techLevel == TechLevel.INDUSTRIAL) {
+            int game = (planet.size.ordinal() * (planet.resource.ordinal() + planet.techLevel.ordinal()));
+            planet.setGameResource(game);
+        }
+
+        if (planet.resource == Resource.WARLIKE || planet.techLevel == TechLevel.HITECH
+                || planet.techLevel == TechLevel.POSTINDUSTRIAL || planet.techLevel == TechLevel.INDUSTRIAL
+                || planet.resource == Resource.MINERALRICH) {
+            int firearm = (planet.size.ordinal() * (planet.resource.ordinal() + planet.techLevel.ordinal()));
+            planet.setFirearmResource(firearm);
+        }
+
+        if (planet.techLevel == TechLevel.HITECH || planet.techLevel == TechLevel.POSTINDUSTRIAL
+                || planet.techLevel == TechLevel.INDUSTRIAL || planet.resource == Resource.WEIRDMUSHROOMS
+                || planet.resource == Resource.LOTSOFHERBS) {
+            int medicine = (planet.size.ordinal() * (planet.resource.ordinal() + planet.techLevel.ordinal()));
+            planet.setMedicineResource(medicine);
+        }
+
+        if (planet.techLevel == TechLevel.HITECH || planet.techLevel == TechLevel.POSTINDUSTRIAL
+                || planet.techLevel == TechLevel.INDUSTRIAL || planet.resource == Resource.MINERALRICH
+                || planet.resource == Resource.WARLIKE) {
+            int machine = (planet.size.ordinal() * (planet.resource.ordinal() + planet.techLevel.ordinal()));
+            planet.setMachineResource(machine);
+        }
+
+        if (planet.resource == Resource.WEIRDMUSHROOMS || planet.resource == Resource.LOTSOFHERBS
+                || planet.resource == Resource.ARTISTIC) {
+            int narcotic = (planet.size.ordinal() * (planet.resource.ordinal() + planet.techLevel.ordinal()));
+            planet.setNarcoticResource(narcotic);
+        }
+
+        if (planet.techLevel == TechLevel.HITECH || planet.techLevel == TechLevel.POSTINDUSTRIAL
+                || planet.techLevel == TechLevel.INDUSTRIAL || planet.resource == Resource.MINERALRICH
+                || planet.resource == Resource.WARLIKE) {
+            int robot = (planet.size.ordinal() * (planet.resource.ordinal() + planet.techLevel.ordinal()));
+            planet.setRobotResource(robot);
+        }
+    }
 }
