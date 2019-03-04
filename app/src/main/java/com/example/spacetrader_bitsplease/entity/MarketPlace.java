@@ -13,10 +13,6 @@ public class MarketPlace {
 
     public void buyResource(Resource resource, int price, int quantity) {
 
-        /**
-        *set prices for resources here
-         **/
-
         if (price > money || quantity > remainingStorageCapacity) {
             //do not buy
         } else {
