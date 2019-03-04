@@ -10,16 +10,11 @@ public class MarketPlace {
         this.money = Player.getMoney();
     }
 
-
     public void buyResource(Resource resource, int price, int quantity) {
-
-        if (price > money || quantity > remainingStorageCapacity) {
-            //do not buy
-        } else {
+        if (((price * quantity) <= money) && (quantity <= remainingStorageCapacity)) {
             remainingStorageCapacity -= quantity;
             money -= price * quantity;
         }
-
     }
 
 }
