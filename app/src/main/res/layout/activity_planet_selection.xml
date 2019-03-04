@@ -1107,4 +1107,63 @@
         android:orientation="vertical"
         app:layout_constraintGuide_begin="20dp" />
 
+    <TextView
+        android:id="@+id/Bays_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="16dp"
+        android:text="Bays"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Credits_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="15dp"
+        android:text="Credits"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Bays_text" />
+
+    <TextView
+        android:id="@+id/UsedBays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="16dp"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/Bays_text"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TotalBays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/Slashbays"
+        app:layout_constraintTop_toTopOf="@+id/UsedBays" />
+
+    <TextView
+        android:id="@+id/Slashbays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/"
+        app:layout_constraintStart_toEndOf="@+id/UsedBays"
+        app:layout_constraintTop_toTopOf="@+id/UsedBays" />
+
+    <TextView
+        android:id="@+id/Credits_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="1000"
+        app:layout_constraintStart_toEndOf="@+id/Credits_text"
+        app:layout_constraintTop_toTopOf="@+id/Credits_text" />
+
 </android.support.constraint.ConstraintLayout>
