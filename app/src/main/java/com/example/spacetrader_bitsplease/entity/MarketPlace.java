@@ -7,7 +7,7 @@ public class MarketPlace {
 
     public MarketPlace(int money, int remainingStorageCapacity) {
         this.remainingStorageCapacity = remainingStorageCapacity;
-        this.money = money;
+        this.money = Player.getMoney();
     }
 
 
