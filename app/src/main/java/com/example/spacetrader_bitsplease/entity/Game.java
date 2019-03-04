@@ -174,4 +174,13 @@ public class Game extends Planet{
         }
         return TechLevel.AGRICULTURE;
     }
+
+    public static int buyingPrice(Planet planet) {
+       return 0;
+    }
+
+    public static int sellingPrice(Planet planet) {
+        return buyingPrice(planet) / 2;
+    }
+
 }
