@@ -17,4 +17,10 @@ public class MarketPlace {
         }
     }
 
+    public void sellResource(Resource resource, int price, int quantity) {
+        if (((price * quantity) <= money) && (quantity <= remainingStorageCapacity)) {
+            remainingStorageCapacity -= quantity;
+            money += price * quantity;
+        }
+    }
 }
