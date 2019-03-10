@@ -56,8 +56,26 @@ public class Planet {
         narcoticCondition = 0;
         robotCondition = 0;
     }
+    public Planet(PlanetName name, int xCoordinate, int yCoordinate, Size size, Condition condition, TechLevel techLevel) {
+        this.planetName = name;
+        this.xcoordinate = xCoordinate;
+        this.ycoordinate = yCoordinate;
+        this.size = size;
+        this.condition = condition;
+        this.techLevel = techLevel;
+        waterCondition = 0;
+        furCondition = 0;
+        foodCondition = 0;
+        oreCondition = 0;
+        gameCondition = 0;
+        firearmCondition = 0;
+        medicineCondition = 0;
+        machineCondition = 0;
+        narcoticCondition = 0;
+        robotCondition = 0;
+    }
 
-    public void setXcoordinate() { xcoordinate = this.xcoordinate; }
+        public void setXcoordinate() { xcoordinate = this.xcoordinate; }
     public void setYcoordinate() { ycoordinate = this.ycoordinate; }
     public int getXcoordinate() { return xcoordinate; }
     public int getYcoordinate() { return ycoordinate; }
