@@ -1,5 +1,7 @@
 package com.example.spacetrader_bitsplease.entity;
 
+import com.example.spacetrader_bitsplease.model.Repository;
+
 public class Planet {
     int xcoordinate;
     int ycoordinate;
@@ -38,11 +40,11 @@ public class Planet {
     }
     public Planet(PlanetName name) {
         this.planetName = name;
-        this.xcoordinate = Game.xCoordinate(name);
-        this.ycoordinate = Game.yCoordinate(name);
-        this.size = Game.size(name);
-        this.resource = Game.resource(name);
-        this.techLevel = Game.techLevel(name);
+        this.xcoordinate = Repository.xCoordinate(name);
+        this.ycoordinate = Repository.yCoordinate(name);
+        this.size = Repository.size(name);
+        this.resource = Repository.resource(name);
+        this.techLevel = Repository.techLevel(name);
         waterResource = 0;
         furResource = 0;
         foodResource = 0;
