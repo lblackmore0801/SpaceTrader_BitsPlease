@@ -1,6 +1,6 @@
 package com.example.spacetrader_bitsplease.entity;
 
-public enum Resource {
+public enum Condition {
     NOSPECIALRESOURCES("No Special Resources"),
     MINERALRICH("Mineral Rich"),
     MINERALPOOR("Mineral Poor"),
@@ -17,7 +17,7 @@ public enum Resource {
 
     private final String resource;
 
-    Resource(String resource) {
+    Condition(String resource) {
         this.resource = resource;
     }
 
