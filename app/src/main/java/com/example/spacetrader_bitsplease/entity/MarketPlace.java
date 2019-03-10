@@ -10,15 +10,15 @@ public class MarketPlace {
         this.money = Player.getMoney();
     }
 
-    //only buy a resource if you have sufficient funds and storage capacity
-    public void buyResource(Resource resource, int price, int quantity) {
+    //only buy a condition if you have sufficient funds and storage capacity
+    public void buyResource(Condition condition, int price, int quantity) {
         if (((price * quantity) <= money) && (quantity <= remainingStorageCapacity)) {
             remainingStorageCapacity -= quantity;
             money -= price * quantity;
         }
     }
 
-    public void sellResource(Resource resource, int price, int quantity) {
+    public void sellResource(Condition condition, int price, int quantity) {
         if (((price * quantity) <= money) && (quantity <= remainingStorageCapacity)) {
             remainingStorageCapacity -= quantity;
             money += price * quantity;

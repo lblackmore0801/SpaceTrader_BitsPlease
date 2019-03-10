@@ -1,15 +1,12 @@
 package com.example.spacetrader_bitsplease.views;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemSelectedListener;
 
 import com.example.spacetrader_bitsplease.R;
 import com.example.spacetrader_bitsplease.entity.Planet;
@@ -49,7 +46,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         Planet currentPlanet = new Planet();
         currentName.setText(currentPlanet.getPlanetName().toString());
         currentSize.setText(currentPlanet.getSize().toString());
-        currentResource.setText(currentPlanet.getResource().toString());
+        currentResource.setText(currentPlanet.getCondition().toString());
         currentTech.setText(currentPlanet.getTechLevel().toString());
         currentCoordinates.setText(currentPlanet.getCoordinates());
 
@@ -66,7 +63,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                 //set target planet stats
                 Planet targetPlanet = new Planet(target);
                 nextSize.setText(targetPlanet.getSize().toString());
-                nextResource.setText(targetPlanet.getResource().toString());
+                nextResource.setText(targetPlanet.getCondition().toString());
                 nextTech.setText(targetPlanet.getTechLevel().toString());
                 nextCoordinates.setText(targetPlanet.getCoordinates());
             }

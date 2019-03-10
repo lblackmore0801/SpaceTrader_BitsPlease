@@ -107,38 +107,38 @@ public class Game extends Planet{
         return Size.MEDIUM;
     }
 
-    public static Resource resource(PlanetName planet) {
+    public static Condition resource(PlanetName planet) {
         if (planet == PlanetName.ANDEVIAN) {
-            return Resource.ARTISTIC;
+            return Condition.ARTISTIC;
         }
         if (planet == PlanetName.CASTOR) {
-            return Resource.DESERT;
+            return Condition.DESERT;
         }
         if (planet == PlanetName.ESMEE) {
-            return Resource.LIFELESS;
+            return Condition.LIFELESS;
         }
         if (planet == PlanetName.FERRIS) {
-            return Resource.MINERALPOOR;
+            return Condition.MINERALPOOR;
         }
         if (planet == PlanetName.HELENA) {
-            return Resource.POORSOIL;
+            return Condition.POORSOIL;
         }
         if (planet == PlanetName.MYRTHE) {
-            return Resource.LOTSOFHERBS;
+            return Condition.LOTSOFHERBS;
         }
         if (planet == PlanetName.OTHELLO) {
-            return Resource.RICHFAUNA;
+            return Condition.RICHFAUNA;
         }
         if (planet == PlanetName.RHYMUS) {
-            return Resource.WEIRDMUSHROOMS;
+            return Condition.WEIRDMUSHROOMS;
         }
         if (planet == PlanetName.SOL) {
-            return Resource.WARLIKE;
+            return Condition.WARLIKE;
         }
         if (planet == PlanetName.ZUUL) {
-            return Resource.LOTSOFWATER;
+            return Condition.LOTSOFWATER;
         }
-        return Resource.ARTISTIC;
+        return Condition.ARTISTIC;
     }
 
     public static TechLevel techLevel(PlanetName planet) {
@@ -176,69 +176,69 @@ public class Game extends Planet{
     }
 
     public static void assignProductQuantity(Planet planet) {
-        if (planet.resource == Resource.WEIRDMUSHROOMS || planet.resource == Resource.RICHSOIL
-                || planet.resource == Resource.LOTSOFHERBS || planet.resource == Resource.LOTSOFWATER
-                || planet.resource == Resource.RICHFAUNA || planet.techLevel == TechLevel.AGRICULTURE) {
-            int water = (planet.size.ordinal() * (planet.resource.ordinal() + planet.techLevel.ordinal()));
+        if (planet.condition == Condition.WEIRDMUSHROOMS || planet.condition == Condition.RICHSOIL
+                || planet.condition == Condition.LOTSOFHERBS || planet.condition == Condition.LOTSOFWATER
+                || planet.condition == Condition.RICHFAUNA || planet.techLevel == TechLevel.AGRICULTURE) {
+            int water = (planet.size.ordinal() * (planet.condition.ordinal() + planet.techLevel.ordinal()));
             planet.setWaterResource(water);
         }
 
-        if (planet.resource == Resource.RICHFAUNA || planet.techLevel == TechLevel.MEDIEVAL
+        if (planet.condition == Condition.RICHFAUNA || planet.techLevel == TechLevel.MEDIEVAL
             || planet.techLevel == TechLevel.RENAISSANCE || planet.techLevel == TechLevel.EARLY) {
-            int fur = (planet.size.ordinal() * (planet.resource.ordinal() + planet.techLevel.ordinal()));
+            int fur = (planet.size.ordinal() * (planet.condition.ordinal() + planet.techLevel.ordinal()));
             planet.setFurResource(fur);
         }
 
-        if (planet.resource == Resource.WEIRDMUSHROOMS || planet.resource == Resource.RICHSOIL
-                || planet.resource == Resource.LOTSOFHERBS || planet.resource == Resource.LOTSOFWATER
-                || planet.resource == Resource.RICHFAUNA || planet.techLevel == TechLevel.AGRICULTURE) {
-            int food = (planet.size.ordinal() * (planet.resource.ordinal() + planet.techLevel.ordinal()));
+        if (planet.condition == Condition.WEIRDMUSHROOMS || planet.condition == Condition.RICHSOIL
+                || planet.condition == Condition.LOTSOFHERBS || planet.condition == Condition.LOTSOFWATER
+                || planet.condition == Condition.RICHFAUNA || planet.techLevel == TechLevel.AGRICULTURE) {
+            int food = (planet.size.ordinal() * (planet.condition.ordinal() + planet.techLevel.ordinal()));
             planet.setFoodResource(food);
         }
 
-        if (planet.resource == Resource.DESERT || planet.resource == Resource.LIFELESS
-                || planet.resource == Resource.MINERALRICH || planet.resource == Resource.LOTSOFHERBS) {
-            int ore = (planet.size.ordinal() * (planet.resource.ordinal() + planet.techLevel.ordinal()));
+        if (planet.condition == Condition.DESERT || planet.condition == Condition.LIFELESS
+                || planet.condition == Condition.MINERALRICH || planet.condition == Condition.LOTSOFHERBS) {
+            int ore = (planet.size.ordinal() * (planet.condition.ordinal() + planet.techLevel.ordinal()));
             planet.setOreResource(ore);
         }
 
         if (planet.techLevel == TechLevel.HITECH || planet.techLevel == TechLevel.POSTINDUSTRIAL
                 || planet.techLevel == TechLevel.INDUSTRIAL) {
-            int game = (planet.size.ordinal() * (planet.resource.ordinal() + planet.techLevel.ordinal()));
+            int game = (planet.size.ordinal() * (planet.condition.ordinal() + planet.techLevel.ordinal()));
             planet.setGameResource(game);
         }
 
-        if (planet.resource == Resource.WARLIKE || planet.techLevel == TechLevel.HITECH
+        if (planet.condition == Condition.WARLIKE || planet.techLevel == TechLevel.HITECH
                 || planet.techLevel == TechLevel.POSTINDUSTRIAL || planet.techLevel == TechLevel.INDUSTRIAL
-                || planet.resource == Resource.MINERALRICH) {
-            int firearm = (planet.size.ordinal() * (planet.resource.ordinal() + planet.techLevel.ordinal()));
+                || planet.condition == Condition.MINERALRICH) {
+            int firearm = (planet.size.ordinal() * (planet.condition.ordinal() + planet.techLevel.ordinal()));
             planet.setFirearmResource(firearm);
         }
 
         if (planet.techLevel == TechLevel.HITECH || planet.techLevel == TechLevel.POSTINDUSTRIAL
-                || planet.techLevel == TechLevel.INDUSTRIAL || planet.resource == Resource.WEIRDMUSHROOMS
-                || planet.resource == Resource.LOTSOFHERBS) {
-            int medicine = (planet.size.ordinal() * (planet.resource.ordinal() + planet.techLevel.ordinal()));
+                || planet.techLevel == TechLevel.INDUSTRIAL || planet.condition == Condition.WEIRDMUSHROOMS
+                || planet.condition == Condition.LOTSOFHERBS) {
+            int medicine = (planet.size.ordinal() * (planet.condition.ordinal() + planet.techLevel.ordinal()));
             planet.setMedicineResource(medicine);
         }
 
         if (planet.techLevel == TechLevel.HITECH || planet.techLevel == TechLevel.POSTINDUSTRIAL
-                || planet.techLevel == TechLevel.INDUSTRIAL || planet.resource == Resource.MINERALRICH
-                || planet.resource == Resource.WARLIKE) {
-            int machine = (planet.size.ordinal() * (planet.resource.ordinal() + planet.techLevel.ordinal()));
+                || planet.techLevel == TechLevel.INDUSTRIAL || planet.condition == Condition.MINERALRICH
+                || planet.condition == Condition.WARLIKE) {
+            int machine = (planet.size.ordinal() * (planet.condition.ordinal() + planet.techLevel.ordinal()));
             planet.setMachineResource(machine);
         }
 
-        if (planet.resource == Resource.WEIRDMUSHROOMS || planet.resource == Resource.LOTSOFHERBS
-                || planet.resource == Resource.ARTISTIC) {
-            int narcotic = (planet.size.ordinal() * (planet.resource.ordinal() + planet.techLevel.ordinal()));
+        if (planet.condition == Condition.WEIRDMUSHROOMS || planet.condition == Condition.LOTSOFHERBS
+                || planet.condition == Condition.ARTISTIC) {
+            int narcotic = (planet.size.ordinal() * (planet.condition.ordinal() + planet.techLevel.ordinal()));
             planet.setNarcoticResource(narcotic);
         }
 
         if (planet.techLevel == TechLevel.HITECH || planet.techLevel == TechLevel.POSTINDUSTRIAL
-                || planet.techLevel == TechLevel.INDUSTRIAL || planet.resource == Resource.MINERALRICH
-                || planet.resource == Resource.WARLIKE) {
-            int robot = (planet.size.ordinal() * (planet.resource.ordinal() + planet.techLevel.ordinal()));
+                || planet.techLevel == TechLevel.INDUSTRIAL || planet.condition == Condition.MINERALRICH
+                || planet.condition == Condition.WARLIKE) {
+            int robot = (planet.size.ordinal() * (planet.condition.ordinal() + planet.techLevel.ordinal()));
             planet.setRobotResource(robot);
         }
     }
