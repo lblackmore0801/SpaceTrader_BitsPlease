@@ -15,13 +15,13 @@ public enum Condition {
     ARTISTIC("Artistic"),
     WARLIKE("Warlike");
 
-    private final String resource;
+    private final String condition;
 
-    Condition(String resource) {
-        this.resource = resource;
+    Condition(String condition) {
+        this.condition = condition;
     }
 
     public String toString() {
-        return resource;
+        return condition;
     }
 }
