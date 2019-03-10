@@ -1,5 +1,7 @@
 package com.example.spacetrader_bitsplease.entity;
 
+import com.example.spacetrader_bitsplease.model.Repository;
+
 public class Planet {
     int xcoordinate;
     int ycoordinate;
@@ -15,7 +17,7 @@ public class Planet {
     int robotResource;
     Size size;
     PlanetName planetName;
-    Condition condition;
+    Resource resource;
     TechLevel techLevel;
 
     public Planet() {
@@ -23,7 +25,7 @@ public class Planet {
         ycoordinate = 100;
         size = Size.MEDIUM;
         planetName = PlanetName.ANDEVIAN;
-        condition = Condition.ARTISTIC;
+        resource = Resource.ARTISTIC;
         techLevel = TechLevel.AGRICULTURE;
         waterResource = 0;
         furResource = 0;
@@ -38,11 +40,11 @@ public class Planet {
     }
     public Planet(PlanetName name) {
         this.planetName = name;
-        this.xcoordinate = Game.xCoordinate(name);
-        this.ycoordinate = Game.yCoordinate(name);
-        this.size = Game.size(name);
-        this.condition = Game.resource(name);
-        this.techLevel = Game.techLevel(name);
+        this.xcoordinate = Repository.xCoordinate(name);
+        this.ycoordinate = Repository.yCoordinate(name);
+        this.size = Repository.size(name);
+        this.resource = Repository.resource(name);
+        this.techLevel = Repository.techLevel(name);
         waterResource = 0;
         furResource = 0;
         foodResource = 0;
@@ -53,15 +55,6 @@ public class Planet {
         machineResource = 0;
         narcoticResource = 0;
         robotResource = 0;
-    }
-
-    public Planet(PlanetName name, int xcoordinate, int ycoordinate, Size size, Condition condition, TechLevel techLevel) {
-        this.planetName = name;
-        this.xcoordinate = xcoordinate;
-        this.ycoordinate = ycoordinate;
-        this.size = size;
-        this.condition = condition;
-        this.techLevel = techLevel;
     }
 
     public void setXcoordinate() { xcoordinate = this.xcoordinate; }
@@ -76,8 +69,8 @@ public class Planet {
     public void setPlanetName(){ planetName = this.planetName; }
     public PlanetName getPlanetName() { return planetName; }
 
-    public void setResource() { condition = this.condition; }
-    public Condition getCondition() { return condition; }
+    public void setResource() { resource = this.resource; }
+    public Resource getResource() { return resource; }
 
     public void setTechLevel() { techLevel = this.techLevel; }
     public TechLevel getTechLevel() { return techLevel; }
@@ -114,6 +107,6 @@ public class Planet {
 
     public String toString() {
         return String.format("Coordinates: (%d,%d)\nPlanet: %s\n,Resources: %s,Tech Level: %s",
-                xcoordinate, ycoordinate, planetName.toString(), condition.toString(), techLevel.toString());
+                xcoordinate, ycoordinate, planetName.toString(), resource.toString(), techLevel.toString());
     }
 }
