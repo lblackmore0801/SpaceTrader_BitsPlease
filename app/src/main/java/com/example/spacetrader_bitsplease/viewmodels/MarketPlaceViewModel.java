@@ -1,11 +1,14 @@
-package com.example.spacetrader_bitsplease.entity;
+package com.example.spacetrader_bitsplease.viewmodels;
 
-public class MarketPlace {
+import com.example.spacetrader_bitsplease.entity.Player;
+import com.example.spacetrader_bitsplease.entity.Resource;
+
+public class MarketPlaceViewModel {
 
     private int remainingStorageCapacity;
     private int money;
 
-    public MarketPlace(int money, int remainingStorageCapacity) {
+    public MarketPlaceViewModel(int money, int remainingStorageCapacity) {
         this.remainingStorageCapacity = remainingStorageCapacity;
         this.money = Player.getMoney();
     }
