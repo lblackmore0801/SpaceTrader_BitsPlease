@@ -186,66 +186,66 @@ public class Repository {
                 || planet.getCondition() == Condition.LOTSOFHERBS || planet.getCondition() == Condition.LOTSOFWATER
                 || planet.getCondition() == Condition.RICHFAUNA || planet.getTechLevel() == TechLevel.AGRICULTURE) {
             int water = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
-            planet.setWaterCondition(water);
+            //planet.setWaterCondition(water);
         }
 
         if (planet.getCondition() == Condition.RICHFAUNA || planet.getTechLevel() == TechLevel.MEDIEVAL
                 || planet.getTechLevel() == TechLevel.RENAISSANCE || planet.getTechLevel() == TechLevel.EARLY) {
             int fur = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
-            planet.setFurCondition(fur);
+            //planet.setFurCondition(fur);
         }
 
         if (planet.getCondition() == Condition.WEIRDMUSHROOMS || planet.getCondition() == Condition.RICHSOIL
                 || planet.getCondition() == Condition.LOTSOFHERBS || planet.getCondition() == Condition.LOTSOFWATER
                 || planet.getCondition() == Condition.RICHFAUNA || planet.getTechLevel() == TechLevel.AGRICULTURE) {
             int food = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
-            planet.setFoodCondition(food);
+            //planet.setFoodCondition(food);
         }
 
         if (planet.getCondition() == Condition.DESERT || planet.getCondition() == Condition.LIFELESS
                 || planet.getCondition() == Condition.MINERALRICH || planet.getCondition() == Condition.LOTSOFHERBS) {
             int ore = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
-            planet.setOreCondition(ore);
+            //planet.setOreCondition(ore);
         }
 
         if (planet.getTechLevel() == TechLevel.HITECH || planet.getTechLevel() == TechLevel.POSTINDUSTRIAL
                 || planet.getTechLevel() == TechLevel.INDUSTRIAL) {
             int game = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
-            planet.setGameCondition(game);
+            //planet.setGameCondition(game);
         }
 
         if (planet.getCondition() == Condition.WARLIKE || planet.getTechLevel() == TechLevel.HITECH
                 || planet.getTechLevel() == TechLevel.POSTINDUSTRIAL || planet.getTechLevel() == TechLevel.INDUSTRIAL
                 || planet.getCondition() == Condition.MINERALRICH) {
             int firearm = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
-            planet.setFirearmCondition(firearm);
+            //planet.setFirearmCondition(firearm);
         }
 
         if (planet.getTechLevel() == TechLevel.HITECH || planet.getTechLevel() == TechLevel.POSTINDUSTRIAL
                 || planet.getTechLevel() == TechLevel.INDUSTRIAL || planet.getCondition() == Condition.WEIRDMUSHROOMS
                 || planet.getCondition() == Condition.LOTSOFHERBS) {
             int medicine = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
-            planet.setMedicineCondition(medicine);
+            //planet.setMedicineCondition(medicine);
         }
 
         if (planet.getTechLevel() == TechLevel.HITECH || planet.getTechLevel() == TechLevel.POSTINDUSTRIAL
                 || planet.getTechLevel() == TechLevel.INDUSTRIAL || planet.getCondition() == Condition.MINERALRICH
                 || planet.getCondition() == Condition.WARLIKE) {
             int machine = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
-            planet.setMachineCondition(machine);
+            //planet.setMachineCondition(machine);
         }
 
         if (planet.getCondition() == Condition.WEIRDMUSHROOMS || planet.getCondition() == Condition.LOTSOFHERBS
                 || planet.getCondition() == Condition.ARTISTIC) {
             int narcotic = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
-            planet.setNarcoticCondition(narcotic);
+            //planet.setNarcoticCondition(narcotic);
         }
 
         if (planet.getTechLevel() == TechLevel.HITECH || planet.getTechLevel() == TechLevel.POSTINDUSTRIAL
                 || planet.getTechLevel() == TechLevel.INDUSTRIAL || planet.getCondition() == Condition.MINERALRICH
                 || planet.getCondition() == Condition.WARLIKE) {
             int robot = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
-            planet.setRobotCondition(robot);
+            //planet.setRobotCondition(robot);
         }
     }
 

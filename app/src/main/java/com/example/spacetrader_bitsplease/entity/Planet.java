@@ -42,16 +42,16 @@ public class Planet {
     public int getYcoordinate() { return ycoordinate; }
     public String getCoordinates() { return xcoordinate + ", " + ycoordinate; }
 
-    public void setSize() { this.size = size; }
+    public void setSize(Size size) { this.size = size; }
     public Size getSize() { return size; }
 
-    public void setPlanetName(){ planetName = this.planetName; }
+    public void setPlanetName(PlanetName planetName){ this.planetName = planetName; }
     public PlanetName getPlanetName() { return planetName; }
 
-    public void setCondition() { condition = this.condition; }
+    public void setCondition(Condition condition) { this.condition = condition; }
     public Condition getCondition() { return condition; }
 
-    public void setTechLevel() { techLevel = this.techLevel; }
+    public void setTechLevel(TechLevel techLevel) { this.techLevel = techLevel; }
     public TechLevel getTechLevel() { return techLevel; }
 
 
