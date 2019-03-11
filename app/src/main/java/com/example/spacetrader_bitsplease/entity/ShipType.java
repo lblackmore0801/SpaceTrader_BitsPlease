@@ -1,7 +1,15 @@
 package com.example.spacetrader_bitsplease.entity;
 
 public enum ShipType {
-    GNAT("Gnat");
+    GNAT("Gnat"),
+    FIREFLY("Firefly"),
+    MOSQUITO("Mosquito"),
+    BUMBLEBEE("Bumblebee"),
+    BEETLE("Beetle"),
+    HORNET("Hornet"),
+    GRASSHOPPER("Grasshopper"),
+    TERMITE("Termite"),
+    WASP("Wasp");
 
     private final String type;
 
