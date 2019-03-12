@@ -1,5 +1,8 @@
 package com.example.spacetrader_bitsplease.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public enum TradeGoods {
 
     WATER("Water", 0, 0, 2, 30, 3, 4),
@@ -13,15 +16,66 @@ public enum TradeGoods {
     NARCOTICS("Narcotics", 5, 0, 5, 3500, -125, 150),
     ROBOTS("Robots", 6, 4, 7, 5000, -150, 100);
 
+    private static final List<TradeGoods> goods;
+
     private final String tradeGood;
+    private final int mtlp;
+    private final int mtlu;
+    private final int ttp;
+    private final int basePrice;
+    private final int ipl;
+    private final int var;
+
+    static {
+        goods = new ArrayList<>();
+        for (TradeGoods good : TradeGoods.values()) {
+            goods.add(good);
+        }
+    }
 
     TradeGoods(String tradeGood, int mtlp, int mtlu, int ttp, int basePrice, int ipl, int var) {
         this.tradeGood = tradeGood;
+        this.mtlp = mtlp;
+        this.mtlu = mtlu;
+        this.ttp = ttp;
+        this.basePrice = basePrice;
+        this.ipl = ipl;
+        this.var = var;
     }
+
+    public int getMtlp() {
+        return mtlp;
+    }
+
+    public int getMtlu() {
+        return mtlu;
+    }
+
+    public int getIpl() {
+        return ipl;
+    }
+
+    public int getVar() {
+        return var;
+    }
+
+    public int getTtp() {
+        return ttp;
+    }
+
+    public int getBasePrice() {
+        return basePrice;
+    }
+
 
     public String toString() {
         return tradeGood;
     }
 
+    public static List<TradeGoods> getGoods() {
+        return goods;
+    }
+
 }
+
 

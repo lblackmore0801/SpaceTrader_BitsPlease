@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.spacetrader_bitsplease.R;
 import com.example.spacetrader_bitsplease.entity.Planet;
 import com.example.spacetrader_bitsplease.entity.PlanetName;
+import com.example.spacetrader_bitsplease.model.Repository;
 
 public class PlanetSelectionActivity extends AppCompatActivity {
 
@@ -25,7 +26,32 @@ public class PlanetSelectionActivity extends AppCompatActivity {
     private TextView currentCoordinates;
     private TextView nextCoordinates;
 
+    private TextView waterPrice;
+    private TextView furPrice;
+    private TextView foodPrice;
+    private TextView orePrice;
+    private TextView gamesPrice;
+    private TextView firearmPrice;
+    private TextView medicinePrice;
+    private TextView machinePrice;
+    private TextView narcoticPrice;
+    private TextView robotsPrice;
+
+    private TextView waterSell;
+    private TextView furSell;
+    private TextView foodSell;
+    private TextView oreSell;
+    private TextView gamesSell;
+    private TextView firearmSell;
+    private TextView medicineSell;
+    private TextView machineSell;
+    private TextView narcoticSell;
+    private TextView robotsSell;
+
+
+
     private Planet planet;
+    private Repository repo = new Repository();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,13 +68,60 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         currentCoordinates = findViewById(R.id.curr_coordinates);
         nextCoordinates = findViewById(R.id.next_coordinates);
 
+        waterPrice = findViewById(R.id.waterPriceBuy);
+        furPrice = findViewById(R.id.furPriceBuy);
+        foodPrice = findViewById(R.id.foodPriceBuy);
+        orePrice = findViewById(R.id.orePriceBuy);
+        gamesPrice = findViewById(R.id.gamePriceBuy);
+        firearmPrice = findViewById(R.id.firearmPriceBuy);
+        medicinePrice = findViewById(R.id.medicinePriceBuy);
+        machinePrice = findViewById(R.id.machinePriceBuy);
+        narcoticPrice = findViewById(R.id.narcoticsPriceBuy);
+        robotsPrice = findViewById(R.id.robotPriceBuy);
+
+        waterSell = findViewById(R.id.waterPriceSell);
+        furSell = findViewById(R.id.furPriceSell);
+        foodSell = findViewById(R.id.foodPriceSell);
+        oreSell = findViewById(R.id.orePriceSell);
+        gamesSell = findViewById(R.id.gamePriceSell);
+        firearmSell = findViewById(R.id.firearmPriceSell);
+        medicineSell = findViewById(R.id.medicinePriceSell);
+        machineSell = findViewById(R.id.MachinePriceSell);
+        narcoticSell = findViewById(R.id.narcoticsPriceSell);
+        robotsSell = findViewById(R.id.robotPriceSell);
+
+
+
         //set current planet stats
         Planet currentPlanet = new Planet();
+        repo.assignPrices(currentPlanet);
         currentName.setText(currentPlanet.getPlanetName().toString());
         currentSize.setText(currentPlanet.getSize().toString());
         currentResource.setText(currentPlanet.getCondition().toString());
         currentTech.setText(currentPlanet.getTechLevel().toString());
         currentCoordinates.setText(currentPlanet.getCoordinates());
+
+        waterPrice.setText(""+currentPlanet.getWaterPrice());
+        furPrice.setText(""+currentPlanet.getFurPrice());
+        foodPrice.setText(""+currentPlanet.getFoodPrice());
+        orePrice.setText(""+currentPlanet.getOrePrice());
+        gamesPrice.setText(""+currentPlanet.getGamePrice());
+        firearmPrice.setText(""+currentPlanet.getFirearmPrice());
+        medicinePrice.setText(""+currentPlanet.getMedicinePrice());
+        machinePrice.setText(""+currentPlanet.getMachinePrice());
+        narcoticPrice.setText(""+currentPlanet.getNarcoticPrice());
+        robotsPrice.setText(""+currentPlanet.getRobotPrice());
+
+        waterSell.setText(""+currentPlanet.getWaterSell());
+        furSell.setText(""+currentPlanet.getFurSell());
+        foodSell.setText(""+currentPlanet.getFoodSell());
+        oreSell.setText(""+currentPlanet.getOreSell());
+        gamesSell.setText(""+currentPlanet.getGameSell());
+        firearmSell.setText(""+currentPlanet.getFirearmSell());
+        medicineSell.setText(""+currentPlanet.getMedicineSell());
+        machineSell.setText(""+currentPlanet.getMachineSell());
+        narcoticSell.setText(""+currentPlanet.getNarcoticSell());
+        robotsSell.setText(""+currentPlanet.getRobotSell());
 
         //create and populate spinner for target planets
         ArrayAdapter<PlanetName> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, PlanetName.values());

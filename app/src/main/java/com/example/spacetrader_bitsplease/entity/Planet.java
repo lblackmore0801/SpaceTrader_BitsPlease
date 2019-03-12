@@ -32,6 +32,17 @@ public class Planet {
     int narcoticPrice;
     int robotPrice;
 
+    int waterSell;
+    int furSell;
+    int foodSell;
+    int oreSell;
+    int gameSell;
+    int firearmSell;
+    int medicineSell;
+    int machineSell;
+    int narcoticSell;
+    int robotSell;
+
     public Planet() {
         xcoordinate = 100;
         ycoordinate = 100;
@@ -41,12 +52,8 @@ public class Planet {
         techLevel = TechLevel.AGRICULTURE;
     }
     public Planet(PlanetName name) {
-        this.planetName = name;
-        this.xcoordinate = Repository.xCoordinate(name);
-        this.ycoordinate = Repository.yCoordinate(name);
-        this.size = Repository.size(name);
-        this.condition = Repository.condition(name);
-        this.techLevel = Repository.techLevel(name);
+        this(name, Repository.xCoordinate(name),Repository.yCoordinate(name),Repository.size(name),
+                Repository.condition(name),Repository.techLevel(name));
     }
 
     public Planet(PlanetName name, int xCoordinate, int yCoordinate, Size size, Condition condition, TechLevel techLevel) {
@@ -75,6 +82,66 @@ public class Planet {
 
     public void setTechLevel(TechLevel techLevel) { this.techLevel = techLevel; }
     public TechLevel getTechLevel() { return techLevel; }
+
+    public void setWaterPrice(int water) { this.waterPrice = water; }
+    public int getWaterPrice() { return waterPrice; }
+
+    public void setFoodPrice(int food) { this.foodPrice = food; }
+    public int getFoodPrice() { return foodPrice; }
+
+    public void setFurPrice(int fur) { this.furPrice = fur; }
+    public int getFurPrice() { return furPrice; }
+
+    public void setOrePrice(int ore) { this.orePrice = ore; }
+    public int getOrePrice() { return orePrice; }
+
+    public void setGamePrice(int game) { this.gamePrice = game; }
+    public int getGamePrice() { return gamePrice; }
+
+    public void setFirearmPrice(int firearm) { this.firearmPrice = firearm; }
+    public int getFirearmPrice() { return firearmPrice; }
+
+    public void setMedicinePrice(int medicine) { this.medicinePrice = medicine; }
+    public int getMedicinePrice() { return medicinePrice; }
+
+    public void setMachinePrice(int machine) { this.machinePrice = machine; }
+    public int getMachinePrice() { return machinePrice; }
+
+    public void setNarcoticPrice(int narcotic) { this.narcoticPrice = narcotic; }
+    public int getNarcoticPrice() { return narcoticPrice; }
+
+    public void setRobotPrice(int robot) { this.robotPrice = robot; }
+    public int getRobotPrice() { return robotPrice; }
+
+    public void setWaterSell(int water) { this.waterSell = water; }
+    public int getWaterSell() { return waterSell; }
+
+    public void setFoodSell(int food) { this.foodSell = food; }
+    public int getFoodSell() { return foodSell; }
+
+    public void setFurSell(int fur) { this.furSell = fur; }
+    public int getFurSell() { return furSell; }
+
+    public void setOreSell(int ore) { this.oreSell = ore; }
+    public int getOreSell() { return oreSell; }
+
+    public void setGameSell(int game) { this.gameSell = game; }
+    public int getGameSell() { return gameSell; }
+
+    public void setFirearmSell(int firearm) { this.firearmSell = firearm; }
+    public int getFirearmSell() { return firearmSell; }
+
+    public void setMedicineSell(int medicine) { this.medicineSell = medicine; }
+    public int getMedicineSell() { return medicineSell; }
+
+    public void setMachineSell(int machine) { this.machineSell = machine; }
+    public int getMachineSell() { return machineSell; }
+
+    public void setNarcoticSell(int narcotic) { this.narcoticSell = narcotic; }
+    public int getNarcoticSell() { return narcoticSell; }
+
+    public void setRobotSell(int robot) { this.robotSell = robot; }
+    public int getRobotSell() { return robotSell; }
 
     public void setWaterQuant(int water) { this.waterQuant = water; }
     public int getWaterQuant() { return waterQuant; }

@@ -5,6 +5,10 @@ import com.example.spacetrader_bitsplease.entity.PlanetName;
 import com.example.spacetrader_bitsplease.entity.Condition;
 import com.example.spacetrader_bitsplease.entity.Size;
 import com.example.spacetrader_bitsplease.entity.TechLevel;
+import com.example.spacetrader_bitsplease.entity.TradeGoods;
+
+import java.util.List;
+import java.util.Random;
 
 public class Repository {
 
@@ -249,11 +253,51 @@ public class Repository {
         }
     }
 
-    public static int buyingPrice(Planet planet) {
-        return 0;
-    }
+    public static void assignPrices(Planet planet) {
+        List<TradeGoods> goods = TradeGoods.getGoods();
 
-    public static int sellingPrice(Planet planet) {
-        return buyingPrice(planet) / 2;
+        for (int i = 0; i < goods.size(); i++) {
+            TradeGoods good = goods.get(i);
+            Random r = new Random();
+            int luck = r.nextInt(good.getVar()) + 1;
+            luck /= 100;
+
+            int price = good.getBasePrice();
+            price += (good.getIpl() * (planet.getTechLevel().ordinal() - good.getMtlp()));
+            price += (good.getBasePrice()*luck);
+
+            if (good == TradeGoods.WATER) {
+                planet.setWaterPrice(price);
+                planet.setWaterSell(price/2);
+            } else if (good == TradeGoods.FURS) {
+                planet.setFurPrice(price);
+                planet.setFurSell(price/2);
+            } else if (good == TradeGoods.FOOD) {
+                planet.setFoodPrice(price);
+                planet.setFoodSell(price/2);
+            } else if (good == TradeGoods.ORE) {
+                planet.setOrePrice(price);
+                planet.setOreSell(price/2);
+            } else if (good == TradeGoods.GAMES) {
+                planet.setGamePrice(price);
+                planet.setGameSell(price/2);
+            } else if (good == TradeGoods.FIREARMS) {
+                planet.setFirearmPrice(price);
+                planet.setFirearmSell(price/2);
+            } else if (good == TradeGoods.MEDICINE) {
+                planet.setMedicinePrice(price);
+                planet.setMedicineSell(price/2);
+            } else if (good == TradeGoods.MACHINES) {
+                planet.setMachinePrice(price);
+                planet.setMachineSell(price/2);
+            } else if (good == TradeGoods.NARCOTICS) {
+                planet.setNarcoticPrice(price);
+                planet.setNarcoticSell(price/2);
+            } else if (good == TradeGoods.ROBOTS) {
+                planet.setRobotPrice(price);
+                planet.setRobotSell(price/2);
+            }
+        }
     }
 }
+
