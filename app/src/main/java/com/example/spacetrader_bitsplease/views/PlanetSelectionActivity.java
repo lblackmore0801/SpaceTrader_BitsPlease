@@ -5,13 +5,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.spacetrader_bitsplease.R;
 import com.example.spacetrader_bitsplease.entity.Planet;
 import com.example.spacetrader_bitsplease.entity.PlanetName;
+import com.example.spacetrader_bitsplease.entity.Player;
+import com.example.spacetrader_bitsplease.entity.ShipType;
 import com.example.spacetrader_bitsplease.model.Repository;
+import com.example.spacetrader_bitsplease.viewmodels.MarketPlaceViewModel;
+
 
 public class PlanetSelectionActivity extends AppCompatActivity {
 
@@ -48,6 +53,9 @@ public class PlanetSelectionActivity extends AppCompatActivity {
     private TextView narcoticSell;
     private TextView robotsSell;
 
+    private TextView credits;
+    private TextView usedBays;
+
     private TextView waterQuant;
     private TextView furQuant;
     private TextView foodQuant;
@@ -77,6 +85,9 @@ public class PlanetSelectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planet_selection);
+
+        credits = findViewById(R.id.Credits_display);
+        usedBays = findViewById(R.id.UsedBays);
 
         currentName = findViewById(R.id.curr_name);
         currentSize = findViewById(R.id.curr_size);
@@ -133,7 +144,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         robotsQuantSell = findViewById(R.id.singleRobotSell_button);
 
         //set current planet stats
-        Planet currentPlanet = new Planet();
+        final Planet currentPlanet = new Planet();
         repo.assignPrices(currentPlanet);
         repo.assignProductQuantity(currentPlanet);
         currentName.setText(currentPlanet.getPlanetName().toString());
@@ -208,6 +219,275 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             }
 
         });
+
+
+        /**
+         * BUYING
+         */
+
+        final int storageCapacity = 15;
+
+        final Button buySingleWater = findViewById(R.id.singleWaterBuy_button);
+        final Button buyAllWater = findViewById(R.id.allWaterBuy_button);
+
+        buySingleWater.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MarketPlaceViewModel.buyOneWater(currentPlanet);
+                credits.setText(""+MarketPlaceViewModel.money);
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
+                usedBays.setText(""+used);
+            }
+        });
+
+        buyAllWater.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                    MarketPlaceViewModel.buyOneWater(currentPlanet);
+                }
+                credits.setText("" + MarketPlaceViewModel.money);
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
+                usedBays.setText("" + used);
+            }
+        });
+
+        final Button buySingleFur = findViewById(R.id.singleFurBuy_button);
+        final Button buyAllFur = findViewById(R.id.allFurBuy_button);
+
+        buySingleFur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MarketPlaceViewModel.buyOneFur(currentPlanet);
+                credits.setText(""+MarketPlaceViewModel.money);
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
+                usedBays.setText(""+used);
+            }
+        });
+
+        buyAllFur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                    MarketPlaceViewModel.buyOneFur(currentPlanet);
+                }
+                credits.setText("" + MarketPlaceViewModel.money);
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
+                usedBays.setText("" + used);
+            }
+        });
+
+        final Button buySingleFood = findViewById(R.id.singleFoodBuy_button);
+        final Button buyAllFood = findViewById(R.id.allFoodBuy_button);
+
+        buySingleFood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MarketPlaceViewModel.buyOneFood(currentPlanet);
+                credits.setText(""+MarketPlaceViewModel.money);
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
+                usedBays.setText(""+used);
+            }
+        });
+
+        buyAllFood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                    MarketPlaceViewModel.buyOneFood(currentPlanet);
+                }
+                credits.setText("" + MarketPlaceViewModel.money);
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
+                usedBays.setText("" + used);
+            }
+        });
+
+        final Button buySingleOre = findViewById(R.id.singleOreBuy_button);
+        final Button buyAllOre = findViewById(R.id.allOreBuy_button);
+
+        buySingleOre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MarketPlaceViewModel.buyOneOre(currentPlanet);
+                credits.setText(""+MarketPlaceViewModel.money);
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
+                usedBays.setText(""+used);
+            }
+        });
+
+        buyAllOre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                    MarketPlaceViewModel.buyOneOre(currentPlanet);
+                }
+                credits.setText("" + MarketPlaceViewModel.money);
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
+                usedBays.setText("" + used);
+            }
+        });
+
+
+        final Button buySingleGame = findViewById(R.id.singleGameBuy_button19);
+        final Button buyAllGame = findViewById(R.id.allGameBuy_button);
+
+        buySingleGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MarketPlaceViewModel.buyOneGame(currentPlanet);
+                credits.setText(""+MarketPlaceViewModel.money);
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
+                usedBays.setText(""+used);
+            }
+        });
+
+        buyAllGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                    MarketPlaceViewModel.buyOneGame(currentPlanet);
+                }
+                credits.setText("" + MarketPlaceViewModel.money);
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
+                usedBays.setText("" + used);
+            }
+        });
+
+
+        final Button buySingleFirearm = findViewById(R.id.singleFirearmBuy_button);
+        final Button buyAllFirearms = findViewById(R.id.allFirearmBuy_button);
+
+        buySingleFirearm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MarketPlaceViewModel.buyOneFirearm(currentPlanet);
+                credits.setText(""+MarketPlaceViewModel.money);
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
+                usedBays.setText(""+used);
+            }
+        });
+
+        buyAllFirearms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                    MarketPlaceViewModel.buyOneFirearm(currentPlanet);
+                }
+                credits.setText("" + MarketPlaceViewModel.money);
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
+                usedBays.setText("" + used);
+            }
+        });
+
+
+        final Button buySingleMedicine = findViewById(R.id.singleMedicineBuy_button);
+        final Button buyAllMedicine = findViewById(R.id.allMedicineBuy_button);
+
+        buySingleMedicine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MarketPlaceViewModel.buyOneMedicine(currentPlanet);
+                credits.setText(""+MarketPlaceViewModel.money);
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
+                usedBays.setText(""+used);
+            }
+        });
+
+        buyAllMedicine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                    MarketPlaceViewModel.buyOneMedicine(currentPlanet);
+                }
+                credits.setText("" + MarketPlaceViewModel.money);
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
+                usedBays.setText("" + used);
+            }
+        });
+
+
+        final Button buySingleMachine = findViewById(R.id.singleMachineBuy_button20);
+        final Button buyAllMachines = findViewById(R.id.allMachineBuy_button);
+
+        buySingleMachine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MarketPlaceViewModel.buyOneMachine(currentPlanet);
+                credits.setText(""+MarketPlaceViewModel.money);
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
+                usedBays.setText(""+used);
+            }
+        });
+
+        buyAllMachines.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                    MarketPlaceViewModel.buyOneMachine(currentPlanet);
+                }
+                credits.setText("" + MarketPlaceViewModel.money);
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
+                usedBays.setText("" + used);
+            }
+        });
+
+
+        final Button buySingleNarcotic = findViewById(R.id.singleNarcoticsBuy_button21);
+        final Button buyAllNarcotics = findViewById(R.id.allNarcoticBuy_button);
+
+        buySingleNarcotic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MarketPlaceViewModel.buyOneNarcotic(currentPlanet);
+                credits.setText(""+MarketPlaceViewModel.money);
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
+                usedBays.setText(""+used);
+            }
+        });
+
+        buyAllNarcotics.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                    MarketPlaceViewModel.buyOneNarcotic(currentPlanet);
+                }
+                credits.setText("" + MarketPlaceViewModel.money);
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
+                usedBays.setText("" + used);
+            }
+        });
+
+
+        final Button buySingleRobot = findViewById(R.id.singleRobotBuy_button);
+        final Button buyAllRobot = findViewById(R.id.allRobotBuy_button);
+
+        buySingleRobot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MarketPlaceViewModel.buyOneRobot(currentPlanet);
+                credits.setText(""+MarketPlaceViewModel.money);
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
+                usedBays.setText(""+used);
+            }
+        });
+
+        buyAllRobot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                    MarketPlaceViewModel.buyOneRobot(currentPlanet);
+                }
+                credits.setText("" + MarketPlaceViewModel.money);
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
+                usedBays.setText("" + used);
+            }
+        });
+
+
+
+
+
+
 
     }
 }
