@@ -142,82 +142,91 @@ public class MarketPlaceViewModel {
     }
 
     public static void sellFur(Planet currentPlanet) {
-        if (currentPlanet.getFurQuant() > 0) {
+        if (furResourceinHold > 0 && remainingStorageCapacity >= 0) {
             int currentFurQuant = currentPlanet.getFurQuant();
-            currentPlanet.setFurQuant(currentFurQuant - 1);
-            remainingStorageCapacity += (currentFurQuant - currentPlanet.getFurQuant());
+            currentPlanet.setFurQuant(currentFurQuant + 1);
+            furResourceinHold--;
+            remainingStorageCapacity++;
             money += currentPlanet.getFurSell();
         }
     }
 
     public static void sellFood(Planet currentPlanet) {
-        if (currentPlanet.getFoodQuant() > 0) {
+        if (foodResourceinHold > 0 && remainingStorageCapacity >= 0) {
             int currentFoodQuant = currentPlanet.getFoodQuant();
-            currentPlanet.setFoodQuant(currentFoodQuant - 1);
-            remainingStorageCapacity += (currentFoodQuant - currentPlanet.getFoodQuant());
+            currentPlanet.setFoodQuant(currentFoodQuant + 1);
+            foodResourceinHold--;
+            remainingStorageCapacity++;
             money += currentPlanet.getFoodSell();
         }
     }
 
     public static void sellOre(Planet currentPlanet) {
-        if (currentPlanet.getOreQuant() > 0) {
+        if (oreResourceinHold > 0 && remainingStorageCapacity >= 0) {
             int currentOreQuant = currentPlanet.getOreQuant();
-            currentPlanet.setOreQuant(currentOreQuant - 1);
-            remainingStorageCapacity += (currentOreQuant - currentPlanet.getOreQuant());
+            currentPlanet.setOreQuant(currentOreQuant + 1);
+            oreResourceinHold--;
+            remainingStorageCapacity++;
             money += currentPlanet.getOreSell();
         }
     }
 
     public static void sellGame(Planet currentPlanet) {
-        if (currentPlanet.getFoodQuant() > 0) {
+        if (gameResourceinHold > 0 && remainingStorageCapacity >= 0) {
             int currentGameQuant = currentPlanet.getGameQuant();
-            currentPlanet.setGameQuant(currentGameQuant - 1);
-            remainingStorageCapacity += (currentGameQuant - currentPlanet.getGameQuant());
+            currentPlanet.setGameQuant(currentGameQuant + 1);
+            gameResourceinHold--;
+            remainingStorageCapacity++;
             money += currentPlanet.getGameSell();
         }
     }
 
     public static void sellFirearm(Planet currentPlanet) {
-        if (currentPlanet.getFirearmQuant() > 0) {
+        if (firearmsResourceinHold > 0 && remainingStorageCapacity >= 0) {
             int currentFirearmQuant = currentPlanet.getFirearmQuant();
-            currentPlanet.setFirearmQuant(currentFirearmQuant - 1);
-            remainingStorageCapacity += (currentFirearmQuant - currentPlanet.getFirearmQuant());
+            currentPlanet.setFirearmQuant(currentFirearmQuant + 1);
+            firearmsResourceinHold--;
+            remainingStorageCapacity++;
             money += currentPlanet.getFirearmSell();
         }
     }
 
     public static void sellMedicine(Planet currentPlanet) {
-        if (currentPlanet.getMedicineQuant() > 0) {
+        if (medicineResourceinHold > 0 && remainingStorageCapacity >= 0) {
             int currentMedicineQuant = currentPlanet.getMedicineQuant();
-            currentPlanet.setMedicineQuant(currentMedicineQuant - 1);
-            remainingStorageCapacity += (currentMedicineQuant - currentPlanet.getMedicineQuant());
+            currentPlanet.setMedicineQuant(currentMedicineQuant + 1);
+            medicineResourceinHold--;
+            remainingStorageCapacity++;
             money += currentPlanet.getMedicineSell();
         }
     }
 
     public static void sellMachine(Planet currentPlanet) {
-        if (currentPlanet.getMachineQuant() > 0) {
+        if (machineResourceinHold > 0 && remainingStorageCapacity >= 0) {
             int currentMachineQuant = currentPlanet.getMachineQuant();
-            currentPlanet.setMachineQuant(currentMachineQuant - 1);
-            remainingStorageCapacity += (currentMachineQuant - currentPlanet.getMachineQuant());
+            currentPlanet.setMachineQuant(currentMachineQuant + 1);
+            machineResourceinHold--;
+            remainingStorageCapacity++;
             money += currentPlanet.getMachineSell();
         }
     }
 
     public static void sellNarcotic(Planet currentPlanet) {
-        if (currentPlanet.getNarcoticQuant() > 0) {
+        if (narcoticResourceinHold > 0 && remainingStorageCapacity >= 0) {
             int currentNarcoticQuant = currentPlanet.getNarcoticQuant();
-            currentPlanet.setMedicineQuant(currentNarcoticQuant - 1);
-            remainingStorageCapacity += (currentNarcoticQuant - currentPlanet.getNarcoticQuant());
+            currentPlanet.setNarcoticQuant(currentNarcoticQuant + 1);
+            narcoticResourceinHold--;
+            remainingStorageCapacity++;
             money += currentPlanet.getNarcoticSell();
         }
     }
 
     public static void sellRobot(Planet currentPlanet) {
-        if (currentPlanet.getRobotQuant() > 0) {
+        if (robotResourceinHold > 0 && remainingStorageCapacity >= 0) {
             int currentRobotQuant = currentPlanet.getRobotQuant();
-            currentPlanet.setRobotQuant(currentRobotQuant - 1);
-            remainingStorageCapacity += (currentRobotQuant - currentPlanet.getRobotQuant());
+            currentPlanet.setRobotQuant(currentRobotQuant + 1);
+            robotResourceinHold--;
+            remainingStorageCapacity++;
             money += currentPlanet.getRobotSell();
         }
     }
