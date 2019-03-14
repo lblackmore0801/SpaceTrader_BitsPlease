@@ -278,12 +278,20 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         final Button buySingleFur = findViewById(R.id.singleFurBuy_button);
         final Button buyAllFur = findViewById(R.id.allFurBuy_button);
 
+        final Button sellSingleFur = findViewById(R.id.singleFurSell_button);
+
         buySingleFur.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (currentPlanet.getFurQuant() > 0 && MarketPlaceViewModel.canBuy(currentPlanet.getFurPrice(), 1)) {
                     currentPlanet.setFurQuant(currentPlanet.getFurQuant() - 1);
-                    buySingleWater.setText("" + currentPlanet.getFurQuant());
+                    buySingleFur.setText("" + currentPlanet.getFurQuant());
+
+                    String furinHold = sellSingleFur.getText().toString();
+                    int furnumber = Integer.parseInt(furinHold);
+                    furnumber++;
+                    String furString = Integer.toString(furnumber);
+                    sellSingleFur.setText("" + furString);
                 }
                 MarketPlaceViewModel.buyOneFur(currentPlanet);
                 credits.setText(""+MarketPlaceViewModel.money);
@@ -309,12 +317,20 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         final Button buySingleFood = findViewById(R.id.singleFoodBuy_button);
         final Button buyAllFood = findViewById(R.id.allFoodBuy_button);
 
+        final Button sellSingleFood = findViewById(R.id.singleFoodSell_button);
+
         buySingleFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (currentPlanet.getFoodQuant() > 0 && MarketPlaceViewModel.canBuy(currentPlanet.getFoodPrice(), 1)) {
                     currentPlanet.setFoodQuant(currentPlanet.getFoodQuant() - 1);
-                    buySingleWater.setText("" + currentPlanet.getFoodQuant());
+                    buySingleFood.setText("" + currentPlanet.getFoodQuant());
+
+                    String foodinHold = sellSingleFood.getText().toString();
+                    int foodnumber = Integer.parseInt(foodinHold);
+                    foodnumber++;
+                    String foodString = Integer.toString(foodnumber);
+                    sellSingleFood.setText("" + foodString);
                 }
                 MarketPlaceViewModel.buyOneFood(currentPlanet);
                 credits.setText(""+MarketPlaceViewModel.money);
@@ -340,12 +356,20 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         final Button buySingleOre = findViewById(R.id.singleOreBuy_button);
         final Button buyAllOre = findViewById(R.id.allOreBuy_button);
 
+        final Button sellSingleOre = findViewById(R.id.singleOreSell_button);
+
         buySingleOre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (currentPlanet.getOreQuant() > 0 && MarketPlaceViewModel.canBuy(currentPlanet.getOrePrice(), 1)) {
                     currentPlanet.setOreQuant(currentPlanet.getOreQuant() - 1);
-                    buySingleWater.setText("" + currentPlanet.getOreQuant());
+                    buySingleOre.setText("" + currentPlanet.getOreQuant());
+
+                    String oreinHold = sellSingleOre.getText().toString();
+                    int orenumber = Integer.parseInt(oreinHold);
+                    orenumber++;
+                    String oreString = Integer.toString(orenumber);
+                    sellSingleOre.setText("" + oreString);
                 }
                 MarketPlaceViewModel.buyOneOre(currentPlanet);
                 credits.setText(""+MarketPlaceViewModel.money);
@@ -372,12 +396,20 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         final Button buySingleGame = findViewById(R.id.singleGameBuy_button19);
         final Button buyAllGame = findViewById(R.id.allGameBuy_button);
 
+        final Button sellSingleGame = findViewById(R.id.singleGameSell_button);
+
         buySingleGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (currentPlanet.getGameQuant() > 0 && MarketPlaceViewModel.canBuy(currentPlanet.getGamePrice(), 1)) {
                     currentPlanet.setGameQuant(currentPlanet.getGameQuant() - 1);
-                    buySingleWater.setText("" + currentPlanet.getGameQuant());
+                    buySingleGame.setText("" + currentPlanet.getGameQuant());
+
+                    String gameinHold = sellSingleGame.getText().toString();
+                    int gamenumber = Integer.parseInt(gameinHold);
+                    gamenumber++;
+                    String gameString = Integer.toString(gamenumber);
+                    sellSingleGame.setText("" + gameString);
                 }
                 MarketPlaceViewModel.buyOneGame(currentPlanet);
                 credits.setText(""+MarketPlaceViewModel.money);
@@ -404,12 +436,20 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         final Button buySingleFirearm = findViewById(R.id.singleFirearmBuy_button);
         final Button buyAllFirearms = findViewById(R.id.allFirearmBuy_button);
 
+        final Button sellSingleFirearm = findViewById(R.id.singleFirearmSell_button);
+
         buySingleFirearm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (currentPlanet.getFirearmQuant() > 0 && MarketPlaceViewModel.canBuy(currentPlanet.getFirearmPrice(), 1)) {
                     currentPlanet.setFirearmQuant(currentPlanet.getFirearmQuant() - 1);
-                    buySingleWater.setText("" + currentPlanet.getFirearmQuant());
+                    buySingleFirearm.setText("" + currentPlanet.getFirearmQuant());
+
+                    String firearminHold = sellSingleFirearm.getText().toString();
+                    int firearmnumber = Integer.parseInt(firearminHold);
+                    firearmnumber++;
+                    String firearmString = Integer.toString(firearmnumber);
+                    sellSingleFirearm.setText("" + firearmString);
                 }
                 MarketPlaceViewModel.buyOneFirearm(currentPlanet);
                 credits.setText(""+MarketPlaceViewModel.money);
@@ -436,12 +476,20 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         final Button buySingleMedicine = findViewById(R.id.singleMedicineBuy_button);
         final Button buyAllMedicine = findViewById(R.id.allMedicineBuy_button);
 
+        final Button sellSingleMedicine = findViewById(R.id.singleMedicineSell_button);
+
         buySingleMedicine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (currentPlanet.getMedicineQuant() > 0 && MarketPlaceViewModel.canBuy(currentPlanet.getMedicinePrice(), 1)) {
                     currentPlanet.setMedicineQuant(currentPlanet.getMedicineQuant() - 1);
-                    buySingleWater.setText("" + currentPlanet.getMedicineQuant());
+                    buySingleMedicine.setText("" + currentPlanet.getMedicineQuant());
+
+                    String medicineinHold = sellSingleMedicine.getText().toString();
+                    int medicinenumber = Integer.parseInt(medicineinHold);
+                    medicinenumber++;
+                    String medicineString = Integer.toString(medicinenumber);
+                    sellSingleMedicine.setText("" + medicineString);
                 }
                 MarketPlaceViewModel.buyOneMedicine(currentPlanet);
                 credits.setText(""+MarketPlaceViewModel.money);
@@ -468,12 +516,20 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         final Button buySingleMachine = findViewById(R.id.singleMachineBuy_button20);
         final Button buyAllMachines = findViewById(R.id.allMachineBuy_button);
 
+        final Button sellSingleMachine = findViewById(R.id.singleMachineSell_button);
+
         buySingleMachine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (currentPlanet.getMachineQuant() > 0 && MarketPlaceViewModel.canBuy(currentPlanet.getMachinePrice(), 1)) {
                     currentPlanet.setMachineQuant(currentPlanet.getMachineQuant() - 1);
-                    buySingleWater.setText("" + currentPlanet.getMachineQuant());
+                    buySingleMachine.setText("" + currentPlanet.getMachineQuant());
+
+                    String machineinHold = sellSingleMachine.getText().toString();
+                    int machinenumber = Integer.parseInt(machineinHold);
+                    machinenumber++;
+                    String machineString = Integer.toString(machinenumber);
+                    sellSingleMachine.setText("" + machineString);
                 }
                 MarketPlaceViewModel.buyOneMachine(currentPlanet);
                 credits.setText(""+MarketPlaceViewModel.money);
@@ -500,12 +556,20 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         final Button buySingleNarcotic = findViewById(R.id.singleNarcoticsBuy_button21);
         final Button buyAllNarcotics = findViewById(R.id.allNarcoticBuy_button);
 
+        final Button sellSingleNarcotic = findViewById(R.id.singleNarcoticSell_button);
+
         buySingleNarcotic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (currentPlanet.getNarcoticQuant() > 0 && MarketPlaceViewModel.canBuy(currentPlanet.getNarcoticPrice(), 1)) {
                     currentPlanet.setNarcoticQuant(currentPlanet.getNarcoticQuant() - 1);
-                    buySingleWater.setText("" + currentPlanet.getNarcoticQuant());
+                    buySingleNarcotic.setText("" + currentPlanet.getNarcoticQuant());
+
+                    String narcoticinHold = sellSingleNarcotic.getText().toString();
+                    int narcoticnumber = Integer.parseInt(narcoticinHold);
+                    narcoticnumber++;
+                    String narcoticString = Integer.toString(narcoticnumber);
+                    sellSingleNarcotic.setText("" + narcoticString);
                 }
                 MarketPlaceViewModel.buyOneNarcotic(currentPlanet);
                 credits.setText(""+MarketPlaceViewModel.money);
@@ -532,12 +596,20 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         final Button buySingleRobot = findViewById(R.id.singleRobotBuy_button);
         final Button buyAllRobot = findViewById(R.id.allRobotBuy_button);
 
+        final Button sellSingleRobot = findViewById(R.id.singleRobotSell_button);
+
         buySingleRobot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (currentPlanet.getRobotQuant() > 0 && MarketPlaceViewModel.canBuy(currentPlanet.getRobotPrice(), 1)) {
                     currentPlanet.setRobotQuant(currentPlanet.getRobotQuant() - 1);
-                    buySingleWater.setText("" + currentPlanet.getRobotQuant());
+                    buySingleRobot.setText("" + currentPlanet.getRobotQuant());
+
+                    String robotinHold = sellSingleRobot.getText().toString();
+                    int robotnumber = Integer.parseInt(robotinHold);
+                    robotnumber++;
+                    String robotString = Integer.toString(robotnumber);
+                    sellSingleRobot.setText("" + robotString);
                 }
                 MarketPlaceViewModel.buyOneRobot(currentPlanet);
                 credits.setText(""+MarketPlaceViewModel.money);
@@ -623,16 +695,31 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             }
         });
 
-        final Button sellSingleFur = findViewById(R.id.singleFurSell_button);
+        //final Button sellSingleFur = findViewById(R.id.singleFurSell_button);
         final Button sellAllFur = findViewById(R.id.allFurSell_button);
 
         sellSingleFur.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MarketPlaceViewModel.buyOneFur(currentPlanet);
+
+                MarketPlaceViewModel.sellFur(currentPlanet);
                 credits.setText(""+MarketPlaceViewModel.money);
-                int used = storageCapacity + MarketPlaceViewModel.remainingStorageCapacity;
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
+
+
+                String furinHold = sellSingleFur.getText().toString();
+                int furnumber = Integer.parseInt(furinHold);
+                if (furnumber > 0) {
+                    furnumber--;
+                }
+                String furString = Integer.toString(furnumber);
+                sellSingleFur.setText("" + furString);
+
+
+                //currentPlanet.setWaterQuant(currentPlanet.getWaterQuant());
+                buySingleFur.setText("" + currentPlanet.getFurQuant());
+
             }
         });
 
@@ -648,16 +735,29 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             }
         });
 
-        final Button sellSingleFood = findViewById(R.id.singleFoodSell_button);
+        //final Button sellSingleFood = findViewById(R.id.singleFoodSell_button);
         final Button sellAllFood = findViewById(R.id.allFoodSell_button);
 
         sellSingleFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MarketPlaceViewModel.buyOneFood(currentPlanet);
+                MarketPlaceViewModel.sellFood(currentPlanet);
                 credits.setText(""+MarketPlaceViewModel.money);
-                int used = storageCapacity + MarketPlaceViewModel.remainingStorageCapacity;
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
+
+
+                String foodinHold = sellSingleFood.getText().toString();
+                int foodnumber = Integer.parseInt(foodinHold);
+                if (foodnumber > 0) {
+                    foodnumber--;
+                }
+                String foodString = Integer.toString(foodnumber);
+                sellSingleFood.setText("" + foodString);
+
+
+                //currentPlanet.setWaterQuant(currentPlanet.getWaterQuant());
+                buySingleFood.setText("" + currentPlanet.getFoodQuant());
             }
         });
 
@@ -673,16 +773,29 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             }
         });
 
-        final Button sellSingleOre = findViewById(R.id.singleOreSell_button);
+        //final Button sellSingleOre = findViewById(R.id.singleOreSell_button);
         final Button sellAllOre = findViewById(R.id.allOreSell_button);
 
         sellSingleOre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MarketPlaceViewModel.buyOneOre(currentPlanet);
+                MarketPlaceViewModel.sellOre(currentPlanet);
                 credits.setText(""+MarketPlaceViewModel.money);
-                int used = storageCapacity + MarketPlaceViewModel.remainingStorageCapacity;
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
+
+
+                String oreinHold = sellSingleOre.getText().toString();
+                int orenumber = Integer.parseInt(oreinHold);
+                if (orenumber > 0) {
+                    orenumber--;
+                }
+                String oreString = Integer.toString(orenumber);
+                sellSingleOre.setText("" + oreString);
+
+
+                //currentPlanet.setWaterQuant(currentPlanet.getWaterQuant());
+                buySingleOre.setText("" + currentPlanet.getOreQuant());
             }
         });
 
@@ -699,16 +812,29 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         });
 
 
-        final Button sellSingleGame = findViewById(R.id.singleGameSell_button);
+        //final Button sellSingleGame = findViewById(R.id.singleGameSell_button);
         final Button sellAllGame = findViewById(R.id.allGamesSell_button);
 
         sellSingleGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MarketPlaceViewModel.buyOneGame(currentPlanet);
+                MarketPlaceViewModel.sellGame(currentPlanet);
                 credits.setText(""+MarketPlaceViewModel.money);
-                int used = storageCapacity + MarketPlaceViewModel.remainingStorageCapacity;
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
+
+
+                String gameinHold = sellSingleGame.getText().toString();
+                int gamenumber = Integer.parseInt(gameinHold);
+                if (gamenumber > 0) {
+                    gamenumber--;
+                }
+                String gameString = Integer.toString(gamenumber);
+                sellSingleGame.setText("" + gameString);
+
+
+                //currentPlanet.setWaterQuant(currentPlanet.getWaterQuant());
+                buySingleGame.setText("" + currentPlanet.getGameQuant());
             }
         });
 
@@ -725,16 +851,29 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         });
 
 
-        final Button sellSingleFirearm = findViewById(R.id.singleFirearmSell_button);
+        //final Button sellSingleFirearm = findViewById(R.id.singleFirearmSell_button);
         final Button sellAllFirearms = findViewById(R.id.allFirearmsSell_button);
 
         sellSingleFirearm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MarketPlaceViewModel.buyOneFirearm(currentPlanet);
+                MarketPlaceViewModel.sellFirearm(currentPlanet);
                 credits.setText(""+MarketPlaceViewModel.money);
-                int used = storageCapacity + MarketPlaceViewModel.remainingStorageCapacity;
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
+
+
+                String firearminHold = sellSingleFirearm.getText().toString();
+                int firearmnumber = Integer.parseInt(firearminHold);
+                if (firearmnumber > 0) {
+                    firearmnumber--;
+                }
+                String firearmString = Integer.toString(firearmnumber);
+                sellSingleFirearm.setText("" + firearmString);
+
+
+                //currentPlanet.setWaterQuant(currentPlanet.getWaterQuant());
+                buySingleFirearm.setText("" + currentPlanet.getFirearmQuant());
             }
         });
 
@@ -751,16 +890,29 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         });
 
 
-        final Button sellSingleMedicine = findViewById(R.id.singleMedicineSell_button);
+        //final Button sellSingleMedicine = findViewById(R.id.singleMedicineSell_button);
         final Button sellAllMedicine = findViewById(R.id.allMedicineSell_button);
 
         sellSingleMedicine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MarketPlaceViewModel.buyOneMedicine(currentPlanet);
+                MarketPlaceViewModel.sellMedicine(currentPlanet);
                 credits.setText(""+MarketPlaceViewModel.money);
-                int used = storageCapacity + MarketPlaceViewModel.remainingStorageCapacity;
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
+
+
+                String medicineinHold = sellSingleMedicine.getText().toString();
+                int medicinenumber = Integer.parseInt(medicineinHold);
+                if (medicinenumber > 0) {
+                    medicinenumber--;
+                }
+                String medicineString = Integer.toString(medicinenumber);
+                sellSingleMedicine.setText("" + medicineString);
+
+
+                //currentPlanet.setWaterQuant(currentPlanet.getWaterQuant());
+                buySingleMedicine.setText("" + currentPlanet.getMedicineQuant());
             }
         });
 
@@ -777,16 +929,29 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         });
 
 
-        final Button sellSingleMachine = findViewById(R.id.singleMachineSell_button);
+        //final Button sellSingleMachine = findViewById(R.id.singleMachineSell_button);
         final Button sellAllMachines = findViewById(R.id.allMedicineSell_button2);
 
         sellSingleMachine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MarketPlaceViewModel.buyOneMachine(currentPlanet);
+                MarketPlaceViewModel.sellMachine(currentPlanet);
                 credits.setText(""+MarketPlaceViewModel.money);
-                int used = storageCapacity + MarketPlaceViewModel.remainingStorageCapacity;
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
+
+
+                String machineinHold = sellSingleMachine.getText().toString();
+                int machinenumber = Integer.parseInt(machineinHold);
+                if (machinenumber > 0) {
+                    machinenumber--;
+                }
+                String machineString = Integer.toString(machinenumber);
+                sellSingleMachine.setText("" + machineString);
+
+
+                //currentPlanet.setWaterQuant(currentPlanet.getWaterQuant());
+                buySingleMachine.setText("" + currentPlanet.getMachineQuant());
             }
         });
 
@@ -803,16 +968,29 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         });
 
 
-        final Button sellSingleNarcotic = findViewById(R.id.singleNarcoticSell_button);
+        //final Button sellSingleNarcotic = findViewById(R.id.singleNarcoticSell_button);
         final Button sellAllNarcotics = findViewById(R.id.allNarcoticSell_button);
 
         sellSingleNarcotic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MarketPlaceViewModel.buyOneNarcotic(currentPlanet);
+                MarketPlaceViewModel.sellNarcotic(currentPlanet);
                 credits.setText(""+MarketPlaceViewModel.money);
-                int used = storageCapacity + MarketPlaceViewModel.remainingStorageCapacity;
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
+
+
+                String narcoticinHold = sellSingleNarcotic.getText().toString();
+                int narcoticnumber = Integer.parseInt(narcoticinHold);
+                if (narcoticnumber > 0) {
+                    narcoticnumber--;
+                }
+                String narcoticString = Integer.toString(narcoticnumber);
+                sellSingleNarcotic.setText("" + narcoticString);
+
+
+                //currentPlanet.setWaterQuant(currentPlanet.getWaterQuant());
+                buySingleNarcotic.setText("" + currentPlanet.getNarcoticQuant());
             }
         });
 
@@ -829,16 +1007,29 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         });
 
 
-        final Button sellSingleRobot = findViewById(R.id.singleRobotSell_button);
+        //final Button sellSingleRobot = findViewById(R.id.singleRobotSell_button);
         final Button sellAllRobot = findViewById(R.id.allMedicineSell_button4);
 
         sellSingleRobot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MarketPlaceViewModel.buyOneRobot(currentPlanet);
+                MarketPlaceViewModel.sellRobot(currentPlanet);
                 credits.setText(""+MarketPlaceViewModel.money);
-                int used = storageCapacity + MarketPlaceViewModel.remainingStorageCapacity;
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
+
+
+                String robotinHold = sellSingleRobot.getText().toString();
+                int robotnumber = Integer.parseInt(robotinHold);
+                if (robotnumber > 0) {
+                    robotnumber--;
+                }
+                String robotString = Integer.toString(robotnumber);
+                sellSingleRobot.setText("" + robotString);
+
+
+                //currentPlanet.setWaterQuant(currentPlanet.getWaterQuant());
+                buySingleRobot.setText("" + currentPlanet.getRobotQuant());
             }
         });
 
