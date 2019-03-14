@@ -230,17 +230,27 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         final Button buySingleWater = findViewById(R.id.singleWaterBuy_button);
         final Button buyAllWater = findViewById(R.id.allWaterBuy_button);
 
+        final Button sellSingleWater = findViewById(R.id.singleWaterSell_button);
+
         buySingleWater.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (currentPlanet.getWaterQuant() > 0 && MarketPlaceViewModel.canBuy(currentPlanet.getWaterPrice(), 1)) {
                     currentPlanet.setWaterQuant(currentPlanet.getWaterQuant() - 1);
                     buySingleWater.setText("" + currentPlanet.getWaterQuant());
+
+                    String waterinHold = sellSingleWater.getText().toString();
+                    int waternumber = Integer.parseInt(waterinHold);
+                    waternumber++;
+                    String waterString = Integer.toString(waternumber);
+                    sellSingleWater.setText("" + waterString);
                 }
                 MarketPlaceViewModel.buyOneWater(currentPlanet);
                 credits.setText(""+MarketPlaceViewModel.money);
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
+
+
 
             }
         });
@@ -251,6 +261,12 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                 while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
                     currentPlanet.setWaterQuant(currentPlanet.getWaterQuant() - 1);
                     MarketPlaceViewModel.buyOneWater(currentPlanet);
+
+                    String waterinHold = sellSingleWater.getText().toString();
+                    int waternumber = Integer.parseInt(waterinHold);
+                    waternumber++;
+                    String waterString = Integer.toString(waternumber);
+                    sellSingleWater.setText("" + waterString);
                 }
                 buySingleWater.setText("" + currentPlanet.getWaterQuant());
                 credits.setText("" + MarketPlaceViewModel.money);
@@ -549,16 +565,49 @@ public class PlanetSelectionActivity extends AppCompatActivity {
  * SELLING
  */
 
-        final Button sellSingleWater = findViewById(R.id.singleWaterSell_button);
+//* final Button buySingleWater = findViewById(R.id.singleWaterBuy_button);
+//        final Button buyAllWater = findViewById(R.id.allWaterBuy_button);
+//
+//        buySingleWater.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (currentPlanet.getWaterQuant() > 0 && MarketPlaceViewModel.canBuy(currentPlanet.getWaterPrice(), 1)) {
+//                    currentPlanet.setWaterQuant(currentPlanet.getWaterQuant() - 1);
+//                    buySingleWater.setText("" + currentPlanet.getWaterQuant());
+//                }
+//                MarketPlaceViewModel.buyOneWater(currentPlanet);
+//                credits.setText(""+MarketPlaceViewModel.money);
+//                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
+//                usedBays.setText(""+used);
+//
+//            }
+//        });
+
+        //final Button sellSingleWater = findViewById(R.id.singleWaterSell_button);
         final Button sellAllWater = findViewById(R.id.allWaterSell_button);
 
         sellSingleWater.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MarketPlaceViewModel.buyOneWater(currentPlanet);
+
+                MarketPlaceViewModel.sellWater(currentPlanet);
                 credits.setText(""+MarketPlaceViewModel.money);
-                int used = storageCapacity - 1;
+                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
+
+
+                String waterinHold = sellSingleWater.getText().toString();
+                int waternumber = Integer.parseInt(waterinHold);
+                if (waternumber > 0) {
+                    waternumber--;
+                }
+                String waterString = Integer.toString(waternumber);
+                sellSingleWater.setText("" + waterString);
+
+
+                //currentPlanet.setWaterQuant(currentPlanet.getWaterQuant());
+                buySingleWater.setText("" + currentPlanet.getWaterQuant());
+
             }
         });
 

@@ -19,9 +19,22 @@ public class MarketPlaceViewModel {
     public static int remainingStorageCapacity = 15;
     public static int money = 1000;
 
+    private static int waterResourceinHold;
+    private static int furResourceinHold;
+    private static int foodResourceinHold;
+    private static int oreResourceinHold;
+    private static int gameResourceinHold;
+    private static int firearmsResourceinHold;
+    private static int machineResourceinHold;
+    private static int medicineResourceinHold;
+    private static int narcoticResourceinHold;
+    private static int robotResourceinHold;
+
     public MarketPlaceViewModel(int money, int remainingStorageCapacity) {
         this.remainingStorageCapacity = remainingStorageCapacity;
         this.money = Player.getMoney();
+        this.waterResourceinHold = 0;
+        this.furResourceinHold = 0;
     }
 
 
@@ -38,6 +51,7 @@ public class MarketPlaceViewModel {
         if (canBuy(currentPlanet.getWaterPrice(), 1)) {
             money -= currentPlanet.getWaterPrice();
             remainingStorageCapacity -= 1;
+            waterResourceinHold++;
         }
     }
 
@@ -45,6 +59,7 @@ public class MarketPlaceViewModel {
         if (canBuy(currentPlanet.getFurPrice(), 1)) {
             money -= currentPlanet.getFurPrice();
             remainingStorageCapacity -= 1;
+            furResourceinHold++;
         }
     }
 
@@ -52,6 +67,7 @@ public class MarketPlaceViewModel {
         if (canBuy(currentPlanet.getFoodPrice(), 1)) {
             money -= currentPlanet.getFoodPrice();
             remainingStorageCapacity -= 1;
+            foodResourceinHold++;
         }
     }
 
@@ -59,6 +75,7 @@ public class MarketPlaceViewModel {
         if (canBuy(currentPlanet.getOrePrice(), 1)) {
             money -= currentPlanet.getOrePrice();
             remainingStorageCapacity -= 1;
+            oreResourceinHold++;
         }
     }
 
@@ -66,6 +83,7 @@ public class MarketPlaceViewModel {
         if (canBuy(currentPlanet.getGamePrice(), 1)) {
             money -= currentPlanet.getGamePrice();
             remainingStorageCapacity -= 1;
+            gameResourceinHold++;
         }
     }
 
@@ -73,6 +91,7 @@ public class MarketPlaceViewModel {
         if (canBuy(currentPlanet.getFirearmPrice(), 1)) {
             money -= currentPlanet.getFirearmPrice();
             remainingStorageCapacity -= 1;
+            firearmsResourceinHold++;
         }
     }
 
@@ -80,6 +99,7 @@ public class MarketPlaceViewModel {
         if (canBuy(currentPlanet.getMedicinePrice(), 1)) {
             money -= currentPlanet.getMedicinePrice();
             remainingStorageCapacity -= 1;
+            medicineResourceinHold++;
         }
     }
 
@@ -87,6 +107,7 @@ public class MarketPlaceViewModel {
         if (canBuy(currentPlanet.getMachinePrice(), 1)) {
             money -= currentPlanet.getMachinePrice();
             remainingStorageCapacity -= 1;
+            machineResourceinHold++;
         }
     }
 
@@ -94,6 +115,7 @@ public class MarketPlaceViewModel {
         if (canBuy(currentPlanet.getNarcoticPrice(), 1)) {
             money -= currentPlanet.getNarcoticPrice();
             remainingStorageCapacity -= 1;
+            narcoticResourceinHold++;
         }
     }
 
@@ -101,6 +123,7 @@ public class MarketPlaceViewModel {
         if (canBuy(currentPlanet.getRobotPrice(), 1)) {
             money -= currentPlanet.getRobotPrice();
             remainingStorageCapacity -= 1;
+            robotResourceinHold++;
         }
     }
 
@@ -108,11 +131,12 @@ public class MarketPlaceViewModel {
     * Selling stuff
      */
 
-    public static void sellWater(Planet currentPlanet, Planet targetPlanet) {
-        if (currentPlanet.getWaterQuant() > 0) {
+    public static void sellWater(Planet currentPlanet) {
+        if (waterResourceinHold > 0 && remainingStorageCapacity >= 0) {
             int currentWaterQuant = currentPlanet.getWaterQuant();
-            currentPlanet.setWaterQuant(currentWaterQuant - 1);
-            remainingStorageCapacity += (currentWaterQuant - currentPlanet.getWaterQuant());
+            currentPlanet.setWaterQuant(currentWaterQuant + 1);
+            waterResourceinHold--;
+            remainingStorageCapacity++;
             money += currentPlanet.getWaterSell();
         }
     }

@@ -192,10 +192,10 @@ public class Repository {
             TradeGoods good = goods.get(i);
             Random rand = new Random();
             int chance = rand.nextInt(good.getVar()) + 1;
-            chance *= 50;
+            chance *= 5;
 
             int quant = good.getTtp();
-            quant += (good.getTtp() * chance) + 200;
+            quant += (good.getTtp() * chance) + 20;
 
             if (good == TradeGoods.WATER) {
                 planet.setWaterQuant(quant);

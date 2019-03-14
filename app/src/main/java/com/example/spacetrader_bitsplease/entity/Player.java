@@ -10,6 +10,18 @@ public class Player {
     private Ship ship;
     private static int money;
 
+    private int waterResourceinHold;
+    private int furResourceinHold;
+    private int foodResourceinHold;
+    private int oreResourceinHold;
+    private int gameResourceinHold;
+    private int firearmsResourceinHold;
+    private int medicineResourceinHold;
+    private int narcoticResourceinHold;
+    private int robotResourceinHold;
+
+
+
     /**
      * Constructor required for making the new object
      *
@@ -97,4 +109,32 @@ public class Player {
         return String.format("Username: %s \nDifficulty: %s \nFighter Skill: %s \nPilot Skill: %s \nEngineering Skill: %s \nTrader Skill: %s \nShip: %s \nMoney: %d",
                                 username, difficulty.toString(), fighterSkill, pilotSkill, engineerSkill, traderSkill, ship.toString(), money);
     }
+
+
+    public void setWaterinHold(int waterResourceinHold) { this.waterResourceinHold = waterResourceinHold; }
+    public int getWaterinHold() { return waterResourceinHold; }
+
+    public void setFoodinHold(int foodResourceinHold) { this.foodResourceinHold = foodResourceinHold; }
+    public int setFoodinHold() { return foodResourceinHold; }
+
+    public void setFurResourceinHold(int furResourceinHold) { this.furResourceinHold = furResourceinHold; }
+    public int getFurResourceinHold() { return furResourceinHold; }
+
+    public void setOreResourceinHold(int oreResourceinHold) { this.oreResourceinHold = oreResourceinHold; }
+    public int getOreResourceinHold() { return oreResourceinHold; }
+
+    public void setGameResourceinHold(int gameResourceinHold) { this.gameResourceinHold = gameResourceinHold; }
+    public int getGameResourceinHold() { return gameResourceinHold; }
+
+    public void setFirearmsResourceinHold(int firearmsResourceinHold) { this.firearmsResourceinHold = firearmsResourceinHold; }
+    public int getFirearmsResourceinHold() { return firearmsResourceinHold; }
+
+    public void setMedicineResourceinHold(int medicineResourceinHold) { this.medicineResourceinHold = medicineResourceinHold; }
+    public int getMedicineResourceinHold() { return medicineResourceinHold; }
+
+    public void setNarcoticResourceinHold(int narcoticResourceinHold) { this.narcoticResourceinHold = narcoticResourceinHold; }
+    public int getNarcoticResourceinHold() { return narcoticResourceinHold; }
+
+    public void setRobotResourceinHold(int robotResourceinHold) { this.robotResourceinHold = robotResourceinHold; }
+    public int getRobotResourceinHold() { return robotResourceinHold; }
 }
