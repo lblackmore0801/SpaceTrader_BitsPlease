@@ -199,34 +199,34 @@ public class Repository {
 
             if (good == TradeGoods.WATER) {
                 planet.setWaterQuant(quant);
-                planet.setWaterQuantSell(quant*2);
+                planet.setWaterQuantSell(0);
             } else if (good == TradeGoods.FURS) {
                 planet.setFurQuant(quant);
-                planet.setFurQuantSell(quant*2);
+                planet.setFurQuantSell(0);
             } else if (good == TradeGoods.FOOD) {
                 planet.setFoodQuant(quant);
-                planet.setFoodQuantSell(quant*2);
+                planet.setFoodQuantSell(0);
             } else if (good == TradeGoods.ORE) {
                 planet.setOreQuant(quant);
-                planet.setOreQuantSell(quant*2);
+                planet.setOreQuantSell(0);
             } else if (good == TradeGoods.GAMES) {
                 planet.setGameQuant(quant);
-                planet.setGameQuantSell(quant*2);
+                planet.setGameQuantSell(0);
             } else if (good == TradeGoods.FIREARMS) {
                 planet.setFirearmQuant(quant);
-                planet.setFirearmQuantSell(quant*2);
+                planet.setFirearmQuantSell(0);
             } else if (good == TradeGoods.MEDICINE) {
                 planet.setMedicineQuant(quant);
-                planet.setMedicineQuantSell(quant*2);
+                planet.setMedicineQuantSell(0);
             } else if (good == TradeGoods.MACHINES) {
                 planet.setMachineQuant(quant);
-                planet.setMachineQuantSell(quant*2);
+                planet.setMachineQuantSell(0);
             } else if (good == TradeGoods.NARCOTICS) {
                 planet.setNarcoticQuant(quant);
-                planet.setNarcoticQuantSell(quant*2);
+                planet.setNarcoticQuantSell(0);
             } else if (good == TradeGoods.ROBOTS) {
                 planet.setRobotQuant(quant);
-                planet.setRobotQuantSell(quant*2);
+                planet.setRobotQuantSell(0);
             }
         }
     }
