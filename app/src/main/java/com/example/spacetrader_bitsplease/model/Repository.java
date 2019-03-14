@@ -186,80 +186,48 @@ public class Repository {
     }
 
     public static void assignProductQuantity(Planet planet) {
-        if (planet.getCondition() == Condition.WEIRDMUSHROOMS || planet.getCondition() == Condition.RICHSOIL
-                || planet.getCondition() == Condition.LOTSOFHERBS || planet.getCondition() == Condition.LOTSOFWATER
-                || planet.getCondition() == Condition.RICHFAUNA || planet.getTechLevel() == TechLevel.AGRICULTURE) {
-            int water = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
-            planet.setWaterQuant(water);
-            planet.setWaterQuantSell(water * 2);
-        }
+        List<TradeGoods> goods = TradeGoods.getGoods();
 
-        if (planet.getCondition() == Condition.RICHFAUNA || planet.getTechLevel() == TechLevel.MEDIEVAL
-                || planet.getTechLevel() == TechLevel.RENAISSANCE || planet.getTechLevel() == TechLevel.EARLY) {
-            int fur = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
-            planet.setFurQuant(fur);
-            planet.setFurQuantSell(fur * 2);
-        }
+        for (int i = 0; i < goods.size(); i++) {
+            TradeGoods good = goods.get(i);
+            Random rand = new Random();
+            int chance = rand.nextInt(good.getVar()) + 1;
+            chance *= 50;
 
-        if (planet.getCondition() == Condition.WEIRDMUSHROOMS || planet.getCondition() == Condition.RICHSOIL
-                || planet.getCondition() == Condition.LOTSOFHERBS || planet.getCondition() == Condition.LOTSOFWATER
-                || planet.getCondition() == Condition.RICHFAUNA || planet.getTechLevel() == TechLevel.AGRICULTURE) {
-            int food = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
-            planet.setFoodQuant(food);
-            planet.setFoodQuantSell(food * 2);
-        }
+            int quant = good.getTtp();
+            quant += (good.getTtp() * chance) + 200;
 
-        if (planet.getCondition() == Condition.DESERT || planet.getCondition() == Condition.LIFELESS
-                || planet.getCondition() == Condition.MINERALRICH || planet.getCondition() == Condition.LOTSOFHERBS) {
-            int ore = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
-            planet.setOreQuant(ore);
-            planet.setOreQuantSell(ore * 2);
-        }
-
-        if (planet.getTechLevel() == TechLevel.HITECH || planet.getTechLevel() == TechLevel.POSTINDUSTRIAL
-                || planet.getTechLevel() == TechLevel.INDUSTRIAL) {
-            int game = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
-            planet.setGameQuant(game);
-            planet.setGameQuantSell(game * 2);
-        }
-
-        if (planet.getCondition() == Condition.WARLIKE || planet.getTechLevel() == TechLevel.HITECH
-                || planet.getTechLevel() == TechLevel.POSTINDUSTRIAL || planet.getTechLevel() == TechLevel.INDUSTRIAL
-                || planet.getCondition() == Condition.MINERALRICH) {
-            int firearm = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
-            planet.setFirearmQuant(firearm);
-            planet.setFirearmQuantSell(firearm * 2);
-        }
-
-        if (planet.getTechLevel() == TechLevel.HITECH || planet.getTechLevel() == TechLevel.POSTINDUSTRIAL
-                || planet.getTechLevel() == TechLevel.INDUSTRIAL || planet.getCondition() == Condition.WEIRDMUSHROOMS
-                || planet.getCondition() == Condition.LOTSOFHERBS) {
-            int medicine = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
-            planet.setMedicineQuant(medicine);
-            planet.setMedicineQuantSell(medicine * 2);
-        }
-
-        if (planet.getTechLevel() == TechLevel.HITECH || planet.getTechLevel() == TechLevel.POSTINDUSTRIAL
-                || planet.getTechLevel() == TechLevel.INDUSTRIAL || planet.getCondition() == Condition.MINERALRICH
-                || planet.getCondition() == Condition.WARLIKE) {
-            int machine = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
-            planet.setMachineQuant(machine);
-            planet.setMachineQuantSell(machine * 2);
-        }
-
-        if (planet.getCondition() == Condition.WEIRDMUSHROOMS || planet.getCondition() == Condition.LOTSOFHERBS
-                || planet.getCondition() == Condition.ARTISTIC) {
-            int narcotic = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
-            planet.setNarcoticQuant(narcotic);
-            planet.setNarcoticQuantSell(narcotic * 2);
-        }
-
-        if (planet.getTechLevel() == TechLevel.HITECH || planet.getTechLevel() == TechLevel.POSTINDUSTRIAL
-                || planet.getTechLevel() == TechLevel.INDUSTRIAL || planet.getCondition() == Condition.MINERALRICH
-                || planet.getCondition() == Condition.WARLIKE) {
-            int robot = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
-            planet.setRobotQuant(robot);
-            planet.setRobotQuantSell(robot * 2);
+            if (good == TradeGoods.WATER) {
+                planet.setWaterQuant(quant);
+                planet.setWaterQuantSell(quant*2);
+            } else if (good == TradeGoods.FURS) {
+                planet.setFurQuant(quant);
+                planet.setFurQuantSell(quant*2);
+            } else if (good == TradeGoods.FOOD) {
+                planet.setFoodQuant(quant);
+                planet.setFoodQuantSell(quant*2);
+            } else if (good == TradeGoods.ORE) {
+                planet.setOreQuant(quant);
+                planet.setOreQuantSell(quant*2);
+            } else if (good == TradeGoods.GAMES) {
+                planet.setGameQuant(quant);
+                planet.setGameQuantSell(quant*2);
+            } else if (good == TradeGoods.FIREARMS) {
+                planet.setFirearmQuant(quant);
+                planet.setFirearmQuantSell(quant*2);
+            } else if (good == TradeGoods.MEDICINE) {
+                planet.setMedicineQuant(quant);
+                planet.setMedicineQuantSell(quant*2);
+            } else if (good == TradeGoods.MACHINES) {
+                planet.setMachineQuant(quant);
+                planet.setMachineQuantSell(quant*2);
+            } else if (good == TradeGoods.NARCOTICS) {
+                planet.setNarcoticQuant(quant);
+                planet.setNarcoticQuantSell(quant*2);
+            } else if (good == TradeGoods.ROBOTS) {
+                planet.setRobotQuant(quant);
+                planet.setRobotQuantSell(quant*2);
+            }
         }
     }
 
