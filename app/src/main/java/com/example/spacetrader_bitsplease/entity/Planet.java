@@ -21,6 +21,17 @@ public class Planet {
     int narcoticQuant;
     int robotQuant;
 
+    int waterQuantSell;
+    int furQuantSell;
+    int foodQuantSell;
+    int oreQuantSell;
+    int gameQuantSell;
+    int firearmQuantSell;
+    int medicineQuantSell;
+    int machineQuantSell;
+    int narcoticQuantSell;
+    int robotQuantSell;
+
     int waterPrice;
     int furPrice;
     int foodPrice;
@@ -172,6 +183,36 @@ public class Planet {
 
     public void setRobotQuant(int robot) { this.robotQuant = robot; }
     public int getRobotQuant() { return robotQuant; }
+
+    public void setWaterQuantSell(int water) { this.waterQuant = water; }
+    public int getWaterQuantSell() { return waterQuant; }
+
+    public void setFoodQuantSell(int food) { this.foodQuant = food; }
+    public int getFoodQuantSell() { return foodQuant; }
+
+    public void setFurQuantSell(int fur) { this.furQuant = fur; }
+    public int getFurQuantSell() { return furQuant; }
+
+    public void setOreQuantSell(int ore) { this.oreQuant = ore; }
+    public int getOreQuantSell() { return oreQuant; }
+
+    public void setGameQuantSell(int game) { this.gameQuant = game; }
+    public int getGameQuantSell() { return gameQuant; }
+
+    public void setFirearmQuantSell(int firearm) { this.firearmQuant = firearm; }
+    public int getFirearmQuantSell() { return firearmQuant; }
+
+    public void setMedicineQuantSell(int medicine) { this.medicineQuant = medicine; }
+    public int getMedicineQuantSell() { return medicineQuant; }
+
+    public void setMachineQuantSell(int machine) { this.machineQuant = machine; }
+    public int getMachineQuantSell() { return machineQuant; }
+
+    public void setNarcoticQuantSell(int narcotic) { this.narcoticQuant = narcotic; }
+    public int getNarcoticQuantSell() { return narcoticQuant; }
+
+    public void setRobotQuantSell(int robot) { this.robotQuant = robot; }
+    public int getRobotQuantSell() { return robotQuant; }
 
     public String toString() {
         return String.format("Coordinates: (%d,%d)\nPlanet: %s\n,Conditions: %s,Tech Level: %s",
