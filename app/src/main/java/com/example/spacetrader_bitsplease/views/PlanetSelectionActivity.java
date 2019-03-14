@@ -56,7 +56,27 @@ public class PlanetSelectionActivity extends AppCompatActivity {
     private TextView credits;
     private TextView usedBays;
 
+    private TextView waterQuant;
+    private TextView furQuant;
+    private TextView foodQuant;
+    private TextView oreQuant;
+    private TextView gamesQuant;
+    private TextView firearmQuant;
+    private TextView medicineQuant;
+    private TextView machineQuant;
+    private TextView narcoticQuant;
+    private TextView robotsQuant;
 
+    private TextView waterQuantSell;
+    private TextView furQuantSell;
+    private TextView foodQuantSell;
+    private TextView oreQuantSell;
+    private TextView gamesQuantSell;
+    private TextView firearmQuantSell;
+    private TextView medicineQuantSell;
+    private TextView machineQuantSell;
+    private TextView narcoticQuantSell;
+    private TextView robotsQuantSell;
 
     private Planet planet;
     private Repository repo = new Repository();
@@ -101,11 +121,32 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         narcoticSell = findViewById(R.id.narcoticsPriceSell);
         robotsSell = findViewById(R.id.robotPriceSell);
 
+        waterQuant = findViewById(R.id.singleWaterBuy_button);
+        furQuant = findViewById(R.id.singleFurBuy_button);
+        foodQuant = findViewById(R.id.singleFoodBuy_button);
+        oreQuant = findViewById(R.id.singleOreBuy_button);
+        gamesQuant = findViewById(R.id.singleGameBuy_button19);
+        firearmQuant = findViewById(R.id.singleFirearmBuy_button);
+        medicineQuant = findViewById(R.id.singleMedicineBuy_button);
+        machineQuant = findViewById(R.id.singleMachineBuy_button20);
+        narcoticQuant = findViewById(R.id.singleNarcoticsBuy_button21);
+        robotsQuant = findViewById(R.id.singleRobotBuy_button);
 
+        waterQuantSell = findViewById(R.id.singleWaterSell_button);
+        furQuantSell = findViewById(R.id.singleFurSell_button);
+        foodQuantSell = findViewById(R.id.singleFoodSell_button);
+        oreQuantSell = findViewById(R.id.singleOreSell_button);
+        gamesQuantSell = findViewById(R.id.singleGameSell_button);
+        firearmQuantSell = findViewById(R.id.singleFirearmSell_button);
+        medicineQuantSell = findViewById(R.id.singleMedicineSell_button);
+        machineQuantSell = findViewById(R.id.singleMachineSell_button);
+        narcoticQuantSell = findViewById(R.id.singleNarcoticSell_button);
+        robotsQuantSell = findViewById(R.id.singleRobotSell_button);
 
         //set current planet stats
         final Planet currentPlanet = new Planet();
         repo.assignPrices(currentPlanet);
+        repo.assignProductQuantity(currentPlanet);
         currentName.setText(currentPlanet.getPlanetName().toString());
         currentSize.setText(currentPlanet.getSize().toString());
         currentResource.setText(currentPlanet.getCondition().toString());
@@ -133,6 +174,28 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         machineSell.setText(""+currentPlanet.getMachineSell());
         narcoticSell.setText(""+currentPlanet.getNarcoticSell());
         robotsSell.setText(""+currentPlanet.getRobotSell());
+
+        waterQuant.setText(""+currentPlanet.getWaterQuant());
+        furQuant.setText(""+currentPlanet.getFurQuant());
+        foodQuant.setText(""+currentPlanet.getFoodQuant());
+        oreQuant.setText(""+currentPlanet.getOreQuant());
+        gamesQuant.setText(""+currentPlanet.getGameQuant());
+        firearmQuant.setText(""+currentPlanet.getFirearmQuant());
+        medicineQuant.setText(""+currentPlanet.getMedicineQuant());
+        machineQuant.setText(""+currentPlanet.getMachineQuant());
+        narcoticQuant.setText(""+currentPlanet.getNarcoticQuant());
+        robotsQuant.setText(""+currentPlanet.getRobotQuant());
+
+        waterQuantSell.setText(""+currentPlanet.getWaterQuantSell());
+        furQuantSell.setText(""+currentPlanet.getFurQuantSell());
+        foodQuantSell.setText(""+currentPlanet.getFoodQuantSell());
+        oreQuantSell.setText(""+currentPlanet.getOreQuantSell());
+        gamesQuantSell.setText(""+currentPlanet.getGameQuantSell());
+        firearmQuantSell.setText(""+currentPlanet.getFirearmQuantSell());
+        medicineQuantSell.setText(""+currentPlanet.getMedicineQuantSell());
+        machineQuantSell.setText(""+currentPlanet.getMachineQuantSell());
+        narcoticQuantSell.setText(""+currentPlanet.getNarcoticQuantSell());
+        robotsQuantSell.setText(""+currentPlanet.getRobotQuantSell());
 
         //create and populate spinner for target planets
         ArrayAdapter<PlanetName> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, PlanetName.values());
