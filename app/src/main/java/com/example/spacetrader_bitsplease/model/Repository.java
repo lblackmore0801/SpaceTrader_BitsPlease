@@ -191,12 +191,14 @@ public class Repository {
                 || planet.getCondition() == Condition.RICHFAUNA || planet.getTechLevel() == TechLevel.AGRICULTURE) {
             int water = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
             planet.setWaterQuant(water);
+            planet.setWaterQuantSell(water * 2);
         }
 
         if (planet.getCondition() == Condition.RICHFAUNA || planet.getTechLevel() == TechLevel.MEDIEVAL
                 || planet.getTechLevel() == TechLevel.RENAISSANCE || planet.getTechLevel() == TechLevel.EARLY) {
             int fur = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
             planet.setFurQuant(fur);
+            planet.setFurQuantSell(fur * 2);
         }
 
         if (planet.getCondition() == Condition.WEIRDMUSHROOMS || planet.getCondition() == Condition.RICHSOIL
@@ -204,18 +206,21 @@ public class Repository {
                 || planet.getCondition() == Condition.RICHFAUNA || planet.getTechLevel() == TechLevel.AGRICULTURE) {
             int food = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
             planet.setFoodQuant(food);
+            planet.setFoodQuantSell(food * 2);
         }
 
         if (planet.getCondition() == Condition.DESERT || planet.getCondition() == Condition.LIFELESS
                 || planet.getCondition() == Condition.MINERALRICH || planet.getCondition() == Condition.LOTSOFHERBS) {
             int ore = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
             planet.setOreQuant(ore);
+            planet.setOreQuantSell(ore * 2);
         }
 
         if (planet.getTechLevel() == TechLevel.HITECH || planet.getTechLevel() == TechLevel.POSTINDUSTRIAL
                 || planet.getTechLevel() == TechLevel.INDUSTRIAL) {
             int game = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
             planet.setGameQuant(game);
+            planet.setGameQuantSell(game * 2);
         }
 
         if (planet.getCondition() == Condition.WARLIKE || planet.getTechLevel() == TechLevel.HITECH
@@ -223,6 +228,7 @@ public class Repository {
                 || planet.getCondition() == Condition.MINERALRICH) {
             int firearm = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
             planet.setFirearmQuant(firearm);
+            planet.setFirearmQuantSell(firearm * 2);
         }
 
         if (planet.getTechLevel() == TechLevel.HITECH || planet.getTechLevel() == TechLevel.POSTINDUSTRIAL
@@ -230,6 +236,7 @@ public class Repository {
                 || planet.getCondition() == Condition.LOTSOFHERBS) {
             int medicine = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
             planet.setMedicineQuant(medicine);
+            planet.setMedicineQuantSell(medicine * 2);
         }
 
         if (planet.getTechLevel() == TechLevel.HITECH || planet.getTechLevel() == TechLevel.POSTINDUSTRIAL
@@ -237,12 +244,14 @@ public class Repository {
                 || planet.getCondition() == Condition.WARLIKE) {
             int machine = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
             planet.setMachineQuant(machine);
+            planet.setMachineQuantSell(machine * 2);
         }
 
         if (planet.getCondition() == Condition.WEIRDMUSHROOMS || planet.getCondition() == Condition.LOTSOFHERBS
                 || planet.getCondition() == Condition.ARTISTIC) {
             int narcotic = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
             planet.setNarcoticQuant(narcotic);
+            planet.setNarcoticQuantSell(narcotic * 2);
         }
 
         if (planet.getTechLevel() == TechLevel.HITECH || planet.getTechLevel() == TechLevel.POSTINDUSTRIAL
@@ -250,6 +259,7 @@ public class Repository {
                 || planet.getCondition() == Condition.WARLIKE) {
             int robot = (planet.getSize().ordinal() * (planet.getCondition().ordinal() + planet.getTechLevel().ordinal()));
             planet.setRobotQuant(robot);
+            planet.setRobotQuantSell(robot * 2);
         }
     }
 
