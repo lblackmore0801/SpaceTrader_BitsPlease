@@ -90,6 +90,9 @@ public class Player {
     public void setMoney(int money) { this.money = money; }
     public static int getMoney() { return money; }
 
+    public void setShip(Ship ship) { this.ship = ship; }
+    public Ship getShip() { return ship; }
+
     public String toString() {
         return String.format("Username: %s \nDifficulty: %s \nFighter Skill: %s \nPilot Skill: %s \nEngineering Skill: %s \nTrader Skill: %s \nShip: %s \nMoney: %d",
                                 username, difficulty.toString(), fighterSkill, pilotSkill, engineerSkill, traderSkill, ship.toString(), money);
