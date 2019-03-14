@@ -1,5 +1,9 @@
 package com.example.spacetrader_bitsplease.views;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -16,6 +20,7 @@ import com.example.spacetrader_bitsplease.entity.Player;
 import com.example.spacetrader_bitsplease.entity.ShipType;
 import com.example.spacetrader_bitsplease.model.Repository;
 import com.example.spacetrader_bitsplease.viewmodels.MarketPlaceViewModel;
+import com.example.spacetrader_bitsplease.viewmodels.UniverseViewModel;
 
 
 public class PlanetSelectionActivity extends AppCompatActivity {
@@ -1045,7 +1050,36 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             }
         });
 
-
+        /**
+         * TRAVELLING
+         */
+//        final Button travelButton = findViewById(R.id.Travel_button);
+//        travelButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (UniverseViewModel.inRange(currentPlanet, targetPlanet, ship, fuel)) {
+//                    PlanetName target = (PlanetName) findViewById(R.id.planet_spinner);
+//                    Planet targetPlanet = new Planet(target);
+//                    currentPlanet = targetPlanet;
+//                } else {
+//
+//                    Context context = PlanetSelectionActivity.this;
+//                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+//                    builder.setTitle("Error.");
+//                    builder.setMessage("Not enough fuel to travel the distance between these planets.");
+//                    builder.setCancelable(false);
+//                    builder.setNegativeButton(
+//                            "Cancel",
+//                            new DialogInterface.OnClickListener() {
+//                                public void onClick(DialogInterface dialog, int id) {
+//                                    dialog.cancel();
+//                                }
+//                            });
+//                    AlertDialog alert = builder.create();
+//                    alert.show();
+//                }
+//            }
+//        });
 
     }
 }
