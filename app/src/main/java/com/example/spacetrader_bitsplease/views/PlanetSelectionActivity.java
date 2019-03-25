@@ -86,6 +86,11 @@ public class PlanetSelectionActivity extends AppCompatActivity {
     private Planet planet;
     private Repository repo = new Repository();
 
+    //save next planet stats
+    private Planet nextPlanet;
+    private Planet currentPlanet;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -149,7 +154,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         robotsQuantSell = findViewById(R.id.singleRobotSell_button);
 
         //set current planet stats
-        final Planet currentPlanet = new Planet();
+        currentPlanet = new Planet();
         repo.assignPrices(currentPlanet);
         repo.assignProductQuantity(currentPlanet);
         currentName.setText(currentPlanet.getPlanetName().toString());
@@ -208,12 +213,16 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         planetSpinner = findViewById(R.id.planet_spinner);
         planetSpinner.setAdapter(adapter);
 
+
+
         planetSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
                 PlanetName target = (PlanetName) adapterView.getItemAtPosition(position);
                 //set target planet stats
                 Planet targetPlanet = new Planet(target);
+                nextPlanet = targetPlanet;
                 nextSize.setText(targetPlanet.getSize().toString());
                 nextResource.setText(targetPlanet.getCondition().toString());
                 nextTech.setText(targetPlanet.getTechLevel().toString());
@@ -1053,33 +1062,33 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         /**
          * TRAVELLING
          */
-//        final Button travelButton = findViewById(R.id.Travel_button);
-//        travelButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (UniverseViewModel.inRange(currentPlanet, targetPlanet, ship, fuel)) {
-//                    PlanetName target = (PlanetName) findViewById(R.id.planet_spinner);
-//                    Planet targetPlanet = new Planet(target);
-//                    currentPlanet = targetPlanet;
-//                } else {
-//
-//                    Context context = PlanetSelectionActivity.this;
-//                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
-//                    builder.setTitle("Error.");
-//                    builder.setMessage("Not enough fuel to travel the distance between these planets.");
-//                    builder.setCancelable(false);
-//                    builder.setNegativeButton(
-//                            "Cancel",
-//                            new DialogInterface.OnClickListener() {
-//                                public void onClick(DialogInterface dialog, int id) {
-//                                    dialog.cancel();
-//                                }
-//                            });
-//                    AlertDialog alert = builder.create();
-//                    alert.show();
-//                }
-//            }
-//        });
+        final Button travelButton = findViewById(R.id.Travel_button);
+        travelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ShipType ship = ShipType.GNAT;
+                int fuel = 10;
+                if (UniverseViewModel.inRange(currentPlanet, nextPlanet, ship, fuel)) {
+                    currentPlanet = nextPlanet;
+                } else {
+
+                    Context context = PlanetSelectionActivity.this;
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    builder.setTitle("Error.");
+                    builder.setMessage("Not enough fuel to travel the distance between these planets.");
+                    builder.setCancelable(false);
+                    builder.setNegativeButton(
+                            "Cancel",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+                    AlertDialog alert = builder.create();
+                    alert.show();
+                }
+            }
+        });
 
     }
 }

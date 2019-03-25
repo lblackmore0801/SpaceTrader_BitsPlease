@@ -76,8 +76,8 @@ public class Planet {
         this.techLevel = techLevel;
     }
 
-    public void setXcoordinate() { xcoordinate = this.xcoordinate; }
-    public void setYcoordinate() { ycoordinate = this.ycoordinate; }
+    public void setXcoordinate(int xcoordinate) { xcoordinate = this.xcoordinate; }
+    public void setYcoordinate(int ycoordinate) { ycoordinate = this.ycoordinate; }
     public int getXcoordinate() { return xcoordinate; }
     public int getYcoordinate() { return ycoordinate; }
     public String getCoordinates() { return xcoordinate + ", " + ycoordinate; }
