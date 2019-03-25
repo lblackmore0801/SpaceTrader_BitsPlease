@@ -1067,9 +1067,16 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ShipType ship = ShipType.GNAT;
-                int fuel = 10;
+                int fuel = 40;
                 if (UniverseViewModel.inRange(currentPlanet, nextPlanet, ship, fuel)) {
                     currentPlanet = nextPlanet;
+                    repo.assignPrices(currentPlanet);
+                    repo.assignProductQuantity(currentPlanet);
+                    currentName.setText(currentPlanet.getPlanetName().toString());
+                    currentSize.setText(currentPlanet.getSize().toString());
+                    currentResource.setText(currentPlanet.getCondition().toString());
+                    currentTech.setText(currentPlanet.getTechLevel().toString());
+                    currentCoordinates.setText(currentPlanet.getCoordinates());
                 } else {
 
                     Context context = PlanetSelectionActivity.this;
