@@ -1080,6 +1080,53 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                     currentTech.setText(currentPlanet.getTechLevel().toString());
                     currentCoordinates.setText(currentPlanet.getCoordinates());
                     remainingFuel.setText("" + Player.getShip().getFuel());
+
+                    waterPrice.setText(""+currentPlanet.getWaterPrice());
+                    furPrice.setText(""+currentPlanet.getFurPrice());
+                    foodPrice.setText(""+currentPlanet.getFoodPrice());
+                    orePrice.setText(""+currentPlanet.getOrePrice());
+                    gamesPrice.setText(""+currentPlanet.getGamePrice());
+                    firearmPrice.setText(""+currentPlanet.getFirearmPrice());
+                    medicinePrice.setText(""+currentPlanet.getMedicinePrice());
+                    machinePrice.setText(""+currentPlanet.getMachinePrice());
+                    narcoticPrice.setText(""+currentPlanet.getNarcoticPrice());
+                    robotsPrice.setText(""+currentPlanet.getRobotPrice());
+
+                    waterSell.setText(""+currentPlanet.getWaterSell());
+                    furSell.setText(""+currentPlanet.getFurSell());
+                    foodSell.setText(""+currentPlanet.getFoodSell());
+                    oreSell.setText(""+currentPlanet.getOreSell());
+                    gamesSell.setText(""+currentPlanet.getGameSell());
+                    firearmSell.setText(""+currentPlanet.getFirearmSell());
+                    medicineSell.setText(""+currentPlanet.getMedicineSell());
+                    machineSell.setText(""+currentPlanet.getMachineSell());
+                    narcoticSell.setText(""+currentPlanet.getNarcoticSell());
+                    robotsSell.setText(""+currentPlanet.getRobotSell());
+
+                    waterQuant.setText(""+currentPlanet.getWaterQuant());
+                    furQuant.setText(""+currentPlanet.getFurQuant());
+                    foodQuant.setText(""+currentPlanet.getFoodQuant());
+                    oreQuant.setText(""+currentPlanet.getOreQuant());
+                    gamesQuant.setText(""+currentPlanet.getGameQuant());
+                    firearmQuant.setText(""+currentPlanet.getFirearmQuant());
+                    medicineQuant.setText(""+currentPlanet.getMedicineQuant());
+                    machineQuant.setText(""+currentPlanet.getMachineQuant());
+                    narcoticQuant.setText(""+currentPlanet.getNarcoticQuant());
+                    robotsQuant.setText(""+currentPlanet.getRobotQuant());
+
+                    waterQuantSell.setText(""+currentPlanet.getWaterQuantSell());
+                    furQuantSell.setText(""+currentPlanet.getFurQuantSell());
+                    foodQuantSell.setText(""+currentPlanet.getFoodQuantSell());
+                    oreQuantSell.setText(""+currentPlanet.getOreQuantSell());
+                    gamesQuantSell.setText(""+currentPlanet.getGameQuantSell());
+                    firearmQuantSell.setText(""+currentPlanet.getFirearmQuantSell());
+                    medicineQuantSell.setText(""+currentPlanet.getMedicineQuantSell());
+                    machineQuantSell.setText(""+currentPlanet.getMachineQuantSell());
+                    narcoticQuantSell.setText(""+currentPlanet.getNarcoticQuantSell());
+                    robotsQuantSell.setText(""+currentPlanet.getRobotQuantSell());
+
+
+
                 } else {
 
                     Context context = PlanetSelectionActivity.this;
