@@ -1116,19 +1116,6 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                     narcoticQuant.setText(""+currentPlanet.getNarcoticQuant());
                     robotsQuant.setText(""+currentPlanet.getRobotQuant());
 
-                    waterQuantSell.setText(""+currentPlanet.getWaterQuantSell());
-                    furQuantSell.setText(""+currentPlanet.getFurQuantSell());
-                    foodQuantSell.setText(""+currentPlanet.getFoodQuantSell());
-                    oreQuantSell.setText(""+currentPlanet.getOreQuantSell());
-                    gamesQuantSell.setText(""+currentPlanet.getGameQuantSell());
-                    firearmQuantSell.setText(""+currentPlanet.getFirearmQuantSell());
-                    medicineQuantSell.setText(""+currentPlanet.getMedicineQuantSell());
-                    machineQuantSell.setText(""+currentPlanet.getMachineQuantSell());
-                    narcoticQuantSell.setText(""+currentPlanet.getNarcoticQuantSell());
-                    robotsQuantSell.setText(""+currentPlanet.getRobotQuantSell());
-
-
-
                 } else {
 
                     Context context = PlanetSelectionActivity.this;
