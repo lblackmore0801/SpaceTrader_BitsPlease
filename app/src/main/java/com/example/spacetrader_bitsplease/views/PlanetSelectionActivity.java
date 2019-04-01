@@ -166,6 +166,8 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         currentTech.setText(currentPlanet.getTechLevel().toString());
         currentCoordinates.setText(currentPlanet.getCoordinates());
 
+        remainingFuel.setText(""+Player.getShip().getFuel());
+
         waterPrice.setText(""+currentPlanet.getWaterPrice());
         furPrice.setText(""+currentPlanet.getFurPrice());
         foodPrice.setText(""+currentPlanet.getFoodPrice());
