@@ -17,6 +17,7 @@ import com.example.spacetrader_bitsplease.R;
 import com.example.spacetrader_bitsplease.entity.Planet;
 import com.example.spacetrader_bitsplease.entity.PlanetName;
 import com.example.spacetrader_bitsplease.entity.Player;
+import com.example.spacetrader_bitsplease.entity.Ship;
 import com.example.spacetrader_bitsplease.entity.ShipType;
 import com.example.spacetrader_bitsplease.model.Repository;
 import com.example.spacetrader_bitsplease.viewmodels.MarketPlaceViewModel;
@@ -35,6 +36,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
     private TextView nextTech;
     private TextView currentCoordinates;
     private TextView nextCoordinates;
+    private TextView remainingFuel;
 
     private TextView waterPrice;
     private TextView furPrice;
@@ -108,6 +110,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         nextTech = findViewById(R.id.next_tech);
         currentCoordinates = findViewById(R.id.curr_coordinates);
         nextCoordinates = findViewById(R.id.next_coordinates);
+        remainingFuel = findViewById(R.id.remainingFuel);
 
         waterPrice = findViewById(R.id.waterPriceBuy);
         furPrice = findViewById(R.id.furPriceBuy);
@@ -1066,9 +1069,8 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         travelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ShipType ship = ShipType.GNAT;
-                int fuel = 40;
-                if (UniverseViewModel.inRange(currentPlanet, nextPlanet, ship, fuel)) {
+                Ship ship = Player.getShip();
+                if (UniverseViewModel.inRange(currentPlanet, nextPlanet, ship)) {
                     currentPlanet = nextPlanet;
                     repo.assignPrices(currentPlanet);
                     repo.assignProductQuantity(currentPlanet);
@@ -1077,6 +1079,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                     currentResource.setText(currentPlanet.getCondition().toString());
                     currentTech.setText(currentPlanet.getTechLevel().toString());
                     currentCoordinates.setText(currentPlanet.getCoordinates());
+                    remainingFuel.setText("" + Player.getShip().getFuel());
                 } else {
 
                     Context context = PlanetSelectionActivity.this;

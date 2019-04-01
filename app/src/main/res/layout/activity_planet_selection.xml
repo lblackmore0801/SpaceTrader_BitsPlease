@@ -938,12 +938,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="108dp"
                 android:layout_marginLeft="108dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="9dp"
                 android:text="Buy"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/planets_coord" />
+                app:layout_constraintTop_toBottomOf="@+id/curr_coordinates" />
 
             <TextView
                 android:id="@+id/Sell_text"
@@ -951,12 +951,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="108dp"
                 android:layout_marginLeft="108dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="9dp"
                 android:text="Sell"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/Buy_text"
-                app:layout_constraintTop_toBottomOf="@+id/planets_coord" />
+                app:layout_constraintTop_toBottomOf="@+id/curr_coordinates" />
 
             <Button
                 android:id="@+id/store_button"
@@ -975,10 +975,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="10dp"
                 android:text="Water"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/planets_coord" />
+                app:layout_constraintTop_toBottomOf="@+id/Buy_text" />
 
             <TextView
                 android:id="@+id/Furs_text"
@@ -1178,6 +1178,28 @@
                 android:text="1000"
                 app:layout_constraintStart_toEndOf="@+id/Credits_text"
                 app:layout_constraintTop_toTopOf="@+id/Credits_text" />
+
+            <TextView
+                android:id="@+id/fuelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="19dp"
+                android:text="Fuel: "
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/planets_coord" />
+
+            <TextView
+                android:id="@+id/remainingFuel"
+                android:layout_width="24dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="15dp"
+                android:text="999"
+                app:layout_constraintStart_toEndOf="@+id/fuelText"
+                app:layout_constraintTop_toBottomOf="@+id/planets_coord" />
 
 
         </android.support.constraint.ConstraintLayout>
