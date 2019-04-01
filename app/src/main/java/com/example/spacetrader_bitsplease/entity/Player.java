@@ -7,7 +7,7 @@ public class Player {
     private int engineerSkill;
     private int fighterSkill;
     private int traderSkill;
-    private Ship ship;
+    private static Ship ship;
     private static int money;
 
     private int waterResourceinHold;
@@ -103,7 +103,7 @@ public class Player {
     public static int getMoney() { return money; }
 
     public void setShip(Ship ship) { this.ship = ship; }
-    public Ship getShip() { return ship; }
+    public static Ship getShip() { return ship; }
 
     public String toString() {
         return String.format("Username: %s \nDifficulty: %s \nFighter Skill: %s \nPilot Skill: %s \nEngineering Skill: %s \nTrader Skill: %s \nShip: %s \nMoney: %d",

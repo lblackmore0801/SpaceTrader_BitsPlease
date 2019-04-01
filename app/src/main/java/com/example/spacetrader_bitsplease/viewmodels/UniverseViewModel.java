@@ -1,5 +1,6 @@
 package com.example.spacetrader_bitsplease.viewmodels;
 
+import com.example.spacetrader_bitsplease.entity.Ship;
 import com.example.spacetrader_bitsplease.entity.ShipType;
 import com.example.spacetrader_bitsplease.entity.Planet;
 
@@ -20,12 +21,13 @@ public class UniverseViewModel {
         return distance;
     }
 
-    public static double fuelRange(ShipType ship, int fuel) {
-        return 50;
+    public static int fuelRange(Ship ship) {
+        return ship.getFuel();
     }
 
-    public static boolean inRange(Planet currentPlanet, Planet targetPlanet, ShipType ship, int fuel) {
-        if (fuelRange(ship, fuel) >= distance(currentPlanet, targetPlanet)) {
+    public static boolean inRange(Planet currentPlanet, Planet targetPlanet, Ship ship) {
+        if (fuelRange(ship) >= distance(currentPlanet, targetPlanet)) {
+            ship.decrementFuel(distance);
             return true;
         }
         return false;
