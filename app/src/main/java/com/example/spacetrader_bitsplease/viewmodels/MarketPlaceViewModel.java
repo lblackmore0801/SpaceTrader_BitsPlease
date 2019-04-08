@@ -37,21 +37,21 @@ public class MarketPlaceViewModel {
     }
 
 
-    public static int getNarcoticResourceinHold() {
-        return narcoticResourceinHold;
-    }
+//    public static int getNarcoticResourceinHold() {
+//        return narcoticResourceinHold;
+//    }
+//
+//    public static int getFirearmsResourceinHold() {
+//        return firearmsResourceinHold;
+//    }
+//
+//    public static void setNarcoticResourceinHold(int input) {
+//        narcoticResourceinHold = input;
+//    }
 
-    public static int getFirearmsResourceinHold() {
-        return firearmsResourceinHold;
-    }
-
-    public static void setNarcoticResourceinHold(int input) {
-        narcoticResourceinHold = input;
-    }
-
-    public static void setFirearmsResourceinHold(int input) {
-        firearmsResourceinHold = input;
-    }
+    //public static void setFirearmsResourceinHold(int input) {
+    //    firearmsResourceinHold = input;
+    //}
 
     //only buy a resource if you have sufficient funds and storage capacity
 
@@ -72,7 +72,7 @@ public class MarketPlaceViewModel {
 
     public static void buyOneFur(Planet currentPlanet) {
         if (canBuy(currentPlanet.getFurPrice(), 1)) {
-            money -= currentPlanet.getFurPrice();
+            Player.setMoney(Player.getMoney() - currentPlanet.getFurPrice());
             remainingStorageCapacity -= 1;
             furResourceinHold++;
         }
@@ -80,7 +80,7 @@ public class MarketPlaceViewModel {
 
     public static void buyOneFood(Planet currentPlanet) {
         if (canBuy(currentPlanet.getFoodPrice(), 1)) {
-            money -= currentPlanet.getFoodPrice();
+            Player.setMoney(Player.getMoney() - currentPlanet.getFoodPrice());
             remainingStorageCapacity -= 1;
             foodResourceinHold++;
         }
@@ -88,7 +88,7 @@ public class MarketPlaceViewModel {
 
     public static void buyOneOre(Planet currentPlanet) {
         if (canBuy(currentPlanet.getOrePrice(), 1)) {
-            money -= currentPlanet.getOrePrice();
+            Player.setMoney(Player.getMoney() - currentPlanet.getOrePrice());
             remainingStorageCapacity -= 1;
             oreResourceinHold++;
         }
@@ -96,7 +96,7 @@ public class MarketPlaceViewModel {
 
     public static void buyOneGame(Planet currentPlanet) {
         if (canBuy(currentPlanet.getGamePrice(), 1)) {
-            money -= currentPlanet.getGamePrice();
+            Player.setMoney(Player.getMoney() - currentPlanet.getGamePrice());
             remainingStorageCapacity -= 1;
             gameResourceinHold++;
         }
@@ -104,7 +104,7 @@ public class MarketPlaceViewModel {
 
     public static void buyOneFirearm(Planet currentPlanet) {
         if (canBuy(currentPlanet.getFirearmPrice(), 1)) {
-            money -= currentPlanet.getFirearmPrice();
+            Player.setMoney(Player.getMoney() - currentPlanet.getFirearmPrice());
             remainingStorageCapacity -= 1;
             firearmsResourceinHold++;
         }
@@ -112,7 +112,7 @@ public class MarketPlaceViewModel {
 
     public static void buyOneMedicine(Planet currentPlanet) {
         if (canBuy(currentPlanet.getMedicinePrice(), 1)) {
-            money -= currentPlanet.getMedicinePrice();
+            Player.setMoney(Player.getMoney() - currentPlanet.getMedicinePrice());
             remainingStorageCapacity -= 1;
             medicineResourceinHold++;
         }
@@ -120,7 +120,7 @@ public class MarketPlaceViewModel {
 
     public static void buyOneMachine(Planet currentPlanet) {
         if (canBuy(currentPlanet.getMachinePrice(), 1)) {
-            money -= currentPlanet.getMachinePrice();
+            Player.setMoney(Player.getMoney() - currentPlanet.getMachinePrice());
             remainingStorageCapacity -= 1;
             machineResourceinHold++;
         }
@@ -128,7 +128,7 @@ public class MarketPlaceViewModel {
 
     public static void buyOneNarcotic(Planet currentPlanet) {
         if (canBuy(currentPlanet.getNarcoticPrice(), 1)) {
-            money -= currentPlanet.getNarcoticPrice();
+            Player.setMoney(Player.getMoney() - currentPlanet.getNarcoticPrice());
             remainingStorageCapacity -= 1;
             narcoticResourceinHold++;
         }
@@ -136,7 +136,7 @@ public class MarketPlaceViewModel {
 
     public static void buyOneRobot(Planet currentPlanet) {
         if (canBuy(currentPlanet.getRobotPrice(), 1)) {
-            money -= currentPlanet.getRobotPrice();
+            Player.setMoney(Player.getMoney() - currentPlanet.getRobotPrice());
             remainingStorageCapacity -= 1;
             robotResourceinHold++;
         }
@@ -152,7 +152,7 @@ public class MarketPlaceViewModel {
             currentPlanet.setWaterQuant(currentWaterQuant + 1);
             waterResourceinHold--;
             remainingStorageCapacity++;
-            money += currentPlanet.getWaterSell();
+            Player.setMoney(Player.getMoney() + currentPlanet.getWaterSell());
         }
     }
 
@@ -162,7 +162,7 @@ public class MarketPlaceViewModel {
             currentPlanet.setFurQuant(currentFurQuant + 1);
             furResourceinHold--;
             remainingStorageCapacity++;
-            money += currentPlanet.getFurSell();
+            Player.setMoney(Player.getMoney() + currentPlanet.getFurSell());
         }
     }
 
@@ -172,7 +172,7 @@ public class MarketPlaceViewModel {
             currentPlanet.setFoodQuant(currentFoodQuant + 1);
             foodResourceinHold--;
             remainingStorageCapacity++;
-            money += currentPlanet.getFoodSell();
+            Player.setMoney(Player.getMoney() + currentPlanet.getFoodSell());
         }
     }
 
@@ -182,7 +182,7 @@ public class MarketPlaceViewModel {
             currentPlanet.setOreQuant(currentOreQuant + 1);
             oreResourceinHold--;
             remainingStorageCapacity++;
-            money += currentPlanet.getOreSell();
+            Player.setMoney(Player.getMoney() + currentPlanet.getOreSell());
         }
     }
 
@@ -192,7 +192,7 @@ public class MarketPlaceViewModel {
             currentPlanet.setGameQuant(currentGameQuant + 1);
             gameResourceinHold--;
             remainingStorageCapacity++;
-            money += currentPlanet.getGameSell();
+            Player.setMoney(Player.getMoney() + currentPlanet.getGameSell());
         }
     }
 
@@ -202,7 +202,7 @@ public class MarketPlaceViewModel {
             currentPlanet.setFirearmQuant(currentFirearmQuant + 1);
             firearmsResourceinHold--;
             remainingStorageCapacity++;
-            money += currentPlanet.getFirearmSell();
+            Player.setMoney(Player.getMoney() + currentPlanet.getFirearmSell());
         }
     }
 
@@ -212,7 +212,7 @@ public class MarketPlaceViewModel {
             currentPlanet.setMedicineQuant(currentMedicineQuant + 1);
             medicineResourceinHold--;
             remainingStorageCapacity++;
-            money += currentPlanet.getMedicineSell();
+            Player.setMoney(Player.getMoney() + currentPlanet.getMedicineSell());
         }
     }
 
@@ -222,7 +222,7 @@ public class MarketPlaceViewModel {
             currentPlanet.setMachineQuant(currentMachineQuant + 1);
             machineResourceinHold--;
             remainingStorageCapacity++;
-            money += currentPlanet.getMachineSell();
+            Player.setMoney(Player.getMoney() + currentPlanet.getMachineSell());
         }
     }
 
@@ -232,7 +232,7 @@ public class MarketPlaceViewModel {
             currentPlanet.setNarcoticQuant(currentNarcoticQuant + 1);
             narcoticResourceinHold--;
             remainingStorageCapacity++;
-            money += currentPlanet.getNarcoticSell();
+            Player.setMoney(Player.getMoney() + currentPlanet.getNarcoticSell());
         }
     }
 
@@ -242,7 +242,7 @@ public class MarketPlaceViewModel {
             currentPlanet.setRobotQuant(currentRobotQuant + 1);
             robotResourceinHold--;
             remainingStorageCapacity++;
-            money += currentPlanet.getRobotSell();
+            Player.setMoney(Player.getMoney() + currentPlanet.getRobotSell());
         }
     }
 
