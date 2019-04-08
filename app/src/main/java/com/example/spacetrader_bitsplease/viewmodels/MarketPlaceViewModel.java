@@ -17,7 +17,8 @@ import com.example.spacetrader_bitsplease.views.PlanetSelectionActivity;
 public class MarketPlaceViewModel {
 
     public static int remainingStorageCapacity = 15;
-    public static int money = 1000;
+    //public static int money = 1000;
+    public static int money = Player.getMoney();
 
     private static int waterResourceinHold;
     private static int furResourceinHold;
@@ -38,10 +39,26 @@ public class MarketPlaceViewModel {
     }
 
 
+    public static int getNarcoticResourceinHold() {
+        return narcoticResourceinHold;
+    }
+
+    public static int getFirearmsResourceinHold() {
+        return firearmsResourceinHold;
+    }
+
+    public static void setNarcoticResourceinHold(int input) {
+        narcoticResourceinHold = input;
+    }
+
+    public static void setFirearmsResourceinHold(int input) {
+        firearmsResourceinHold = input;
+    }
+
     //only buy a resource if you have sufficient funds and storage capacity
 
     public static boolean canBuy(int price, int quantity) {
-        if (((price * quantity) <= money) && (remainingStorageCapacity > 0)) {
+        if (((price * quantity) <= Player.getMoney()) && (remainingStorageCapacity > 0)) {
             return true;
         }
         return false;
@@ -49,7 +66,7 @@ public class MarketPlaceViewModel {
 
     public static void buyOneWater(Planet currentPlanet) {
         if (canBuy(currentPlanet.getWaterPrice(), 1)) {
-            money -= currentPlanet.getWaterPrice();
+            Player.setMoney(Player.getMoney() - currentPlanet.getWaterPrice());
             remainingStorageCapacity -= 1;
             waterResourceinHold++;
         }
