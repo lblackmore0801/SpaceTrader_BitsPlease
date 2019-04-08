@@ -3,6 +3,8 @@ package com.example.spacetrader_bitsplease.viewmodels;
 import com.example.spacetrader_bitsplease.entity.Ship;
 import com.example.spacetrader_bitsplease.entity.ShipType;
 import com.example.spacetrader_bitsplease.entity.Planet;
+import java.lang.Math;
+
 
 public class UniverseViewModel {
     private static double currentX;
@@ -31,5 +33,22 @@ public class UniverseViewModel {
             return true;
         }
         return false;
+    }
+
+    public static boolean copEncounter() {
+        int random = (int) Math.random() * 100;
+        return true;
+        //if (random > 10) {
+        //    return true;
+        //}
+        //return false;
+    }
+
+    public static boolean checkForIllegals() {
+        //if (MarketPlaceViewModel.getNarcoticResourceinHold() > 0 ||
+        //        MarketPlaceViewModel.getFirearmsResourceinHold() > 0) {
+        //    return true;
+        //}
+        return true;
     }
 }

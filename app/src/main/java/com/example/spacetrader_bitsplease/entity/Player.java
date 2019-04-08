@@ -99,7 +99,7 @@ public class Player {
         return fighterSkill;
     }
 
-    public void setMoney(int money) { this.money = money; }
+    public static void setMoney(int newMoney) { money = newMoney; }
     public static int getMoney() { return money; }
 
     public void setShip(Ship ship) { this.ship = ship; }

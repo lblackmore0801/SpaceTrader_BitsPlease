@@ -269,7 +269,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                     sellSingleWater.setText("" + waterString);
                 }
                 MarketPlaceViewModel.buyOneWater(currentPlanet);
-                credits.setText(""+MarketPlaceViewModel.money);
+                credits.setText(""+Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
 
@@ -1077,6 +1077,52 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Ship ship = Player.getShip();
                 if (UniverseViewModel.inRange(currentPlanet, nextPlanet, ship)) {
+                    if (UniverseViewModel.copEncounter()) {
+                        Context context = PlanetSelectionActivity.this;
+                        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                        builder.setTitle("Police Encounter");
+                        builder.setMessage("The Police have stopped you to see if you have any illegal goods in your hold.");
+                        builder.setCancelable(false);
+                        builder.setNeutralButton(
+                                "Bribe",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        if (Player.getMoney() - 200 > 0) {
+                                            Player.setMoney(Player.getMoney() - 200);
+                                        } else {
+                                            Context context = PlanetSelectionActivity.this;
+                                            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                                            builder.setTitle("Not enough Money");
+                                            builder.setMessage("You do have enough money to bribe them.");
+                                            builder.setNegativeButton(
+                                                    "Cancel",
+                                                    new DialogInterface.OnClickListener() {
+                                                        public void onClick(DialogInterface dialog, int id) {
+                                                            dialog.cancel();
+                                                        }
+                                                    });
+                                            AlertDialog alert = builder.create();
+                                            alert.show();
+                                        }
+                                        credits.setText("" + Player.getMoney());
+                                    }
+                                });
+                        builder.setPositiveButton(
+                                "Submit",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        if (UniverseViewModel.checkForIllegals()) {
+                                            MarketPlaceViewModel.setNarcoticResourceinHold(0);
+                                            MarketPlaceViewModel.setFirearmsResourceinHold(0);
+                                            int percentTaken = (int) (Player.getMoney() * 0.2);
+                                            Player.setMoney(Player.getMoney() - percentTaken);
+                                        }
+
+                                    }
+                                });
+                        AlertDialog alert = builder.create();
+                        alert.show();
+                    }
                     currentPlanet = nextPlanet;
                     repo.assignPrices(currentPlanet);
                     repo.assignProductQuantity(currentPlanet);
@@ -1140,6 +1186,17 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             }
         });
 
+
+        final Button storeButton = findViewById(R.id.store_button);
+        storeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PlanetSelectionActivity.this, generalStoreActivity.class);
+                startActivityForResult(intent, 1);
+            }
+
+    });
+    }
 
         //load and save
 
@@ -1384,5 +1441,4 @@ public class PlanetSelectionActivity extends AppCompatActivity {
 
 
     ;}
-
 }
