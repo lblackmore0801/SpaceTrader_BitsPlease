@@ -1089,6 +1089,9 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                                     public void onClick(DialogInterface dialog, int id) {
                                         if (Player.getMoney() - 200 > 0) {
                                             Player.setMoney(Player.getMoney() - 200);
+                                            Toast.makeText(getApplicationContext(),
+                                                    "Fee was taken",
+                                                    Toast.LENGTH_SHORT).show();;
                                         } else {
                                             Context context = PlanetSelectionActivity.this;
                                             AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -1112,6 +1115,9 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
                                         if (UniverseViewModel.checkForIllegals()) {
+                                            Toast.makeText(getApplicationContext(),
+                                                    "You had Illegals",
+                                                    Toast.LENGTH_SHORT).show();;
                                             MarketPlaceViewModel.setNarcoticResourceinHold(0);
                                             MarketPlaceViewModel.setFirearmsResourceinHold(0);
                                             int percentTaken = (int) (Player.getMoney() * 0.2);
@@ -1206,13 +1212,15 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                 SharedPreferences saveGame = getSharedPreferences(SAVE, MODE_PRIVATE);
                 SharedPreferences.Editor editor = saveGame.edit();
 
-                editor.putInt("savedCredits", Player.getMoney()).putInt("savedBays",
-                        MarketPlaceViewModel.remainingStorageCapacity).putInt(
-                                "savedFuel", Player.getShip().getFuel()).putInt("savedWater",
-                        MarketPlaceViewModel.getWaterResourceinHold()).putInt("savedFur",
-                        MarketPlaceViewModel.getFurResourceinHold()).putInt("savedFood",
-                        MarketPlaceViewModel.getFurResourceinHold()).putInt("savedOre",
-                        MarketPlaceViewModel.getOreResourceinHold()).putInt("savedNarcotics,",
+                editor.putInt("savedCredits", Player.getMoney())
+                        .putInt("savedBays", (MarketPlaceViewModel.remainingStorageCapacity))
+                        .putInt("savedFuel", Player.getShip().getFuel())
+                        .putInt("savedWater",MarketPlaceViewModel.getWaterResourceinHold())
+                        .putInt("savedFur", MarketPlaceViewModel.getFurResourceinHold())
+                        .putInt("savedFood", MarketPlaceViewModel.getFoodResourceinHold())
+                        .putInt("savedOre", MarketPlaceViewModel.getOreResourceinHold())
+
+                        .putInt("savedNarcotics,",
                         MarketPlaceViewModel.getNarcoticResourceinHold()).putInt("savedGames",
                         MarketPlaceViewModel.getGameResourceinHold()).putInt("savedFirearms",
                         MarketPlaceViewModel.getFirearmsResourceinHold()).putInt("savedMachine",
@@ -1433,6 +1441,8 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),
                         "Game loaded succesfully",
                         Toast.LENGTH_SHORT).show();;
+                MarketPlaceViewModel.setRemainingStorageCapacity(15 - savedBays);
+                Player.setMoney(savedCredits);
 
             }
 

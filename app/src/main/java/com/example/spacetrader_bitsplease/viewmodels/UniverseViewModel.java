@@ -36,19 +36,18 @@ public class UniverseViewModel {
     }
 
     public static boolean copEncounter() {
-        int random = (int) Math.random() * 100;
-        return true;
-        //if (random > 10) {
-        //    return true;
-        //}
-        //return false;
+        int random = (int) (Math.random() * 100 + 1);
+        if (random > 10) {
+            return true;
+        }
+        return false;
     }
 
     public static boolean checkForIllegals() {
-        //if (MarketPlaceViewModel.getNarcoticResourceinHold() > 0 ||
-        //        MarketPlaceViewModel.getFirearmsResourceinHold() > 0) {
-        //    return true;
-        //}
-        return true;
+        if (MarketPlaceViewModel.getNarcoticResourceinHold() > 0 ||
+            MarketPlaceViewModel.getFirearmsResourceinHold() > 0) {
+            return true;
+        }
+        return false;
     }
 }
