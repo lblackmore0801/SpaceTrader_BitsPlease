@@ -33,8 +33,6 @@ public class MarketPlaceViewModel {
     public MarketPlaceViewModel(int money, int remainingStorageCapacity) {
         this.remainingStorageCapacity = remainingStorageCapacity;
         this.money = Player.getMoney();
-        this.waterResourceinHold = 0;
-        this.furResourceinHold = 0;
     }
 
 
@@ -229,5 +227,97 @@ public class MarketPlaceViewModel {
             remainingStorageCapacity++;
             money += currentPlanet.getRobotSell();
         }
+    }
+
+    public static int getWaterResourceinHold() {
+        return waterResourceinHold;
+    }
+
+    public static int getFirearmsResourceinHold() {
+        return firearmsResourceinHold;
+    }
+
+    public static int getFoodResourceinHold() {
+        return foodResourceinHold;
+    }
+
+    public static int getFurResourceinHold() {
+        return furResourceinHold;
+    }
+
+    public static int getOreResourceinHold() {
+        return oreResourceinHold;
+    }
+
+    public static int getGameResourceinHold() {
+        return gameResourceinHold;
+    }
+
+    public static int getMachineResourceinHold() {
+        return machineResourceinHold;
+    }
+
+    public static int getMedicineResourceinHold() {
+        return medicineResourceinHold;
+    }
+
+    public static int getNarcoticResourceinHold() {
+        return narcoticResourceinHold;
+    }
+
+    public static int getRemainingStorageCapacity() {
+        return remainingStorageCapacity;
+    }
+
+    public static int getRobotResourceinHold() {
+        return robotResourceinHold;
+    }
+
+    public static int getMoney() {
+        return money;
+    }
+
+    public static void setFirearmsResourceinHold(int firearmsResourceinHold) {
+        MarketPlaceViewModel.firearmsResourceinHold = firearmsResourceinHold;
+    }
+
+    public static void setFoodResourceinHold(int foodResourceinHold) {
+        MarketPlaceViewModel.foodResourceinHold = foodResourceinHold;
+    }
+
+    public static void setFurResourceinHold(int furResourceinHold) {
+        MarketPlaceViewModel.furResourceinHold = furResourceinHold;
+    }
+
+    public static void setGameResourceinHold(int gameResourceinHold) {
+        MarketPlaceViewModel.gameResourceinHold = gameResourceinHold;
+    }
+
+    public static void setMachineResourceinHold(int machineResourceinHold) {
+        MarketPlaceViewModel.machineResourceinHold = machineResourceinHold;
+    }
+
+    public static void setMedicineResourceinHold(int medicineResourceinHold) {
+        MarketPlaceViewModel.medicineResourceinHold = medicineResourceinHold;
+    }
+
+    public static void setNarcoticResourceinHold(int narcoticResourceinHold) {
+        MarketPlaceViewModel.narcoticResourceinHold = narcoticResourceinHold;
+    }
+
+    public static void setOreResourceinHold(int oreResourceinHold) {
+        MarketPlaceViewModel.oreResourceinHold = oreResourceinHold;
+    }
+
+    public static void setRobotResourceinHold(int robotResourceinHold) {
+        MarketPlaceViewModel.robotResourceinHold = robotResourceinHold;
+    }
+
+    public static void setRemainingStorageCapacity(int remainingStorageCapacity) {
+        MarketPlaceViewModel.remainingStorageCapacity = remainingStorageCapacity;
+    }
+
+    public static void setWaterResourceinHold(int waterResourceinHold) {
+        MarketPlaceViewModel.waterResourceinHold = waterResourceinHold;
     }
 }

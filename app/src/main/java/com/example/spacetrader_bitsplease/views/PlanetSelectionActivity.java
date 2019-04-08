@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.spacetrader_bitsplease.R;
 import com.example.spacetrader_bitsplease.entity.Planet;
@@ -25,6 +27,8 @@ import com.example.spacetrader_bitsplease.viewmodels.UniverseViewModel;
 
 
 public class PlanetSelectionActivity extends AppCompatActivity {
+
+    public static final String SAVE = "SavedGameFile";
 
     private Spinner planetSpinner;
     private TextView currentName;
@@ -1136,5 +1140,211 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             }
         });
 
-    }
+
+        //load and save
+
+        final Button save = findViewById(R.id.store_button);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences saveGame = getSharedPreferences(SAVE, MODE_PRIVATE);
+                SharedPreferences.Editor editor = saveGame.edit();
+
+                editor.putInt("savedCredits", MarketPlaceViewModel.money).putInt("savedBays",
+                        MarketPlaceViewModel.remainingStorageCapacity).putInt(
+                                "savedFuel", Player.getShip().getFuel()).putInt("savedWater",
+                        MarketPlaceViewModel.getWaterResourceinHold()).putInt("savedFur",
+                        MarketPlaceViewModel.getFurResourceinHold()).putInt("savedFood",
+                        MarketPlaceViewModel.getFurResourceinHold()).putInt("savedOre",
+                        MarketPlaceViewModel.getOreResourceinHold()).putInt("savedNarcotics,",
+                        MarketPlaceViewModel.getNarcoticResourceinHold()).putInt("savedGames",
+                        MarketPlaceViewModel.getGameResourceinHold()).putInt("savedFirearms",
+                        MarketPlaceViewModel.getFirearmsResourceinHold()).putInt("savedMachine",
+                        MarketPlaceViewModel.getMachineResourceinHold()).putInt("savedRobot",
+                        MarketPlaceViewModel.getRobotResourceinHold()).putInt("savedMedicine",
+                        MarketPlaceViewModel.getFirearmsResourceinHold()).putString("savedPlanetName",
+                        currentPlanet.getPlanetName().toString()).putInt("savedWaterQuant",
+                        currentPlanet.getWaterQuant()).putInt("savedFurQuant",
+                        currentPlanet.getFurQuant()).putInt("savedFoodQuant",
+                        currentPlanet.getFoodQuant()).putInt("savedOreQuant",
+                        currentPlanet.getOreQuant()).putInt("savedWaterQuantSell",
+                        currentPlanet.getWaterQuantSell()).putInt("savedFurQuantSell",
+                        currentPlanet.getFurQuantSell()).putInt("savedFoodQuantSell",
+                        currentPlanet.getFoodQuantSell()).putInt("savedOreQuantSell",
+                        currentPlanet.getOreQuantSell());
+                editor.apply();
+
+                Toast.makeText(getApplicationContext(),
+                        "Game saved succesfully",
+                        Toast.LENGTH_SHORT).show();;
+
+            }
+
+            });
+
+        final Button load = findViewById(R.id.load_button);
+        load.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                SharedPreferences load = getSharedPreferences(SAVE, MODE_PRIVATE);
+
+                int savedCredits = load.getInt("savedCredits", 0);
+                int savedBays = load.getInt("savedBays", 0);
+                savedBays = 15 - savedBays;
+                int savedFuel = load.getInt("savedFuel", 0);
+                int savedWater = load.getInt("savedWater", 0);
+                int savedFur = load.getInt("savedFur", 0);
+                int savedFood = load.getInt("savedFood", 0);
+                int savedOre = load.getInt("savedOre", 0);
+                int savedNarcotics = load.getInt("savedNarcotics", 0);
+                int savedGames = load.getInt("savedGames", 0);
+                int savedFirearms = load.getInt("savedFirearms", 0);
+                int savedMachine = load.getInt("savedMachine", 0);
+                int savedRobot = load.getInt("savedRobot", 0);
+                int savedMedicine = load.getInt("savedMedicine", 0);
+                String savedPlanetName = load.getString("savedPlanetName", "Andevian");
+
+                int savedWaterQuant = load.getInt("savedWaterQuant", 0);
+                int savedFurQuant = load.getInt("savedFurQuant", 0);
+                int savedFoodQuant = load.getInt("savedFoodQuant", 0);
+                int savedOreQuant = load.getInt("savedOreQuant", 0);
+
+                int savedWaterQuantSell = load.getInt("savedWaterQuantSell", 0);
+                int savedFurQuantSell = load.getInt("savedFurQuantSell", 0);
+                int savedFoodQuantSell = load.getInt("savedFoodQuantSell", 0);
+                int savedOreQuantSell = load.getInt("savedOreQuantSell", 0);
+
+
+                PlanetName current;
+
+                switch (savedPlanetName) {
+                    case "Andevian":
+                        current = PlanetName.ANDEVIAN;
+                        break;
+                    case "Castor":
+                        current = PlanetName.CASTOR;
+                        break;
+                    case "Esmee":
+                        current = PlanetName.ESMEE;
+                        break;
+                    case "Ferris":
+                        current = PlanetName.FERRIS;
+                        break;
+                    case "Helena":
+                        current = PlanetName.HELENA;
+                        break;
+                    case "Myrthe":
+                        current = PlanetName.MYRTHE;
+                        break;
+                    case "Othello":
+                        current = PlanetName.OTHELLO;
+                        break;
+                    case "Rhymus":
+                        current = PlanetName.RHYMUS;
+                        break;
+                    case "Sol":
+                        current = PlanetName.SOL;
+                        break;
+                    case "Zuul":
+                        current = PlanetName.ZUUL;
+                        break;
+
+                        default:
+                            current = PlanetName.ANDEVIAN;
+                }
+
+                Planet savedPlanet = new Planet(current);
+
+                savedPlanet.setWaterQuant(savedWaterQuant);
+                savedPlanet.setFoodQuant(savedFoodQuant);
+                savedPlanet.setFurQuant(savedFurQuant);
+                savedPlanet.setOreQuant(savedOreQuant);
+
+                savedPlanet.setWaterQuantSell(savedWaterQuantSell);
+                savedPlanet.setFoodQuantSell(savedFoodQuantSell);
+                savedPlanet.setFurQuantSell(savedFurQuantSell);
+                savedPlanet.setOreQuantSell(savedOreQuantSell);
+
+
+                credits.setText(""+savedCredits);
+                usedBays.setText(""+savedBays);
+                remainingFuel.setText(""+savedFuel);
+                MarketPlaceViewModel.setWaterResourceinHold(savedWater);
+                MarketPlaceViewModel.setFirearmsResourceinHold(savedFirearms);
+                MarketPlaceViewModel.setFoodResourceinHold(savedFood);
+                MarketPlaceViewModel.setRobotResourceinHold(savedRobot);
+                MarketPlaceViewModel.setMedicineResourceinHold(savedMedicine);
+                MarketPlaceViewModel.setFurResourceinHold(savedFur);
+                MarketPlaceViewModel.setGameResourceinHold(savedGames);
+                MarketPlaceViewModel.setNarcoticResourceinHold(savedNarcotics);
+                MarketPlaceViewModel.setOreResourceinHold(savedOre);
+                MarketPlaceViewModel.setMachineResourceinHold(savedMachine);
+
+
+                repo.assignPrices(savedPlanet);
+                repo.assignProductQuantity(savedPlanet);
+                currentName.setText(savedPlanet.getPlanetName().toString());
+                currentSize.setText(savedPlanet.getSize().toString());
+                currentResource.setText(savedPlanet.getCondition().toString());
+                currentTech.setText(savedPlanet.getTechLevel().toString());
+                currentCoordinates.setText(savedPlanet.getCoordinates());
+
+
+                waterPrice.setText(""+savedPlanet.getWaterPrice());
+                furPrice.setText(""+savedPlanet.getFurPrice());
+                foodPrice.setText(""+savedPlanet.getFoodPrice());
+                orePrice.setText(""+savedPlanet.getOrePrice());
+                gamesPrice.setText(""+savedPlanet.getGamePrice());
+                firearmPrice.setText(""+savedPlanet.getFirearmPrice());
+                medicinePrice.setText(""+savedPlanet.getMedicinePrice());
+                machinePrice.setText(""+savedPlanet.getMachinePrice());
+                narcoticPrice.setText(""+savedPlanet.getNarcoticPrice());
+                robotsPrice.setText(""+savedPlanet.getRobotPrice());
+
+                waterSell.setText(""+savedPlanet.getWaterSell());
+                furSell.setText(""+savedPlanet.getFurSell());
+                foodSell.setText(""+savedPlanet.getFoodSell());
+                oreSell.setText(""+savedPlanet.getOreSell());
+                gamesSell.setText(""+savedPlanet.getGameSell());
+                firearmSell.setText(""+savedPlanet.getFirearmSell());
+                medicineSell.setText(""+savedPlanet.getMedicineSell());
+                machineSell.setText(""+savedPlanet.getMachineSell());
+                narcoticSell.setText(""+savedPlanet.getNarcoticSell());
+                robotsSell.setText(""+savedPlanet.getRobotSell());
+
+                waterQuant.setText(""+savedPlanet.getWaterQuant());
+                furQuant.setText(""+savedPlanet.getFurQuant());
+                foodQuant.setText(""+savedPlanet.getFoodQuant());
+                oreQuant.setText(""+savedPlanet.getOreQuant());
+                gamesQuant.setText(""+savedPlanet.getGameQuant());
+                firearmQuant.setText(""+savedPlanet.getFirearmQuant());
+                medicineQuant.setText(""+savedPlanet.getMedicineQuant());
+                machineQuant.setText(""+savedPlanet.getMachineQuant());
+                narcoticQuant.setText(""+savedPlanet.getNarcoticQuant());
+                robotsQuant.setText(""+savedPlanet.getRobotQuant());
+
+                waterQuantSell.setText(""+savedPlanet.getWaterQuantSell());
+                furQuantSell.setText(""+savedPlanet.getFurQuantSell());
+                foodQuantSell.setText(""+savedPlanet.getFoodQuantSell());
+                oreQuantSell.setText(""+savedPlanet.getOreQuantSell());
+                gamesQuantSell.setText(""+savedPlanet.getGameQuantSell());
+                firearmQuantSell.setText(""+savedPlanet.getFirearmQuantSell());
+                medicineQuantSell.setText(""+savedPlanet.getMedicineQuantSell());
+                machineQuantSell.setText(""+savedPlanet.getMachineQuantSell());
+                narcoticQuantSell.setText(""+savedPlanet.getNarcoticQuantSell());
+                robotsQuantSell.setText(""+savedPlanet.getRobotQuantSell());
+
+
+                Toast.makeText(getApplicationContext(),
+                        "Game loaded succesfully",
+                        Toast.LENGTH_SHORT).show();;
+
+            }
+
+        })
+
+
+    ;}
+
 }
