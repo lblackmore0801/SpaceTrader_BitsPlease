@@ -281,7 +281,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         buyAllWater.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && Player.getMoney() > 0) {
                     currentPlanet.setWaterQuant(currentPlanet.getWaterQuant() - 1);
                     MarketPlaceViewModel.buyOneWater(currentPlanet);
 
@@ -292,7 +292,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                     sellSingleWater.setText("" + waterString);
                 }
                 buySingleWater.setText("" + currentPlanet.getWaterQuant());
-                credits.setText("" + MarketPlaceViewModel.money);
+                credits.setText("" + Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText("" + used);
             }
@@ -317,7 +317,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                     sellSingleFur.setText("" + furString);
                 }
                 MarketPlaceViewModel.buyOneFur(currentPlanet);
-                credits.setText(""+MarketPlaceViewModel.money);
+                credits.setText(""+Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
             }
@@ -326,12 +326,12 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         buyAllFur.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && Player.getMoney() > 0) {
                     currentPlanet.setFurQuant(currentPlanet.getFurQuant() - 1);
                     MarketPlaceViewModel.buyOneFur(currentPlanet);
                 }
                 buySingleFur.setText("" + currentPlanet.getFurQuant());
-                credits.setText("" + MarketPlaceViewModel.money);
+                credits.setText("" + Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText("" + used);
             }
@@ -356,7 +356,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                     sellSingleFood.setText("" + foodString);
                 }
                 MarketPlaceViewModel.buyOneFood(currentPlanet);
-                credits.setText(""+MarketPlaceViewModel.money);
+                credits.setText(""+Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
             }
@@ -365,12 +365,12 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         buyAllFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && Player.getMoney() > 0) {
                     currentPlanet.setFoodQuant(currentPlanet.getFoodQuant() - 1);
                     MarketPlaceViewModel.buyOneFood(currentPlanet);
                 }
                 buySingleFood.setText("" + currentPlanet.getFoodQuant());
-                credits.setText("" + MarketPlaceViewModel.money);
+                credits.setText("" + Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText("" + used);
             }
@@ -395,7 +395,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                     sellSingleOre.setText("" + oreString);
                 }
                 MarketPlaceViewModel.buyOneOre(currentPlanet);
-                credits.setText(""+MarketPlaceViewModel.money);
+                credits.setText(""+Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
             }
@@ -404,12 +404,12 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         buyAllOre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && Player.getMoney() > 0) {
                     currentPlanet.setOreQuant(currentPlanet.getOreQuant() - 1);
                     MarketPlaceViewModel.buyOneOre(currentPlanet);
                 }
                 buySingleOre.setText("" + currentPlanet.getOreQuant());
-                credits.setText("" + MarketPlaceViewModel.money);
+                credits.setText("" + Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText("" + used);
             }
@@ -435,7 +435,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                     sellSingleGame.setText("" + gameString);
                 }
                 MarketPlaceViewModel.buyOneGame(currentPlanet);
-                credits.setText(""+MarketPlaceViewModel.money);
+                credits.setText(""+Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
             }
@@ -444,12 +444,12 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         buyAllGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && Player.getMoney() > 0) {
                     currentPlanet.setGameQuant(currentPlanet.getGameQuant() - 1);
                     MarketPlaceViewModel.buyOneGame(currentPlanet);
                 }
                 buySingleGame.setText("" + currentPlanet.getGameQuant());
-                credits.setText("" + MarketPlaceViewModel.money);
+                credits.setText("" + Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText("" + used);
             }
@@ -475,7 +475,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                     sellSingleFirearm.setText("" + firearmString);
                 }
                 MarketPlaceViewModel.buyOneFirearm(currentPlanet);
-                credits.setText(""+MarketPlaceViewModel.money);
+                credits.setText(""+Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
             }
@@ -484,12 +484,12 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         buyAllFirearms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && Player.getMoney() > 0) {
                     currentPlanet.setFirearmQuant(currentPlanet.getFirearmQuant() - 1);
                     MarketPlaceViewModel.buyOneFirearm(currentPlanet);
                 }
                 buySingleFirearm.setText("" + currentPlanet.getFirearmQuant());
-                credits.setText("" + MarketPlaceViewModel.money);
+                credits.setText("" + Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText("" + used);
             }
@@ -515,7 +515,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                     sellSingleMedicine.setText("" + medicineString);
                 }
                 MarketPlaceViewModel.buyOneMedicine(currentPlanet);
-                credits.setText(""+MarketPlaceViewModel.money);
+                credits.setText(""+Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
             }
@@ -524,12 +524,12 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         buyAllMedicine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && Player.getMoney() > 0) {
                     currentPlanet.setMedicineQuant(currentPlanet.getMedicineQuant() - 1);
                     MarketPlaceViewModel.buyOneMedicine(currentPlanet);
                 }
                 buySingleMedicine.setText("" + currentPlanet.getMedicineQuant());
-                credits.setText("" + MarketPlaceViewModel.money);
+                credits.setText("" + Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText("" + used);
             }
@@ -555,7 +555,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                     sellSingleMachine.setText("" + machineString);
                 }
                 MarketPlaceViewModel.buyOneMachine(currentPlanet);
-                credits.setText(""+MarketPlaceViewModel.money);
+                credits.setText(""+Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
             }
@@ -564,12 +564,12 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         buyAllMachines.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && Player.getMoney() > 0) {
                     currentPlanet.setMachineQuant(currentPlanet.getMachineQuant() - 1);
                     MarketPlaceViewModel.buyOneMachine(currentPlanet);
                 }
                 buySingleMachine.setText("" + currentPlanet.getMachineQuant());
-                credits.setText("" + MarketPlaceViewModel.money);
+                credits.setText("" + Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText("" + used);
             }
@@ -595,7 +595,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                     sellSingleNarcotic.setText("" + narcoticString);
                 }
                 MarketPlaceViewModel.buyOneNarcotic(currentPlanet);
-                credits.setText(""+MarketPlaceViewModel.money);
+                credits.setText(""+Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
             }
@@ -604,12 +604,12 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         buyAllNarcotics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && Player.getMoney() > 0) {
                     currentPlanet.setNarcoticQuant(currentPlanet.getNarcoticQuant() - 1);
                     MarketPlaceViewModel.buyOneNarcotic(currentPlanet);
                 }
                 buySingleNarcotic.setText("" + currentPlanet.getNarcoticQuant());
-                credits.setText("" + MarketPlaceViewModel.money);
+                credits.setText("" + Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText("" + used);
             }
@@ -635,7 +635,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                     sellSingleRobot.setText("" + robotString);
                 }
                 MarketPlaceViewModel.buyOneRobot(currentPlanet);
-                credits.setText(""+MarketPlaceViewModel.money);
+                credits.setText(""+Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
             }
@@ -644,12 +644,12 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         buyAllRobot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && Player.getMoney() > 0) {
                     currentPlanet.setRobotQuant(currentPlanet.getRobotQuant() - 1);
                     MarketPlaceViewModel.buyOneRobot(currentPlanet);
                 }
                 buySingleRobot.setText("" + currentPlanet.getRobotQuant());
-                credits.setText("" + MarketPlaceViewModel.money);
+                credits.setText("" + Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText("" + used);
             }
@@ -671,7 +671,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
 //                    buySingleWater.setText("" + currentPlanet.getWaterQuant());
 //                }
 //                MarketPlaceViewModel.buyOneWater(currentPlanet);
-//                credits.setText(""+MarketPlaceViewModel.money);
+//                credits.setText(""+Player.getMoney());
 //                int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
 //                usedBays.setText(""+used);
 //
@@ -686,7 +686,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 MarketPlaceViewModel.sellWater(currentPlanet);
-                credits.setText(""+MarketPlaceViewModel.money);
+                credits.setText(""+Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
 
@@ -709,10 +709,10 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         sellAllWater.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && Player.getMoney() > 0) {
                     MarketPlaceViewModel.buyOneWater(currentPlanet);
                 }
-                credits.setText("" + MarketPlaceViewModel.money);
+                credits.setText("" + Player.getMoney());
                 int used = storageCapacity + MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText("" + used);
             }
@@ -726,7 +726,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 MarketPlaceViewModel.sellFur(currentPlanet);
-                credits.setText(""+MarketPlaceViewModel.money);
+                credits.setText(""+Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
 
@@ -749,10 +749,10 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         sellAllFur.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && Player.getMoney() > 0) {
                     MarketPlaceViewModel.buyOneFur(currentPlanet);
                 }
-                credits.setText("" + MarketPlaceViewModel.money);
+                credits.setText("" + Player.getMoney());
                 int used = storageCapacity + MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText("" + used);
             }
@@ -765,7 +765,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 MarketPlaceViewModel.sellFood(currentPlanet);
-                credits.setText(""+MarketPlaceViewModel.money);
+                credits.setText(""+Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
 
@@ -787,10 +787,10 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         sellAllFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && Player.getMoney() > 0) {
                     MarketPlaceViewModel.buyOneFood(currentPlanet);
                 }
-                credits.setText("" + MarketPlaceViewModel.money);
+                credits.setText("" + Player.getMoney());
                 int used = storageCapacity + MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText("" + used);
             }
@@ -803,7 +803,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 MarketPlaceViewModel.sellOre(currentPlanet);
-                credits.setText(""+MarketPlaceViewModel.money);
+                credits.setText(""+Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
 
@@ -825,10 +825,10 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         sellAllOre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && Player.getMoney() > 0) {
                     MarketPlaceViewModel.buyOneOre(currentPlanet);
                 }
-                credits.setText("" + MarketPlaceViewModel.money);
+                credits.setText("" + Player.getMoney());
                 int used = storageCapacity + MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText("" + used);
             }
@@ -842,7 +842,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 MarketPlaceViewModel.sellGame(currentPlanet);
-                credits.setText(""+MarketPlaceViewModel.money);
+                credits.setText(""+Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
 
@@ -864,10 +864,10 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         sellAllGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && Player.getMoney() > 0) {
                     MarketPlaceViewModel.buyOneGame(currentPlanet);
                 }
-                credits.setText("" + MarketPlaceViewModel.money);
+                credits.setText("" + Player.getMoney());
                 int used = storageCapacity + MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText("" + used);
             }
@@ -881,7 +881,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 MarketPlaceViewModel.sellFirearm(currentPlanet);
-                credits.setText(""+MarketPlaceViewModel.money);
+                credits.setText(""+Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
 
@@ -903,10 +903,10 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         sellAllFirearms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && Player.getMoney() > 0) {
                     MarketPlaceViewModel.buyOneFirearm(currentPlanet);
                 }
-                credits.setText("" + MarketPlaceViewModel.money);
+                credits.setText("" + Player.getMoney());
                 int used = storageCapacity + MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText("" + used);
             }
@@ -920,7 +920,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 MarketPlaceViewModel.sellMedicine(currentPlanet);
-                credits.setText(""+MarketPlaceViewModel.money);
+                credits.setText(""+Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
 
@@ -942,10 +942,10 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         sellAllMedicine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && Player.getMoney() > 0) {
                     MarketPlaceViewModel.buyOneMedicine(currentPlanet);
                 }
-                credits.setText("" + MarketPlaceViewModel.money);
+                credits.setText("" + Player.getMoney());
                 int used = storageCapacity + MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText("" + used);
             }
@@ -959,7 +959,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 MarketPlaceViewModel.sellMachine(currentPlanet);
-                credits.setText(""+MarketPlaceViewModel.money);
+                credits.setText(""+Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
 
@@ -981,10 +981,10 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         sellAllMachines.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && Player.getMoney() > 0) {
                     MarketPlaceViewModel.buyOneMachine(currentPlanet);
                 }
-                credits.setText("" + MarketPlaceViewModel.money);
+                credits.setText("" + Player.getMoney());
                 int used = storageCapacity + MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText("" + used);
             }
@@ -998,7 +998,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 MarketPlaceViewModel.sellNarcotic(currentPlanet);
-                credits.setText(""+MarketPlaceViewModel.money);
+                credits.setText(""+Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
 
@@ -1020,10 +1020,10 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         sellAllNarcotics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && Player.getMoney() > 0) {
                     MarketPlaceViewModel.buyOneNarcotic(currentPlanet);
                 }
-                credits.setText("" + MarketPlaceViewModel.money);
+                credits.setText("" + Player.getMoney());
                 int used = storageCapacity + MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText("" + used);
             }
@@ -1037,7 +1037,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 MarketPlaceViewModel.sellRobot(currentPlanet);
-                credits.setText(""+MarketPlaceViewModel.money);
+                credits.setText(""+Player.getMoney());
                 int used = storageCapacity - MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText(""+used);
 
@@ -1059,10 +1059,10 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         sellAllRobot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && MarketPlaceViewModel.money > 0) {
+                while (MarketPlaceViewModel.remainingStorageCapacity > 0 && Player.getMoney() > 0) {
                     MarketPlaceViewModel.buyOneRobot(currentPlanet);
                 }
-                credits.setText("" + MarketPlaceViewModel.money);
+                credits.setText("" + Player.getMoney());
                 int used = storageCapacity + MarketPlaceViewModel.remainingStorageCapacity;
                 usedBays.setText("" + used);
             }
@@ -1196,7 +1196,6 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             }
 
     });
-    }
 
         //load and save
 
@@ -1207,7 +1206,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                 SharedPreferences saveGame = getSharedPreferences(SAVE, MODE_PRIVATE);
                 SharedPreferences.Editor editor = saveGame.edit();
 
-                editor.putInt("savedCredits", MarketPlaceViewModel.money).putInt("savedBays",
+                editor.putInt("savedCredits", Player.getMoney()).putInt("savedBays",
                         MarketPlaceViewModel.remainingStorageCapacity).putInt(
                                 "savedFuel", Player.getShip().getFuel()).putInt("savedWater",
                         MarketPlaceViewModel.getWaterResourceinHold()).putInt("savedFur",
@@ -1419,16 +1418,16 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                 narcoticQuant.setText(""+savedPlanet.getNarcoticQuant());
                 robotsQuant.setText(""+savedPlanet.getRobotQuant());
 
-                waterQuantSell.setText(""+savedPlanet.getWaterQuantSell());
-                furQuantSell.setText(""+savedPlanet.getFurQuantSell());
-                foodQuantSell.setText(""+savedPlanet.getFoodQuantSell());
-                oreQuantSell.setText(""+savedPlanet.getOreQuantSell());
-                gamesQuantSell.setText(""+savedPlanet.getGameQuantSell());
-                firearmQuantSell.setText(""+savedPlanet.getFirearmQuantSell());
-                medicineQuantSell.setText(""+savedPlanet.getMedicineQuantSell());
-                machineQuantSell.setText(""+savedPlanet.getMachineQuantSell());
-                narcoticQuantSell.setText(""+savedPlanet.getNarcoticQuantSell());
-                robotsQuantSell.setText(""+savedPlanet.getRobotQuantSell());
+                waterQuantSell.setText(""+MarketPlaceViewModel.getWaterResourceinHold());
+                furQuantSell.setText(""+MarketPlaceViewModel.getFurResourceinHold());
+                foodQuantSell.setText(""+MarketPlaceViewModel.getFoodResourceinHold());
+                oreQuantSell.setText(""+MarketPlaceViewModel.getOreResourceinHold());
+                gamesQuantSell.setText(""+MarketPlaceViewModel.getGameResourceinHold());
+                firearmQuantSell.setText(""+MarketPlaceViewModel.getFirearmsResourceinHold());
+                medicineQuantSell.setText(""+MarketPlaceViewModel.getMedicineResourceinHold());
+                machineQuantSell.setText(""+MarketPlaceViewModel.getMachineResourceinHold());
+                narcoticQuantSell.setText(""+MarketPlaceViewModel.getNarcoticResourceinHold());
+                robotsQuantSell.setText(""+MarketPlaceViewModel.getRobotResourceinHold());
 
 
                 Toast.makeText(getApplicationContext(),
