@@ -1167,11 +1167,24 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                         currentPlanet.getWaterQuant()).putInt("savedFurQuant",
                         currentPlanet.getFurQuant()).putInt("savedFoodQuant",
                         currentPlanet.getFoodQuant()).putInt("savedOreQuant",
-                        currentPlanet.getOreQuant()).putInt("savedWaterQuantSell",
+                        currentPlanet.getOreQuant()).putInt("savedGamesQuant",
+                        currentPlanet.getGameQuant()).putInt("savedNarcoticsQuant",
+                        currentPlanet.getNarcoticQuant()).putInt("savedFirearmsQuant",
+                        currentPlanet.getFirearmQuant()).putInt("savedMachineQuant",
+                        currentPlanet.getMachineQuant()).putInt("savedRobotQuant",
+                        currentPlanet.getRobotQuant()).putInt("savedMedicineQuant",
+                        currentPlanet.getMedicineQuantSell()).putInt("savedWaterQuantSell",
                         currentPlanet.getWaterQuantSell()).putInt("savedFurQuantSell",
                         currentPlanet.getFurQuantSell()).putInt("savedFoodQuantSell",
                         currentPlanet.getFoodQuantSell()).putInt("savedOreQuantSell",
-                        currentPlanet.getOreQuantSell());
+                        currentPlanet.getOreQuantSell()).putInt("savedGamesQuantSell",
+                        currentPlanet.getGameQuantSell()).putInt("savedNarcoticsQuantSell",
+                        currentPlanet.getNarcoticQuantSell()).putInt("savedFirearmsQuantSell",
+                        currentPlanet.getFirearmQuantSell()).putInt("savedMachineQuantSell",
+                        currentPlanet.getMachineQuantSell()).putInt("savedRobotQuantSell",
+                        currentPlanet.getRobotQuantSell()).putInt("savedMedicineQuantSell",
+                        currentPlanet.getMedicineQuantSell());
+
                 editor.apply();
 
                 Toast.makeText(getApplicationContext(),
@@ -1209,11 +1222,24 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                 int savedFurQuant = load.getInt("savedFurQuant", 0);
                 int savedFoodQuant = load.getInt("savedFoodQuant", 0);
                 int savedOreQuant = load.getInt("savedOreQuant", 0);
+                int savedNarcoticsQuant = load.getInt("savedNarcoticsQuant",0);
+                int savedGamesQuant = load.getInt("savedGamesQuant", 0);
+                int savedFirearmsQuant = load.getInt("savedFirearmsQuant", 0);
+                int savedMachineQuant = load.getInt("savedMachineQuant", 0);
+                int savedRobotQuant = load.getInt("savedRobotQuant", 0);
+                int savedMedicineQuant = load.getInt("savedMedicineQuant", 0);
+
 
                 int savedWaterQuantSell = load.getInt("savedWaterQuantSell", 0);
                 int savedFurQuantSell = load.getInt("savedFurQuantSell", 0);
                 int savedFoodQuantSell = load.getInt("savedFoodQuantSell", 0);
                 int savedOreQuantSell = load.getInt("savedOreQuantSell", 0);
+                int savedNarcoticsQuantSell = load.getInt("savedNarcoticsQuantSell",0);
+                int savedGamesQuantSell = load.getInt("savedGamesQuantSell", 0);
+                int savedFirearmsQuantSell = load.getInt("savedFirearmsQuantSell", 0);
+                int savedMachineQuantSell = load.getInt("savedMachineQuantSell", 0);
+                int savedRobotQuantSell = load.getInt("savedRobotQuantSell", 0);
+                int savedMedicineQuantSell = load.getInt("savedMedicineQuantSell", 0);
 
 
                 PlanetName current;
@@ -1260,11 +1286,23 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                 savedPlanet.setFoodQuant(savedFoodQuant);
                 savedPlanet.setFurQuant(savedFurQuant);
                 savedPlanet.setOreQuant(savedOreQuant);
+                savedPlanet.setNarcoticQuant(savedNarcoticsQuant);
+                savedPlanet.setGameQuant(savedGamesQuant);
+                savedPlanet.setFirearmQuant(savedFirearmsQuant);
+                savedPlanet.setMachineQuant(savedMachineQuant);
+                savedPlanet.setRobotQuant(savedRobotQuant);
+                savedPlanet.setMedicineQuant(savedMedicineQuant);
 
                 savedPlanet.setWaterQuantSell(savedWaterQuantSell);
                 savedPlanet.setFoodQuantSell(savedFoodQuantSell);
                 savedPlanet.setFurQuantSell(savedFurQuantSell);
                 savedPlanet.setOreQuantSell(savedOreQuantSell);
+                savedPlanet.setNarcoticQuantSell(savedNarcoticsQuantSell);
+                savedPlanet.setGameQuantSell(savedGamesQuantSell);
+                savedPlanet.setFirearmQuantSell(savedFirearmsQuantSell);
+                savedPlanet.setMachineQuantSell(savedMachineQuantSell);
+                savedPlanet.setRobotQuantSell(savedRobotQuantSell);
+                savedPlanet.setMedicineQuantSell(savedMedicineQuantSell);
 
 
                 credits.setText(""+savedCredits);
