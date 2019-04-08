@@ -960,12 +960,23 @@
 
             <Button
                 android:id="@+id/store_button"
-                android:layout_width="81dp"
+                android:layout_width="37dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
-                android:text="Store"
+                android:text="Save"
+                app:layout_constraintStart_toEndOf="@+id/planet_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/load_button"
+                android:layout_width="37dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginLeft="64dp"
+                android:layout_marginTop="8dp"
+                android:text="Load"
                 app:layout_constraintStart_toEndOf="@+id/planet_title"
                 app:layout_constraintTop_toTopOf="parent" />
 

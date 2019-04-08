@@ -190,12 +190,13 @@ public class Repository {
 
         for (int i = 0; i < goods.size(); i++) {
             TradeGoods good = goods.get(i);
-            Random rand = new Random();
-            int chance = rand.nextInt(good.getVar()) + 1;
-            chance *= 5;
+            //Random rand = new Random();
+            //int chance = rand.nextInt(good.getVar()) + 1;
+            //chance *= 5;
 
             int quant = good.getTtp();
-            quant += (good.getTtp() * chance) + 20;
+            quant += (good.getTtp()) + 20;
+            //quant += (good.getTtp() * chance) + 20;
 
             if (good == TradeGoods.WATER) {
                 planet.setWaterQuant(quant);
@@ -236,13 +237,13 @@ public class Repository {
 
         for (int i = 0; i < goods.size(); i++) {
             TradeGoods good = goods.get(i);
-            Random r = new Random();
-            int luck = r.nextInt(good.getVar()) + 1;
-            luck /= 100;
+            //Random r = new Random();
+            //int luck = r.nextInt(good.getVar()) + 1;
+            //luck /= 100;
 
             int price = good.getBasePrice();
             price += (good.getIpl() * (planet.getTechLevel().ordinal() - good.getMtlp()));
-            price += (good.getBasePrice()*luck);
+            //price += (good.getBasePrice()*luck);
 
             if (good == TradeGoods.WATER) {
                 planet.setWaterPrice(price);
