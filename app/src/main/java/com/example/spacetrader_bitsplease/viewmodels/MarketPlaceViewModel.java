@@ -18,7 +18,7 @@ public class MarketPlaceViewModel {
 
     public static int remainingStorageCapacity = 15;
     //public static int money = 1000;
-    //private static int money = Player.getMoney();
+    private static final int money = Player.getMoney();
 
     private static int waterResourceinHold;
     private static int furResourceinHold;
@@ -32,6 +32,7 @@ public class MarketPlaceViewModel {
     private static int robotResourceinHold;
 
 // --Commented out by Inspection START (4/15/2019 3:37 PM):
+// --Commented out by Inspection START (4/15/2019 4:07 PM):
 //    /**
 //     * Constructor for MarketPlaceViewModel
 //     * @param  remainingStorageCapacity1 storage remaining
@@ -39,6 +40,7 @@ public class MarketPlaceViewModel {
 //    public MarketPlaceViewModel(int remainingStorageCapacity1) {
 //        remainingStorageCapacity = remainingStorageCapacity1;
 //    }
+// --Commented out by Inspection STOP (4/15/2019 4:07 PM)
 // --Commented out by Inspection STOP (4/15/2019 3:37 PM)
 
 
@@ -423,13 +425,15 @@ public class MarketPlaceViewModel {
         return robotResourceinHold;
     }
 
-    ///**
-    // * Getter for inHoldMaterial
-    // * @return int of materials
-    // */
-    //public static int getMoney() {
-    //    return money;
-    //}
+// --Commented out by Inspection START (4/15/2019 4:07 PM):
+//    /**
+//     * Getter for inHoldMaterial
+//     * @return int of materials
+//     */
+//    public static int getMoney() {
+//        return money;
+//    }
+// --Commented out by Inspection STOP (4/15/2019 4:07 PM)
 
     /**
      * Setter for inHoldMaterial
