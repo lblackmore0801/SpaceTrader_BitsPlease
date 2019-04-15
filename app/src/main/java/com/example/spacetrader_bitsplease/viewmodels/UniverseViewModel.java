@@ -1,16 +1,11 @@
 package com.example.spacetrader_bitsplease.viewmodels;
 
 import com.example.spacetrader_bitsplease.entity.Ship;
-import com.example.spacetrader_bitsplease.entity.ShipType;
 import com.example.spacetrader_bitsplease.entity.Planet;
 import java.lang.Math;
 
 
 public class UniverseViewModel {
-    private static double currentX;
-    private static double currentY;
-    private static double targetX;
-    private static double targetY;
     private static double distance;
 
     /**
@@ -18,11 +13,11 @@ public class UniverseViewModel {
      * @param  currentPlanet the current planet the player is on
      * @param  targetPlanet the planet the player wishes to travel to
      */
-    public static double distance(Planet currentPlanet, Planet targetPlanet) {
-        currentX = currentPlanet.getXcoordinate();
-        currentY = currentPlanet.getYcoordinate();
-        targetX = targetPlanet.getXcoordinate();
-        targetY = targetPlanet.getYcoordinate();
+    private static double distance(Planet currentPlanet, Planet targetPlanet) {
+        double currentX = currentPlanet.getXcoordinate();
+        double currentY = currentPlanet.getYcoordinate();
+        double targetX = targetPlanet.getXcoordinate();
+        double targetY = targetPlanet.getYcoordinate();
         distance = Math.sqrt(Math.pow(targetX - currentX, 2) + Math.pow(targetY - currentY, 2));
         distance = Math.round(distance * 100.00) / 100.00;
         return distance;
@@ -33,7 +28,7 @@ public class UniverseViewModel {
      * @param  ship  the player's ship
      * @return an int denoting fuel value
      */
-    public static int fuelRange(Ship ship) {
+    private static int fuelRange(Ship ship) {
         return ship.getFuel();
     }
 
@@ -56,20 +51,14 @@ public class UniverseViewModel {
      */
     public static boolean copEncounter() {
         int random = (int) (Math.random() * 100 + 1);
-        if (random > 10) {
-            return true;
-        }
-        return false;
+        return random > 10;
     }
     /**
      * Method to check if the player has illegal items in their hold.
      * @return boolean if the player has illegal items or not
      */
     public static boolean checkForIllegals() {
-        if (MarketPlaceViewModel.getNarcoticResourceinHold() > 0 ||
-            MarketPlaceViewModel.getFirearmsResourceinHold() > 0) {
-            return true;
-        }
-        return false;
+        return MarketPlaceViewModel.getNarcoticResourceinHold() > 0 ||
+                MarketPlaceViewModel.getFirearmsResourceinHold() > 0;
     }
 }
