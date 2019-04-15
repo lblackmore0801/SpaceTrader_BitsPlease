@@ -2,13 +2,14 @@ package com.example.spacetrader_bitsplease.entity;
 
 import com.example.spacetrader_bitsplease.model.Repository;
 
+@SuppressWarnings("ALL")
 public class Planet {
-    private int xcoordinate;
-    private int ycoordinate;
-    private Size size;
-    private PlanetName planetName;
-    private Condition condition;
-    private TechLevel techLevel;
+    private final int xcoordinate;
+    private final int ycoordinate;
+    private final Size size;
+    private final PlanetName planetName;
+    private final Condition condition;
+    private final TechLevel techLevel;
 
     private int waterQuant;
     private int furQuant;

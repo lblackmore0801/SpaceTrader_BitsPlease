@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+@SuppressWarnings("ALL")
 public enum TradeGoods {
     FIREARMS("Firearms", 3, 1, 5, 1250, -75, 100),
     FOOD("Food", 1, 0, 1, 100, 5, 5),
