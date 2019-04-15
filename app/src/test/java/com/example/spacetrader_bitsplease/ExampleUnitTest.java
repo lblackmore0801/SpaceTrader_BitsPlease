@@ -63,19 +63,19 @@ public class ExampleUnitTest {
 
     @Test
     public void player_creation_isCorrect() {
-        assertEquals(16, testPlayer1.getFighterSkill()
-                    + testPlayer1.getEngineerSkill()
-                    + testPlayer1.getTraderSkill()
-                    + testPlayer1.getPilotSkill());
+        assertEquals(16, Player.getFighterSkill()
+                    + Player.getEngineerSkill()
+                    + Player.getTraderSkill()
+                    + Player.getPilotSkill());
         assertEquals(Difficulty.BEGINNER, testPlayer1.getDifficulty());
-        assertEquals(1000, testPlayer1.getMoney());
+        assertEquals(1000, Player.getMoney());
 
-        assertEquals(5, testPlayer2.getPilotSkill());
-        assertEquals(4, testPlayer2.getEngineerSkill());
-        assertEquals(3, testPlayer2.getFighterSkill());
-        assertEquals(4, testPlayer2.getTraderSkill());
-        assertEquals(ShipType.GNAT, testPlayer2.getShip().getType());
-        assertEquals(1000, testPlayer2.getMoney());
+        assertEquals(5, Player.getPilotSkill());
+        assertEquals(4, Player.getEngineerSkill());
+        assertEquals(3, Player.getFighterSkill());
+        assertEquals(4, Player.getTraderSkill());
+        assertEquals(ShipType.GNAT, Player.getShip().getType());
+        assertEquals(1000, Player.getMoney());
     }
 
     @Test

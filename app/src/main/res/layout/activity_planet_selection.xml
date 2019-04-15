@@ -733,7 +733,7 @@
                 android:layout_marginLeft="120dp"
                 android:layout_marginTop="10dp"
                 android:text="Planet Selection"
-                android:textSize="22dp"
+                android:textSize="22sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -747,7 +747,7 @@
                 android:layout_marginLeft="152dp"
                 android:layout_marginTop="16dp"
                 android:text="Current Planet"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/planet_title" />
 
@@ -759,7 +759,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="90dp"
                 android:text="Name"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -771,7 +771,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="4dp"
                 android:text="Size"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/planets_name" />
 
@@ -783,7 +783,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="4dp"
                 android:text="Resources"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/planets_size" />
 
@@ -795,7 +795,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="4dp"
                 android:text="Tech Level"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/planets_res" />
 
@@ -807,7 +807,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="4dp"
                 android:text="Coordinates"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/planets_tech" />
 
@@ -819,7 +819,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:text="Target Planet"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/store_button" />
 
