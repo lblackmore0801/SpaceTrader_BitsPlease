@@ -40,6 +40,11 @@ public class CreatePlayerActivity extends AppCompatActivity{
     private int remainingPoints;
 
 
+    /**
+     * Creates buttons and handles buttons on the
+     * player creation page
+     * @param  savedInstanceState price
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

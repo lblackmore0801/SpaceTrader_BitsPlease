@@ -13,6 +13,10 @@ public class MainActivity extends AppCompatActivity {
     /** an integer used because add a course returns something */
     public static final int START_REQUEST_ID = 1;
 
+    /**
+     * Sets instance state for main activity
+     * @param  savedInstanceState price
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
