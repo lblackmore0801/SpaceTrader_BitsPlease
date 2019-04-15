@@ -1,5 +1,6 @@
 package com.example.spacetrader_bitsplease.entity;
 
+@SuppressWarnings("ALL")
 public class Ship {
 
     private ShipType type;

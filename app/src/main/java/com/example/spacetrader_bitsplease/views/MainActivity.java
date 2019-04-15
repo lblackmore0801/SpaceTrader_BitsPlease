@@ -11,7 +11,7 @@ import com.example.spacetrader_bitsplease.R;
 public class MainActivity extends AppCompatActivity {
 
     /** an integer used because add a course returns something */
-    public static final int START_REQUEST_ID = 1;
+    private static final int START_REQUEST_ID = 1;
 
     /**
      * Sets instance state for main activity

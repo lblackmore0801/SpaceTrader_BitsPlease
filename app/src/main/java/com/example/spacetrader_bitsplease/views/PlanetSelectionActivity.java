@@ -26,6 +26,7 @@ import com.example.spacetrader_bitsplease.viewmodels.MarketPlaceViewModel;
 import com.example.spacetrader_bitsplease.viewmodels.UniverseViewModel;
 
 
+@SuppressWarnings("ALL")
 public class PlanetSelectionActivity extends AppCompatActivity {
 
     public static final String SAVE = "SavedGameFile";

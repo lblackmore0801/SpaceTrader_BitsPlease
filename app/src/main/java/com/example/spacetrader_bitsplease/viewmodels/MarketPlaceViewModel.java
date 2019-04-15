@@ -31,13 +31,15 @@ public class MarketPlaceViewModel {
     private static int narcoticResourceinHold;
     private static int robotResourceinHold;
 
-    /**
-     * Constructor for MarketPlaceViewModel
-     * @param  remainingStorageCapacity1 storage remaining
-     */
-    public MarketPlaceViewModel(int remainingStorageCapacity1) {
-        remainingStorageCapacity = remainingStorageCapacity1;
-    }
+// --Commented out by Inspection START (4/15/2019 3:37 PM):
+//    /**
+//     * Constructor for MarketPlaceViewModel
+//     * @param  remainingStorageCapacity1 storage remaining
+//     */
+//    public MarketPlaceViewModel(int remainingStorageCapacity1) {
+//        remainingStorageCapacity = remainingStorageCapacity1;
+//    }
+// --Commented out by Inspection STOP (4/15/2019 3:37 PM)
 
 
 //    public static int getNarcoticResourceinHold() {

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"><![CDATA[
+    android:layout_height="match_parent"
+    tools:ignore="ExtraText"><![CDATA[
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".views.MainActivity">
@@ -316,7 +317,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_username"
-        android:autofillHints="" />
+        android:autofillHints=""
+        tools:ignore="LabelFor,UnusedAttribute" />
 
 
 </android.support.constraint.ConstraintLayout>

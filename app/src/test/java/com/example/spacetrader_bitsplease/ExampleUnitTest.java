@@ -23,7 +23,6 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     private Player testPlayer1;
-    private Player testPlayer2;
 
     private Planet testPlanetNoParam;
     private Planet testPlanetAndevian;
@@ -54,10 +53,11 @@ public class ExampleUnitTest {
         testPlanetMultParam = new Planet(PlanetName.ANDEVIAN, 130, 110, Size.MEDIUM, Condition.LOTSOFWATER, TechLevel.AGRICULTURE);
     }
 
+    @SuppressWarnings("unused")
     @Before
     public void setUpPlayer() {
         testPlayer1 = new Player("Ryan");
-        testPlayer2 = new Player("Ryan", Difficulty.BEGINNER, 5, 4, 3, 4, new Ship(), 1000);
+        Player testPlayer2 = new Player("Ryan", Difficulty.BEGINNER, 5, 4, 3, 4, new Ship(), 1000);
     }
 
 

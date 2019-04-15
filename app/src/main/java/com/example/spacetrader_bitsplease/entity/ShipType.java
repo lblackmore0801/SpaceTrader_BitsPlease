@@ -1,5 +1,6 @@
 package com.example.spacetrader_bitsplease.entity;
 
+@SuppressWarnings("SameParameterValue")
 public enum ShipType {
     GNAT("Gnat", 50, 30);
 //    FIREFLY("Firefly", 55, 40),
@@ -12,8 +13,7 @@ public enum ShipType {
 //    WASP("Wasp", 90, 110);
 
     private final String type;
-    private int storageCapacity;
-    private int fuelCapacity;
+    private final int fuelCapacity;
 
     /**
      * constructor for the shipType enum
@@ -23,7 +23,7 @@ public enum ShipType {
      */
     ShipType(String shipType, int storageCapacity, int fuelCapacity) {
         this.type = shipType;
-        this.storageCapacity = storageCapacity;
+        int storageCapacity1 = storageCapacity;
         this.fuelCapacity = fuelCapacity;
     }
 

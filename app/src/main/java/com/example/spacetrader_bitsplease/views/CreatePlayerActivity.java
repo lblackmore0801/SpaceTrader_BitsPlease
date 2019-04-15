@@ -17,6 +17,7 @@ import com.example.spacetrader_bitsplease.R;
 import com.example.spacetrader_bitsplease.entity.Difficulty;
 import com.example.spacetrader_bitsplease.entity.Player;
 
+@SuppressWarnings("ALL")
 public class CreatePlayerActivity extends AppCompatActivity{
 
     /** an integer used because add a course returns something */
