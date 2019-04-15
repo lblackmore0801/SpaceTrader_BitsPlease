@@ -9,6 +9,7 @@ import com.example.spacetrader_bitsplease.entity.ShipType;
 import com.example.spacetrader_bitsplease.entity.Ship;
 import com.example.spacetrader_bitsplease.entity.Size;
 import com.example.spacetrader_bitsplease.entity.TechLevel;
+import com.example.spacetrader_bitsplease.viewmodels.MarketPlaceViewModel;
 
 
 import org.junit.Before;
@@ -37,6 +38,8 @@ public class ExampleUnitTest {
     private Planet testPlanetZuul;
     private Planet testPlanetMultParam;
 
+    private Planet testPlanet;
+
     @Before
     public void setUpPlanets() {
         testPlanetNoParam = new Planet();
@@ -58,6 +61,14 @@ public class ExampleUnitTest {
     public void setUpPlayer() {
         testPlayer1 = new Player("Ryan");
         Player testPlayer2 = new Player("Ryan", Difficulty.BEGINNER, 5, 4, 3, 4, new Ship(), 1000);
+    }
+
+    @Before
+    public void setTestMarket(){
+        //Player testPlayer = new Player("Test");
+        //MarketPlaceViewModel testMarket = new MarketPlaceViewModel();
+        PlanetName testPlanetName = PlanetName.ANDEVIAN;
+        testPlanet = new Planet(testPlanetName);
     }
 
 
@@ -108,6 +119,35 @@ public class ExampleUnitTest {
         assertEquals(80, testPlanetSol.getYcoordinate());
         assertEquals(90, testPlanetZuul.getYcoordinate());
         assertEquals(110, testPlanetMultParam.getYcoordinate());
+    }
+
+    @Test
+    public void buyOneWater() {
+
+        MarketPlaceViewModel.buyOneWater(testPlanet);
+        // checks we add a resource
+        assertEquals(1, MarketPlaceViewModel.getWaterResourceinHold());
+        //checks we add 1 storage (therfore making it less)
+        assertEquals(14, MarketPlaceViewModel.remainingStorageCapacity);
+        //checks money is reduced
+        assertEquals(970, Player.getMoney());
+
+    }
+
+    @Test
+    public void planet_size_is_correct() {
+        assertEquals(Size.MEDIUM, testPlanetNoParam.getSize());
+        assertEquals(Size.MEDIUM, testPlanetAndevian.getSize());
+        assertEquals(Size.MEDIUM, testPlanetCastor.getSize());
+        assertEquals(Size.MEDIUM, testPlanetEsmee.getSize());
+        assertEquals(Size.LARGE, testPlanetFerris.getSize());
+        assertEquals(Size.SMALL, testPlanetHelena.getSize());
+        assertEquals(Size.MEDIUM, testPlanetMyrthe.getSize());
+        assertEquals(Size.LARGE, testPlanetOthello.getSize());
+        assertEquals(Size.SMALL, testPlanetRhymus.getSize());
+        assertEquals(Size.SMALL, testPlanetSol.getSize());
+        assertEquals(Size.LARGE, testPlanetZuul.getSize());
+        assertEquals(Size.MEDIUM, testPlanetMultParam.getSize());
     }
 
 }
