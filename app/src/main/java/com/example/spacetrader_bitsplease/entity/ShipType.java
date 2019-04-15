@@ -1,6 +1,6 @@
 package com.example.spacetrader_bitsplease.entity;
 
-@SuppressWarnings("SameParameterValue")
+@SuppressWarnings("ALL")
 public enum ShipType {
     GNAT("Gnat", 50, 30);
 //    FIREFLY("Firefly", 55, 40),

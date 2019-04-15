@@ -2,13 +2,11 @@ package com.example.spacetrader_bitsplease.model;
 import com.example.spacetrader_bitsplease.entity.Condition;
 import com.example.spacetrader_bitsplease.entity.Planet;
 import com.example.spacetrader_bitsplease.entity.PlanetName;
-import com.example.spacetrader_bitsplease.entity.Condition;
 import com.example.spacetrader_bitsplease.entity.Size;
 import com.example.spacetrader_bitsplease.entity.TechLevel;
 import com.example.spacetrader_bitsplease.entity.TradeGoods;
 
 import java.util.List;
-import java.util.Random;
 
 public class Repository {
 
