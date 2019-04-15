@@ -1,5 +1,6 @@
 package com.example.spacetrader_bitsplease.views;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -20,7 +21,6 @@ import com.example.spacetrader_bitsplease.entity.Planet;
 import com.example.spacetrader_bitsplease.entity.PlanetName;
 import com.example.spacetrader_bitsplease.entity.Player;
 import com.example.spacetrader_bitsplease.entity.Ship;
-import com.example.spacetrader_bitsplease.entity.ShipType;
 import com.example.spacetrader_bitsplease.model.Repository;
 import com.example.spacetrader_bitsplease.viewmodels.MarketPlaceViewModel;
 import com.example.spacetrader_bitsplease.viewmodels.UniverseViewModel;
@@ -30,7 +30,6 @@ public class PlanetSelectionActivity extends AppCompatActivity {
 
     public static final String SAVE = "SavedGameFile";
 
-    private Spinner planetSpinner;
     private TextView currentName;
     private TextView currentSize;
     private TextView nextSize;
@@ -89,9 +88,6 @@ public class PlanetSelectionActivity extends AppCompatActivity {
     private TextView narcoticQuantSell;
     private TextView robotsQuantSell;
 
-    private Planet planet;
-    private Repository repo = new Repository();
-
     //save next planet stats
     private Planet nextPlanet;
     private Planet currentPlanet;
@@ -102,6 +98,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
      * page.
      * @param  savedInstanceState price
      */
+    @SuppressLint({"CutPasteId", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -167,8 +164,8 @@ public class PlanetSelectionActivity extends AppCompatActivity {
 
         //set current planet stats
         currentPlanet = new Planet();
-        repo.assignPrices(currentPlanet);
-        repo.assignProductQuantity(currentPlanet);
+        Repository.assignPrices(currentPlanet);
+        Repository.assignProductQuantity(currentPlanet);
         currentName.setText(currentPlanet.getPlanetName().toString());
         currentSize.setText(currentPlanet.getSize().toString());
         currentResource.setText(currentPlanet.getCondition().toString());
@@ -224,7 +221,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         //create and populate spinner for target planets
         ArrayAdapter<PlanetName> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, PlanetName.values());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        planetSpinner = findViewById(R.id.planet_spinner);
+        Spinner planetSpinner = findViewById(R.id.planet_spinner);
         planetSpinner.setAdapter(adapter);
 
 
@@ -248,10 +245,6 @@ public class PlanetSelectionActivity extends AppCompatActivity {
 
         });
 
-
-        /**
-         * BUYING
-         */
 
         final int storageCapacity = 15;
 
@@ -661,10 +654,6 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         });
 
 
-/**
- * SELLING
- */
-
 //* final Button buySingleWater = findViewById(R.id.singleWaterBuy_button);
 //        final Button buyAllWater = findViewById(R.id.allWaterBuy_button);
 //
@@ -1073,9 +1062,9 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             }
         });
 
-        /**
-         * TRAVELLING
-         */
+
+         //TRAVELLING
+
         final Button travelButton = findViewById(R.id.Travel_button);
         travelButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1096,7 +1085,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                                             Player.setMoney(Player.getMoney() - 200);
                                             Toast.makeText(getApplicationContext(),
                                                     "Fee was taken",
-                                                    Toast.LENGTH_SHORT).show();;
+                                                    Toast.LENGTH_SHORT).show();
                                         } else {
                                             Context context = PlanetSelectionActivity.this;
                                             AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -1122,7 +1111,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                                         if (UniverseViewModel.checkForIllegals()) {
                                             Toast.makeText(getApplicationContext(),
                                                     "You had Illegals",
-                                                    Toast.LENGTH_SHORT).show();;
+                                                    Toast.LENGTH_SHORT).show();
                                             MarketPlaceViewModel.setNarcoticResourceinHold(0);
                                             MarketPlaceViewModel.setFirearmsResourceinHold(0);
                                             int percentTaken = (int) (Player.getMoney() * 0.2);
@@ -1135,8 +1124,8 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                         alert.show();
                     }
                     currentPlanet = nextPlanet;
-                    repo.assignPrices(currentPlanet);
-                    repo.assignProductQuantity(currentPlanet);
+                    Repository.assignPrices(currentPlanet);
+                    Repository.assignProductQuantity(currentPlanet);
                     currentName.setText(currentPlanet.getPlanetName().toString());
                     currentSize.setText(currentPlanet.getSize().toString());
                     currentResource.setText(currentPlanet.getCondition().toString());
@@ -1269,8 +1258,8 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                 editor.apply();
 
                 Toast.makeText(getApplicationContext(),
-                        "Game saved succesfully",
-                        Toast.LENGTH_SHORT).show();;
+                        "Game saved successfully",
+                        Toast.LENGTH_SHORT).show();
 
             }
 
@@ -1325,6 +1314,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
 
                 PlanetName current;
 
+                assert savedPlanetName != null;
                 switch (savedPlanetName) {
                     case "Andevian":
                         current = PlanetName.ANDEVIAN;
@@ -1401,8 +1391,8 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                 MarketPlaceViewModel.setMachineResourceinHold(savedMachine);
 
 
-                repo.assignPrices(savedPlanet);
-                repo.assignProductQuantity(savedPlanet);
+                Repository.assignPrices(savedPlanet);
+                Repository.assignProductQuantity(savedPlanet);
                 currentName.setText(savedPlanet.getPlanetName().toString());
                 currentSize.setText(savedPlanet.getSize().toString());
                 currentResource.setText(savedPlanet.getCondition().toString());
@@ -1457,7 +1447,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(),
                         "Game loaded succesfully",
-                        Toast.LENGTH_SHORT).show();;
+                        Toast.LENGTH_SHORT).show();
                 MarketPlaceViewModel.setRemainingStorageCapacity(15 - savedBays);
                 Player.setMoney(savedCredits);
 

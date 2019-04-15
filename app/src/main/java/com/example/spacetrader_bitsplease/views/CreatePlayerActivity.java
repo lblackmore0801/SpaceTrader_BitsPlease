@@ -1,5 +1,6 @@
 package com.example.spacetrader_bitsplease.views;
 
+import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -30,7 +31,6 @@ public class CreatePlayerActivity extends AppCompatActivity{
     private TextView engineeringSkill;
     private TextView traderSkill;
     private Spinner difficultySpinner;
-    private Button createButton;
     private TextView remainingSkill;
 
     /* ***********************
@@ -63,15 +63,16 @@ public class CreatePlayerActivity extends AppCompatActivity{
         player = new Player("Ryan Pratt");
         difficultySpinner = findViewById(R.id.difficulty_spinner);
         usernameText.setText(player.getUsername());
-        createButton= findViewById(R.id.create_char);
+        Button createButton = findViewById(R.id.create_char);
 
         final Button addFighter = findViewById(R.id.AddFighterSkill);
         addFighter.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint({"SetTextI18n", "DefaultLocale"})
             @Override
             public void onClick(View view) {
                 if (remainingPoints > 0) {
-                    player.setFighterSkill(player.getFighterSkill() + 1);
-                    fighterSkill.setText(Integer.toString(player.getFighterSkill()));
+                    player.setFighterSkill(Player.getFighterSkill() + 1);
+                    fighterSkill.setText(Integer.toString(Player.getFighterSkill()));
                     remainingPoints--;
                     remainingSkill.setText(String.format("%d", remainingPoints));
 
@@ -80,11 +81,12 @@ public class CreatePlayerActivity extends AppCompatActivity{
         });
         final Button addPilot = findViewById(R.id.AddPilotSkill);
         addPilot.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint({"SetTextI18n", "DefaultLocale"})
             @Override
             public void onClick(View view) {
                 if (remainingPoints > 0) {
-                    player.setPilotSkill(player.getPilotSkill() + 1);
-                    pilotSkill.setText(Integer.toString(player.getPilotSkill()));
+                    player.setPilotSkill(Player.getPilotSkill() + 1);
+                    pilotSkill.setText(Integer.toString(Player.getPilotSkill()));
                     remainingPoints--;
                     remainingSkill.setText(String.format("%d", remainingPoints));
                 }
@@ -92,11 +94,12 @@ public class CreatePlayerActivity extends AppCompatActivity{
         });
         final Button addEngineer = findViewById(R.id.AddEngineeringSkill);
         addEngineer.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint({"SetTextI18n", "DefaultLocale"})
             @Override
             public void onClick(View view) {
                 if (remainingPoints > 0) {
-                    player.setEngineerSkill(player.getEngineerSkill() + 1);
-                    engineeringSkill.setText(Integer.toString(player.getEngineerSkill()));
+                    player.setEngineerSkill(Player.getEngineerSkill() + 1);
+                    engineeringSkill.setText(Integer.toString(Player.getEngineerSkill()));
                     remainingPoints--;
                     remainingSkill.setText(String.format("%d", remainingPoints));
                 }
@@ -104,11 +107,12 @@ public class CreatePlayerActivity extends AppCompatActivity{
         });
         final Button addTrader = findViewById(R.id.AddTraderSkill);
         addTrader.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint({"SetTextI18n", "DefaultLocale"})
             @Override
             public void onClick(View view) {
                 if (remainingPoints > 0) {
-                    player.setTraderSkill(player.getTraderSkill() + 1);
-                    traderSkill.setText(Integer.toString(player.getTraderSkill()));
+                    player.setTraderSkill(Player.getTraderSkill() + 1);
+                    traderSkill.setText(Integer.toString(Player.getTraderSkill()));
                     remainingPoints--;
                     remainingSkill.setText(String.format("%d", remainingPoints));
                 }
@@ -116,11 +120,12 @@ public class CreatePlayerActivity extends AppCompatActivity{
         });
         final Button minusFighter = findViewById(R.id.MinusFighterSkill);
         minusFighter.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint({"SetTextI18n", "DefaultLocale"})
             @Override
             public void onClick(View view) {
-                if (player.getFighterSkill() != 0) {
-                    player.setFighterSkill(player.getFighterSkill() - 1);
-                    fighterSkill.setText(Integer.toString(player.getFighterSkill()));
+                if (Player.getFighterSkill() != 0) {
+                    player.setFighterSkill(Player.getFighterSkill() - 1);
+                    fighterSkill.setText(Integer.toString(Player.getFighterSkill()));
                     remainingPoints++;
                     remainingSkill.setText(String.format("%d", remainingPoints));
                 }
@@ -128,11 +133,12 @@ public class CreatePlayerActivity extends AppCompatActivity{
         });
         final Button minusPilot = findViewById(R.id.MinusPilotSkill);
         minusPilot.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint({"SetTextI18n", "DefaultLocale"})
             @Override
             public void onClick(View view) {
-                if (player.getPilotSkill() != 0) {
-                    player.setPilotSkill(player.getPilotSkill() - 1);
-                    pilotSkill.setText(Integer.toString(player.getPilotSkill()));
+                if (Player.getPilotSkill() != 0) {
+                    player.setPilotSkill(Player.getPilotSkill() - 1);
+                    pilotSkill.setText(Integer.toString(Player.getPilotSkill()));
                     remainingPoints++;
                     remainingSkill.setText(String.format("%d", remainingPoints));
                 }
@@ -140,11 +146,12 @@ public class CreatePlayerActivity extends AppCompatActivity{
         });
         final Button minusEngineer = findViewById(R.id.MinusEngineeringSkill);
         minusEngineer.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint({"SetTextI18n", "DefaultLocale"})
             @Override
             public void onClick(View view) {
-                if (player.getEngineerSkill() != 0) {
-                    player.setEngineerSkill(player.getEngineerSkill() - 1);
-                    engineeringSkill.setText(Integer.toString(player.getEngineerSkill()));
+                if (Player.getEngineerSkill() != 0) {
+                    player.setEngineerSkill(Player.getEngineerSkill() - 1);
+                    engineeringSkill.setText(Integer.toString(Player.getEngineerSkill()));
                     remainingPoints++;
                     remainingSkill.setText(String.format("%d", remainingPoints));
                 }
@@ -152,11 +159,12 @@ public class CreatePlayerActivity extends AppCompatActivity{
         });
         final Button minusTrader = findViewById(R.id.MinusTraderSkill);
         minusTrader.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint({"SetTextI18n", "DefaultLocale"})
             @Override
             public void onClick(View view) {
-                if (player.getTraderSkill() != 0) {
-                    player.setTraderSkill(player.getTraderSkill() - 1);
-                    traderSkill.setText(Integer.toString(player.getTraderSkill()));
+                if (Player.getTraderSkill() != 0) {
+                    player.setTraderSkill(Player.getTraderSkill() - 1);
+                    traderSkill.setText(Integer.toString(Player.getTraderSkill()));
                     remainingPoints++;
                     remainingSkill.setText(String.format("%d", remainingPoints));
                 }
@@ -182,10 +190,10 @@ public class CreatePlayerActivity extends AppCompatActivity{
                     AlertDialog alert = builder.create();
                     alert.show();
                 } else {
-                  player.setTraderSkill(player.getTraderSkill());
-                  player.setEngineerSkill(player.getEngineerSkill());
-                  player.setFighterSkill(player.getFighterSkill());
-                  player.setPilotSkill(player.getPilotSkill());
+                  player.setTraderSkill(Player.getTraderSkill());
+                  player.setEngineerSkill(Player.getEngineerSkill());
+                  player.setFighterSkill(Player.getFighterSkill());
+                  player.setPilotSkill(Player.getPilotSkill());
                   player.setDifficulty((Difficulty) difficultySpinner.getSelectedItem());
                   usernameText = findViewById(R.id.username_Text);
                   player.setUsername(usernameText.getText().toString());
