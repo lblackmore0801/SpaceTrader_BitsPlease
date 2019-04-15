@@ -2,16 +2,15 @@ package com.example.spacetrader_bitsplease.entity;
 
 public class Ship {
 
-    ShipType type;
-    int storageCapacity;
-    int fuelCapacity;
+    private ShipType type;
+    private int fuelCapacity;
 
     /**
      * no params constructor for a Ship that assigns type, storage, and fuel
      */
     public Ship() {
         type = ShipType.GNAT;
-        storageCapacity = type.getStorageCapacity();
+        //int storageCapacity = type.getStorageCapacity();
         fuelCapacity = type.getFuelCapacity();
     }
 

@@ -1,12 +1,12 @@
 package com.example.spacetrader_bitsplease.entity;
 
 public enum Condition {
-    NOSPECIALRESOURCES("No Special Resources"),
-    MINERALRICH("Mineral Rich"),
+    //NOSPECIALRESOURCES("No Special Resources"),
+    //MINERALRICH("Mineral Rich"),
     MINERALPOOR("Mineral Poor"),
     DESERT("Desert"),
     LOTSOFWATER("Lots of Water"),
-    RICHSOIL("Rich Soil"),
+    //RICHSOIL("Rich Soil"),
     POORSOIL("Poor Soil"),
     RICHFAUNA("Rich Fauna"),
     LIFELESS("Lifeless"),

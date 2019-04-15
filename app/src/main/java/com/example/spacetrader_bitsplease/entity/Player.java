@@ -1,5 +1,7 @@
 package com.example.spacetrader_bitsplease.entity;
 
+import android.annotation.SuppressLint;
+
 public class Player {
     private String username;
     private static Difficulty difficulty;
@@ -81,7 +83,7 @@ public class Player {
      * @param pilotSkill int representation of the pilot skill level
      */
     public void setPilotSkill(int pilotSkill) {
-        this.pilotSkill = pilotSkill;
+        Player.pilotSkill = pilotSkill;
     }
 
     /**
@@ -105,7 +107,7 @@ public class Player {
      * @param engineerSkill int representation of the engineering skill
      */
     public void setEngineerSkill(int engineerSkill) {
-        this.engineerSkill = engineerSkill;
+        Player.engineerSkill = engineerSkill;
     }
 
     /**
@@ -113,7 +115,7 @@ public class Player {
      * @param traderSkill int representation of the trader skill
      */
     public void setTraderSkill(int traderSkill) {
-        this.traderSkill = traderSkill;
+        Player.traderSkill = traderSkill;
     }
 
     /**
@@ -129,7 +131,7 @@ public class Player {
      * @param fighterSkill int representation of the trader skill
      */
     public void setFighterSkill(int fighterSkill) {
-        this.fighterSkill = fighterSkill;
+        Player.fighterSkill = fighterSkill;
     }
 
     /**
@@ -168,6 +170,8 @@ public class Player {
      * toString method to display player info in string format
      * @return String representation of the player
      */
+
+    @SuppressLint("DefaultLocale")
     public String toString() {
         return String.format("Username: %s \nDifficulty: %s \nFighter Skill: %s \nPilot Skill: %s \nEngineering Skill: %s \nTrader Skill: %s \nShip: %s \nMoney: %d",
                 username, difficulty.toString(), fighterSkill, pilotSkill, engineerSkill, traderSkill, ship.toString(), money);
