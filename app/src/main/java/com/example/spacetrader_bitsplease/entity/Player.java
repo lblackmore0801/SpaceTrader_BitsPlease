@@ -2,7 +2,7 @@ package com.example.spacetrader_bitsplease.entity;
 
 public class Player {
     private String username;
-    private Difficulty difficulty;
+    private static Difficulty difficulty;
     private static int pilotSkill;
     private static int engineerSkill;
     private static int fighterSkill;
@@ -24,24 +24,24 @@ public class Player {
      * Constructor required for making the new object
      *
      * @param name          name of the student
-     * @param difficulty    Difficulty level
-     * @param pilotSkill    pilot skill level
-     * @param fighterSkill  fighter skill level
-     * @param engineerSkill engineering skill level
-     * @param traderSkill   trader skill level
-     * @param ship          type of ship
-     * @param money         starting money
+     * @param tempDifficulty    Difficulty level
+     * @param tempPilotSkill    pilot skill level
+     * @param tempFighterSkill  fighter skill level
+     * @param tempEngineerSkill engineering skill level
+     * @param tempTraderSkill   trader skill level
+     * @param tempShip          type of ship
+     * @param tempMoney         starting money
      */
-    private Player(String name, Difficulty difficulty, int pilotSkill, int engineerSkill,
-                  int fighterSkill, int traderSkill, Ship ship, int money) {
+    public Player(String name, Difficulty tempDifficulty, int tempPilotSkill, int tempEngineerSkill,
+                  int tempFighterSkill, int tempTraderSkill, Ship tempShip, int tempMoney) {
         this.username = name;
-        this.difficulty = difficulty;
-        this.pilotSkill = pilotSkill;
-        this.fighterSkill = fighterSkill;
-        this.engineerSkill = engineerSkill;
-        this.traderSkill = traderSkill;
-        this.ship = ship;
-        this.money = money;
+        difficulty = tempDifficulty;
+        pilotSkill = tempPilotSkill;
+        fighterSkill = tempFighterSkill;
+        engineerSkill = tempEngineerSkill;
+        traderSkill = tempTraderSkill;
+        ship = tempShip;
+        money = tempMoney;
     }
 
     /**
@@ -58,6 +58,14 @@ public class Player {
      */
     public String getUsername() {
         return username;
+    }
+
+    /**
+     * getter for the game difficulty
+     * @return difficulty Difficulty enum for the game difficulty
+     */
+    public Difficulty getDifficulty() {
+        return difficulty;
     }
 
     /**

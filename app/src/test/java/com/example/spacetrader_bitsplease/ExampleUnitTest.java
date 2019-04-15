@@ -1,9 +1,17 @@
 package com.example.spacetrader_bitsplease;
 
-import android.content.Entity;
-
+import com.example.spacetrader_bitsplease.entity.Condition;
+import com.example.spacetrader_bitsplease.entity.Difficulty;
+import com.example.spacetrader_bitsplease.entity.Planet;
+import com.example.spacetrader_bitsplease.entity.PlanetName;
 import com.example.spacetrader_bitsplease.entity.Player;
+import com.example.spacetrader_bitsplease.entity.ShipType;
+import com.example.spacetrader_bitsplease.entity.Ship;
+import com.example.spacetrader_bitsplease.entity.Size;
+import com.example.spacetrader_bitsplease.entity.TechLevel;
 
+
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -14,17 +22,92 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
-    @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+    private Player testPlayer1;
+    private Player testPlayer2;
+
+    private Planet testPlanetNoParam;
+    private Planet testPlanetAndevian;
+    private Planet testPlanetCastor;
+    private Planet testPlanetEsmee;
+    private Planet testPlanetFerris;
+    private Planet testPlanetHelena;
+    private Planet testPlanetMyrthe;
+    private Planet testPlanetOthello;
+    private Planet testPlanetRhymus;
+    private Planet testPlanetSol;
+    private Planet testPlanetZuul;
+    private Planet testPlanetMultParam;
+
+    @Before
+    public void setUpPlanets() {
+        testPlanetNoParam = new Planet();
+        testPlanetAndevian = new Planet(PlanetName.ANDEVIAN);
+        testPlanetCastor = new Planet(PlanetName.CASTOR);
+        testPlanetEsmee = new Planet(PlanetName.ESMEE);
+        testPlanetFerris = new Planet(PlanetName.FERRIS);
+        testPlanetHelena = new Planet(PlanetName.HELENA);
+        testPlanetMyrthe = new Planet(PlanetName.MYRTHE);
+        testPlanetOthello = new Planet(PlanetName.OTHELLO);
+        testPlanetRhymus = new Planet(PlanetName.RHYMUS);
+        testPlanetSol = new Planet(PlanetName.SOL);
+        testPlanetZuul = new Planet(PlanetName.ZUUL);
+        testPlanetMultParam = new Planet(PlanetName.ANDEVIAN, 130, 110, Size.MEDIUM, Condition.LOTSOFWATER, TechLevel.AGRICULTURE);
     }
+
+    @Before
+    public void setUpPlayer() {
+        testPlayer1 = new Player("Ryan");
+        testPlayer2 = new Player("Ryan", Difficulty.BEGINNER, 5, 4, 3, 4, new Ship(), 1000);
+    }
+
 
     @Test
     public void player_creation_isCorrect() {
-        int sum = Player.getFighterSkill()
-                + Player.getTraderSkill()
-                + Player.getEngineerSkill()
-                + Player.getPilotSkill();
-        //assertEquals(16, sum);
+        assertEquals(16, testPlayer1.getFighterSkill()
+                    + testPlayer1.getEngineerSkill()
+                    + testPlayer1.getTraderSkill()
+                    + testPlayer1.getPilotSkill());
+        assertEquals(Difficulty.BEGINNER, testPlayer1.getDifficulty());
+        assertEquals(1000, testPlayer1.getMoney());
+
+        assertEquals(5, testPlayer2.getPilotSkill());
+        assertEquals(4, testPlayer2.getEngineerSkill());
+        assertEquals(3, testPlayer2.getFighterSkill());
+        assertEquals(4, testPlayer2.getTraderSkill());
+        assertEquals(ShipType.GNAT, testPlayer2.getShip().getType());
+        assertEquals(1000, testPlayer2.getMoney());
     }
+
+    @Test
+    public void x_coordinate_is_correct() {
+        assertEquals(100, testPlanetNoParam.getXcoordinate());
+        assertEquals(100, testPlanetAndevian.getXcoordinate());
+        assertEquals(90, testPlanetCastor.getXcoordinate());
+        assertEquals(80, testPlanetEsmee.getXcoordinate());
+        assertEquals(70, testPlanetFerris.getXcoordinate());
+        assertEquals(60, testPlanetHelena.getXcoordinate());
+        assertEquals(50, testPlanetMyrthe.getXcoordinate());
+        assertEquals(110, testPlanetOthello.getXcoordinate());
+        assertEquals(120, testPlanetRhymus.getXcoordinate());
+        assertEquals(130, testPlanetSol.getXcoordinate());
+        assertEquals(140, testPlanetZuul.getXcoordinate());
+        assertEquals(130, testPlanetMultParam.getXcoordinate());
+    }
+
+    @Test
+    public void y_coordinate_is_correct() {
+        assertEquals(100, testPlanetNoParam.getYcoordinate());
+        assertEquals(100, testPlanetAndevian.getYcoordinate());
+        assertEquals(110, testPlanetCastor.getYcoordinate());
+        assertEquals(120, testPlanetEsmee.getYcoordinate());
+        assertEquals(130, testPlanetFerris.getYcoordinate());
+        assertEquals(140, testPlanetHelena.getYcoordinate());
+        assertEquals(50, testPlanetMyrthe.getYcoordinate());
+        assertEquals(60, testPlanetOthello.getYcoordinate());
+        assertEquals(70, testPlanetRhymus.getYcoordinate());
+        assertEquals(80, testPlanetSol.getYcoordinate());
+        assertEquals(90, testPlanetZuul.getYcoordinate());
+        assertEquals(110, testPlanetMultParam.getYcoordinate());
+    }
+
 }
