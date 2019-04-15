@@ -12,10 +12,18 @@ public enum TechLevel {
 
     private final String techlevel;
 
+    /**
+     * constructor for the Tech Level enum
+     * @param techlevel String of techLevel
+     */
     TechLevel(String techlevel) {
         this.techlevel = techlevel;
     }
 
+    /**
+     * toString method that return string representation of techLevel
+     * @return String representation of techLevel
+     */
     public String toString() {
         return techlevel;
     }

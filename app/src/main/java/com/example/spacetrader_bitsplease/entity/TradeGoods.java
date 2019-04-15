@@ -33,45 +33,70 @@ public enum TradeGoods {
         }
     }
 
-    TradeGoods(String tradeGood, int mtlp, int mtlu, int ttp, int basePrice, int ipl, int var) {
+    /**
+     * constructor for the shipType enum
+     * @param tradeGood type of tradeGood
+     * @param mTLP mimimum tech level to produce
+     * @param mTLU minimum tech level to use
+     * @param ttp tech level which produces this item
+     * @param basePrice int value of a base price of a resource
+     * @param ipl price increase per tech level
+     * @param var max variance above or below base price
+     */
+    TradeGoods(String tradeGood, int mTLP, int mTLU, int ttp, int basePrice, int ipl, int var) {
         this.tradeGood = tradeGood;
-        this.mtlp = mtlp;
-        this.mtlu = mtlu;
+        this.mtlp = mTLP;
+        this.mtlu = mTLU;
         this.ttp = ttp;
         this.basePrice = basePrice;
         this.ipl = ipl;
         this.var = var;
     }
 
+    /**
+     * getter for the minimum tech level to produce
+     * @return int of the minimum tech level to produce
+     */
     public int getMtlp() {
         return mtlp;
     }
 
-    public int getMtlu() {
-        return mtlu;
-    }
-
+    /**
+     * getter for the price increase per tech level
+     * @return int of the minimum tech level to produce
+     */
     public int getIpl() {
         return ipl;
     }
 
-    public int getVar() {
-        return var;
-    }
-
+    /**
+     * getter for the tech level which produces this item
+     * @return int of the tech level which produces this item
+     */
     public int getTtp() {
         return ttp;
     }
 
+    /**
+     * getter for the base price
+     * @return int of the base price of a resource
+     */
     public int getBasePrice() {
         return basePrice;
     }
 
-
+    /**
+     * toString method for a tradeGood
+     * @return String representation of the tradegood
+     */
     public String toString() {
         return tradeGood;
     }
 
+    /**
+     * getter for all of the goods
+     * @return List of TradeGoods that is static
+     */
     public static List<TradeGoods> getGoods() {
         return goods;
     }

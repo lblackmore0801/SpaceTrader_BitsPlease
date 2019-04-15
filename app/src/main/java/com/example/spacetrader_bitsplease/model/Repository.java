@@ -15,6 +15,11 @@ public class Repository {
     public Repository() {
     }
 
+    /**
+     * Method to assign xCoordinate to a planet
+     * @param planet The PlanetName of the planet to be assigned an x value
+     * @return int of x Coordinate
+     */
     public static int xCoordinate(PlanetName planet) {
         if (planet == PlanetName.ANDEVIAN) {
             return 100;
@@ -49,6 +54,11 @@ public class Repository {
         return 100;
     }
 
+    /**
+     * Method to assign yCoordinate to a planet
+     * @param planet The PlanetName of the planet to be assigned an y value
+     * @return int of y Coordinate
+     */
     public static int yCoordinate(PlanetName planet) {
         if (planet == PlanetName.ANDEVIAN) {
             return 100;
@@ -83,6 +93,11 @@ public class Repository {
         return 100;
     }
 
+    /**
+     * Method to assign size to a planet
+     * @param planet The PlanetName of the planet to be assigned a size
+     * @return Size of planet
+     */
     public static Size size(PlanetName planet) {
         if (planet == PlanetName.ANDEVIAN) {
             return Size.MEDIUM;
@@ -117,6 +132,11 @@ public class Repository {
         return Size.MEDIUM;
     }
 
+    /**
+     * Method to assign condition to a planet
+     * @param planet The PlanetName of the planet to be assigned a condition
+     * @return Condition of planet
+     */
     public static Condition condition(PlanetName planet) {
         if (planet == PlanetName.ANDEVIAN) {
             return Condition.ARTISTIC;
@@ -151,6 +171,11 @@ public class Repository {
         return Condition.ARTISTIC;
     }
 
+    /**
+     * Method to assign techLevel to a planet
+     * @param planet The PlanetName of the planet to be assigned a tech level
+     * @return TechLevel of the planet
+     */
     public static TechLevel techLevel(PlanetName planet) {
         if (planet == PlanetName.ANDEVIAN) {
             return TechLevel.AGRICULTURE;
@@ -185,6 +210,10 @@ public class Repository {
         return TechLevel.AGRICULTURE;
     }
 
+    /**
+     * Method to assign productQuantity to a planet
+     * @param planet The PlanetName of the planet to be assigned a product Quantity
+     */
     public static void assignProductQuantity(Planet planet) {
         List<TradeGoods> goods = TradeGoods.getGoods();
 
@@ -232,6 +261,10 @@ public class Repository {
         }
     }
 
+    /**
+     * Method to assign prices to a planet
+     * @param planet The PlanetName of the planet to be assigned a product prices
+     */
     public static void assignPrices(Planet planet) {
         List<TradeGoods> goods = TradeGoods.getGoods();
 

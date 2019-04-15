@@ -3,10 +3,10 @@ package com.example.spacetrader_bitsplease.entity;
 public class Player {
     private String username;
     private Difficulty difficulty;
-    private int pilotSkill;
-    private int engineerSkill;
-    private int fighterSkill;
-    private int traderSkill;
+    private static int pilotSkill;
+    private static int engineerSkill;
+    private static int fighterSkill;
+    private static int traderSkill;
     private static Ship ship;
     private static int money;
 
@@ -80,7 +80,7 @@ public class Player {
      * getter for the pilot skill
      * @return int representation of the pilot skill
      */
-    public int getPilotSkill() {
+    public static int getPilotSkill() {
         return pilotSkill;
     }
 
@@ -88,7 +88,7 @@ public class Player {
      * getter for the engineering skill
      * @return int representation of the engineering skill
      */
-    public int getEngineerSkill() {
+    public static int getEngineerSkill() {
         return engineerSkill;
     }
 
@@ -112,7 +112,7 @@ public class Player {
      * getter for the trader skill
      * @return int representation of the trader skill
      */
-    public int getTraderSkill() {
+    public static int getTraderSkill() {
         return traderSkill;
     }
 
@@ -128,7 +128,7 @@ public class Player {
      * getter for the fighter skill
      * @return int representation of the fighter skill
      */
-    public int getFighterSkill() {
+    public static int getFighterSkill() {
         return fighterSkill;
     }
 
@@ -156,6 +156,10 @@ public class Player {
         return ship;
     }
 
+    /**
+     * toString method to display player info in string format
+     * @return String representation of the player
+     */
     public String toString() {
         return String.format("Username: %s \nDifficulty: %s \nFighter Skill: %s \nPilot Skill: %s \nEngineering Skill: %s \nTrader Skill: %s \nShip: %s \nMoney: %d",
                 username, difficulty.toString(), fighterSkill, pilotSkill, engineerSkill, traderSkill, ship.toString(), money);
