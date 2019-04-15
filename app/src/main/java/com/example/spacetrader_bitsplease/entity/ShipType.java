@@ -15,22 +15,36 @@ public enum ShipType {
     private int storageCapacity;
     private int fuelCapacity;
 
-    ShipType(String ptype, int storageCapacity, int fuelCapacity) {
-        this.type = ptype;
+    /**
+     * constructor for the shipType enum
+     * @param shipType type of ship
+     * @param storageCapacity storage capacity of the ship type
+     * @param fuelCapacity fuel capacity of the ship type
+     */
+    ShipType(String shipType, int storageCapacity, int fuelCapacity) {
+        this.type = shipType;
         this.storageCapacity = storageCapacity;
         this.fuelCapacity = fuelCapacity;
     }
 
-    public String getType() {
-        return type;
-    }
-
+    /**
+     * getter for Storage Capacity of the ship type
+     * @return int value associated with the storage capacity of the ship type
+     */
     public int getStorageCapacity() {
         return storageCapacity;
     }
 
+    /**
+     * getter for Fuel Capacity of the ship type
+     * @return int value associated with the fuel capacity of the ship type
+     */
     public int getFuelCapacity() { return  fuelCapacity; }
 
+    /**
+     * toString method to return a string representation of the ship type
+     * @return String representation of the ship type
+     */
     public String toString() {
         return type;
     }

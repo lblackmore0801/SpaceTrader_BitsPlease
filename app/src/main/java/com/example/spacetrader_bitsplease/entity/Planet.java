@@ -375,66 +375,250 @@ public class Planet {
      */
     public int getRobotSell() { return robotSell; }
 
+    /**
+     * setter for the quantity of water on a planet
+     * @param water int representation of the quantity of water on a planet
+     */
     public void setWaterQuant(int water) { this.waterQuant = water; }
+
+    /**
+     * getter for the quantity of water on a planet
+     * @return int representation of the quantity of water on a planet
+     */
     public int getWaterQuant() { return waterQuant; }
 
+    /**
+     * setter for the quantity of food on a planet
+     * @param food int representation of the quantity of food on a planet
+     */
     public void setFoodQuant(int food) { this.foodQuant = food; }
+
+    /**
+     * getter for the quantity of food on a planet
+     * @return int representation of the quantity of food on a planet
+     */
     public int getFoodQuant() { return foodQuant; }
 
+    /**
+     * setter for the quantity of fur on a planet
+     * @param fur int representation of the quantity of fur on a planet
+     */
     public void setFurQuant(int fur) { this.furQuant = fur; }
+
+    /**
+     * getter for the quantity of Fur on a planet
+     * @return int representation of the quantity of fur on a planet
+     */
     public int getFurQuant() { return furQuant; }
 
+    /**
+     * setter for the quantity of ore on a planet
+     * @param ore  int representation of the quantity of ore on a planet
+     */
     public void setOreQuant(int ore) { this.oreQuant = ore; }
+
+    /**
+     * getter for the quantity of ore on a planet
+     * @return int representation of the quantity of ore on a planet
+     */
     public int getOreQuant() { return oreQuant; }
 
+    /**
+     * setter for the quantity of game on a planet
+     * @param game int representation of the quantity of game on a planet
+     */
     public void setGameQuant(int game) { this.gameQuant = game; }
+
+    /**
+     * getter for the quantity of game on a planet
+     * @return int representation of the quantity of game on a planet
+     */
     public int getGameQuant() { return gameQuant; }
 
+    /**
+     * setter for the quantity of firearm on a planet
+     * @param firearm  int representation of the quantity of firearm on a planet
+     */
     public void setFirearmQuant(int firearm) { this.firearmQuant = firearm; }
+
+    /**
+     * getter for the quantity of firearm on a planet
+     * @return int representation of the quantity of firearm on a planet
+     */
     public int getFirearmQuant() { return firearmQuant; }
 
+    /**
+     * setter for the quantity of medicine on a planet
+     * @param medicine  int representation of the quantity of medicine on a planet
+     */
     public void setMedicineQuant(int medicine) { this.medicineQuant = medicine; }
+
+    /**
+     * getter for the quantity of medicine on a planet
+     * @return int representation of the quantity of medicine on a planet
+     */
     public int getMedicineQuant() { return medicineQuant; }
 
+    /**
+     * getter for the quantity of machine on a planet
+     * @param machine int representation of the quantity of machine on a planet
+     */
     public void setMachineQuant(int machine) { this.machineQuant = machine; }
+
+    /**
+     * getter for the quantity of machine on a planet
+     * @return int representation of the quantity of machine on a planet
+     */
     public int getMachineQuant() { return machineQuant; }
 
+    /**
+     * setter for the quantity of narcotic on a planet
+     * @param narcotic  int representation of the quantity of narcotic on a planet
+     */
     public void setNarcoticQuant(int narcotic) { this.narcoticQuant = narcotic; }
+
+    /**
+     * getter for the quantity of narcotic on a planet
+     * @return int representation of the quantity of narcotic on a planet
+     */
     public int getNarcoticQuant() { return narcoticQuant; }
 
+    /**
+     * setter for the quantity of robot on a planet
+     * @param robot  int representation of the quantity of robot on a planet
+     */
     public void setRobotQuant(int robot) { this.robotQuant = robot; }
+
+    /**
+     * getter for the quantity of robot on a planet
+     * @return int representation of the quantity of robot on a planet
+     */
     public int getRobotQuant() { return robotQuant; }
 
+    /**
+     * setter for the quantity of water able to sell
+     * @param water  int representation of the quantity of water able to sell
+     */
     public void setWaterQuantSell(int water) { this.waterQuantSell = water; }
+
+    /**
+     * getter for the quantity of water able to sell
+     * @return int representation of the quantity of water able to sell
+     */
     public int getWaterQuantSell() { return waterQuantSell; }
 
+    /**
+     * setter for the quantity of food able to sell
+     * @param food int representation of the quantity of food able to sell
+     */
     public void setFoodQuantSell(int food) { this.foodQuantSell = food; }
+
+    /**
+     * getter for the quantity of food able to sell
+     * @return int representation of the quantity of food able to sell
+     */
     public int getFoodQuantSell() { return foodQuantSell; }
 
+    /**
+     * setter for the quantity of fur able to sell
+     * @param fur int representation of the quantity of fur able to sell
+     */
     public void setFurQuantSell(int fur) { this.furQuantSell = fur; }
+
+    /**
+     * getter for the quantity of fur able to sell
+     * @return int representation of the quantity of fur able to sell
+     */
     public int getFurQuantSell() { return furQuantSell; }
 
+    /**
+     * setter for the quantity of ore able to sell
+     * @param ore  int representation of the quantity of ore able to sell
+     */
     public void setOreQuantSell(int ore) { this.oreQuantSell = ore; }
+
+    /**
+     * getter for the quantity of ore able to sell
+     * @return int representation of the quantity of ore able to sell
+     */
     public int getOreQuantSell() { return oreQuantSell; }
 
+    /**
+     * setter for the quantity of game able to sell
+     * @param game int representation of the quantity of game able to sell
+     */
     public void setGameQuantSell(int game) { this.gameQuantSell = game; }
+
+    /**
+     * getter for the quantity of game able to sell
+     * @return int representation of the quantity of game able to sell
+     */
     public int getGameQuantSell() { return gameQuantSell; }
 
+    /**
+     * setter for the quantity of firearm able to sell
+     * @param firearm  int representation of the quantity of firearm able to sell
+     */
     public void setFirearmQuantSell(int firearm) { this.firearmQuantSell = firearm; }
+
+    /**
+     * getter for the quantity of firearm able to sell
+     * @return int representation of the quantity of firearm able to sell
+     */
     public int getFirearmQuantSell() { return firearmQuantSell; }
 
+    /**
+     * setter for the quantity of medicine able to sell
+     * @param medicine int representation of the quantity of medicine able to sell
+     */
     public void setMedicineQuantSell(int medicine) { this.medicineQuantSell = medicine; }
+
+    /**
+     * getter for the quantity of medicine able to sell
+     * @return int representation of the quantity of medicine able to sell
+     */
     public int getMedicineQuantSell() { return medicineQuantSell; }
 
+    /**
+     * setter for the quantity of machine able to sell
+     * @param machine int representation of the quantity of machine able to sell
+     */
     public void setMachineQuantSell(int machine) { this.machineQuantSell = machine; }
+
+    /**
+     * getter for the quantity of machine able to sell
+     * @return int representation of the quantity of machine able to sell
+     */
     public int getMachineQuantSell() { return machineQuantSell; }
 
+    /**
+     * setter for the quantity of narcotic able to sell
+     * @param narcotic int representation of the quantity of narcotic able to sell
+     */
     public void setNarcoticQuantSell(int narcotic) { this.narcoticQuantSell = narcotic; }
+
+    /**
+     * getter for the quantity of narcotic able to sell
+     * @return int representation of the quantity of narcotic able to sell
+     */
     public int getNarcoticQuantSell() { return narcoticQuantSell; }
 
+    /**
+     * setter for the quantity of robot able to sell
+     * @param robot int representation of the quantity of robot able to sell
+     */
     public void setRobotQuantSell(int robot) { this.robotQuantSell = robot; }
+
+    /**
+     * getter for the quantity of robot able to sell
+     * @return int representation of the quantity of robot able to sell
+     */
     public int getRobotQuantSell() { return robotQuantSell; }
 
+    /**
+     * toString method to display planet info in string format
+     * @return String representation of the planet
+     */
     public String toString() {
         return String.format("Coordinates: (%d,%d)\nPlanet: %s\n,Conditions: %s,Tech Level: %s",
                 xcoordinate, ycoordinate, planetName.toString(), condition.toString(), techLevel.toString());
