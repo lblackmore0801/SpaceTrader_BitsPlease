@@ -315,7 +315,8 @@
         app:layout_constraintBottom_toTopOf="@+id/difficulty_header"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_username" />
+        app:layout_constraintTop_toBottomOf="@+id/text_username"
+        android:autofillHints="" />
 
 
 </android.support.constraint.ConstraintLayout>

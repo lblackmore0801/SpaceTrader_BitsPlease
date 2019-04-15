@@ -75,7 +75,7 @@ public class Player {
      * @param difficulty Difficulty enum for the game difficulty
      */
     public void setDifficulty(Difficulty difficulty) {
-        this.difficulty = difficulty;
+        Player.difficulty = difficulty;
     }
 
     /**
