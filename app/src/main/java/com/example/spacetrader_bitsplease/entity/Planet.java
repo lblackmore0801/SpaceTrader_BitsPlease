@@ -84,7 +84,7 @@ public class Planet {
      * @param condition the condition criteria of the planet
      * @param techLevel the tech level of the planet
      */
-    private Planet(PlanetName name, int xCoordinate, int yCoordinate, Size size, Condition condition, TechLevel techLevel) {
+    public Planet(PlanetName name, int xCoordinate, int yCoordinate, Size size, Condition condition, TechLevel techLevel) {
         this.planetName = name;
         this.xcoordinate = xCoordinate;
         this.ycoordinate = yCoordinate;

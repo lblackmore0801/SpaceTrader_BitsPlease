@@ -8,7 +8,7 @@ public class Ship {
     /**
      * no params constructor for a Ship that assigns type, storage, and fuel
      */
-    Ship() {
+    public Ship() {
         type = ShipType.GNAT;
         //int storageCapacity = type.getStorageCapacity();
         fuelCapacity = type.getFuelCapacity();
