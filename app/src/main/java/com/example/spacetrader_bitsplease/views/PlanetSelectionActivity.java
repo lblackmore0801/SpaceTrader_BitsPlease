@@ -97,6 +97,11 @@ public class PlanetSelectionActivity extends AppCompatActivity {
     private Planet currentPlanet;
 
 
+    /**
+     * Creates and handles all of the buttons on the game
+     * page.
+     * @param  savedInstanceState price
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

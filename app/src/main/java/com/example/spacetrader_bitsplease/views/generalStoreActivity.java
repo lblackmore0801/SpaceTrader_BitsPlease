@@ -9,6 +9,11 @@ import android.view.View;
 import com.example.spacetrader_bitsplease.R;
 
 public class generalStoreActivity extends AppCompatActivity {
+
+    /**
+     * Maintains instance state in store
+     * @param  savedInstanceState price
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
