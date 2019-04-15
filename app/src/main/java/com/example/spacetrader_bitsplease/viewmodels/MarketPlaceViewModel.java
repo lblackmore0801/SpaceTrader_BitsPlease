@@ -33,12 +33,10 @@ public class MarketPlaceViewModel {
 
     /**
      * Constructor for MarketPlaceViewModel
-     * @param  money  not used tbh
      * @param  remainingStorageCapacity1 storage remaining
      */
-    public MarketPlaceViewModel(int money, int remainingStorageCapacity1) {
+    public MarketPlaceViewModel(int remainingStorageCapacity1) {
         remainingStorageCapacity = remainingStorageCapacity1;
-        //money = money;
     }
 
 
