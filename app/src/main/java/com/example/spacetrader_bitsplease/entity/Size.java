@@ -2,7 +2,7 @@ package com.example.spacetrader_bitsplease.entity;
 
 public enum Size {
     SMALL("Small"),
-    MEDIUM ("Mediium"),
+    MEDIUM ("Medium"),
     LARGE("Large");
 
     private final String size;
