@@ -1,5 +1,7 @@
 package com.example.spacetrader_bitsplease.entity;
 
+import android.annotation.SuppressLint;
+
 public class Player {
     private String username;
     private Difficulty difficulty;
@@ -36,12 +38,12 @@ public class Player {
                   int fighterSkill, int traderSkill, Ship ship, int money) {
         this.username = name;
         this.difficulty = difficulty;
-        this.pilotSkill = pilotSkill;
-        this.fighterSkill = fighterSkill;
-        this.engineerSkill = engineerSkill;
-        this.traderSkill = traderSkill;
-        this.ship = ship;
-        this.money = money;
+        Player.pilotSkill = pilotSkill;
+        Player.fighterSkill = fighterSkill;
+        Player.engineerSkill = engineerSkill;
+        Player.traderSkill = traderSkill;
+        Player.ship = ship;
+        Player.money = money;
     }
 
     /**
@@ -73,7 +75,7 @@ public class Player {
      * @param pilotSkill int representation of the pilot skill level
      */
     public void setPilotSkill(int pilotSkill) {
-        this.pilotSkill = pilotSkill;
+        Player.pilotSkill = pilotSkill;
     }
 
     /**
@@ -97,7 +99,7 @@ public class Player {
      * @param engineerSkill int representation of the engineering skill
      */
     public void setEngineerSkill(int engineerSkill) {
-        this.engineerSkill = engineerSkill;
+        Player.engineerSkill = engineerSkill;
     }
 
     /**
@@ -105,7 +107,7 @@ public class Player {
      * @param traderSkill int representation of the trader skill
      */
     public void setTraderSkill(int traderSkill) {
-        this.traderSkill = traderSkill;
+        Player.traderSkill = traderSkill;
     }
 
     /**
@@ -121,7 +123,7 @@ public class Player {
      * @param fighterSkill int representation of the trader skill
      */
     public void setFighterSkill(int fighterSkill) {
-        this.fighterSkill = fighterSkill;
+        Player.fighterSkill = fighterSkill;
     }
 
     /**
@@ -160,6 +162,8 @@ public class Player {
      * toString method to display player info in string format
      * @return String representation of the player
      */
+
+    @SuppressLint("DefaultLocale")
     public String toString() {
         return String.format("Username: %s \nDifficulty: %s \nFighter Skill: %s \nPilot Skill: %s \nEngineering Skill: %s \nTrader Skill: %s \nShip: %s \nMoney: %d",
                 username, difficulty.toString(), fighterSkill, pilotSkill, engineerSkill, traderSkill, ship.toString(), money);
