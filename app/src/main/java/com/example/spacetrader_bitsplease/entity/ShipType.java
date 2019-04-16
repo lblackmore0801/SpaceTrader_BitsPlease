@@ -2,11 +2,11 @@ package com.example.spacetrader_bitsplease.entity;
 
 @SuppressWarnings("ALL")
 public enum ShipType {
-    GNAT("Gnat", 50, 30);
-//    FIREFLY("Firefly", 55, 40),
-//    MOSQUITO("Mosquito", 60, 50),
-//    BUMBLEBEE("Bumblebee", 65, 60),
-//    BEETLE("Beetle", 70, 70),
+    GNAT("Gnat", 15, 30, 1000),
+    FIREFLY("Firefly", 20, 40, 2000),
+    MOSQUITO("Mosquito", 30, 50, 5000),
+    BUMBLEBEE("Bumblebee", 65, 60, 10000),
+    BEETLE("Beetle", 70, 70, 15000);
 //    HORNET("Hornet", 75, 80),
 //    GRASSHOPPER("Grasshopper", 80, 90),
 //    TERMITE("Termite", 85, 100),
@@ -14,6 +14,8 @@ public enum ShipType {
 
     private final String type;
     private final int fuelCapacity;
+    private int storageCapacity;
+    private int price;
 
     /**
      * constructor for the shipType enum
@@ -21,10 +23,11 @@ public enum ShipType {
      * @param storageCapacity storage capacity of the ship type
      * @param fuelCapacity fuel capacity of the ship type
      */
-    ShipType(String shipType, int storageCapacity, int fuelCapacity) {
+    ShipType(String shipType, int storageCapacity, int fuelCapacity, int price) {
         this.type = shipType;
-        int storageCapacity1 = storageCapacity;
+        this.storageCapacity = storageCapacity;
         this.fuelCapacity = fuelCapacity;
+        this.price = price;
     }
 
 
@@ -33,6 +36,18 @@ public enum ShipType {
      * @return int value associated with the fuel capacity of the ship type
      */
     public int getFuelCapacity() { return  fuelCapacity; }
+
+    /**
+     * getter for Storage Capacity of the ship type
+     * @return int value associated with the storage capacity of the ship type
+     */
+    public int getStorageCapacity() { return  storageCapacity; }
+
+    /**
+     * getter for price of the ship type
+     * @return int value associated with the price of the ship type
+     */
+    public int getPrice() { return price; }
 
     /**
      * toString method to return a string representation of the ship type

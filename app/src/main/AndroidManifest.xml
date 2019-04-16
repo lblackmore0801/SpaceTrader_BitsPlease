@@ -33,5 +33,10 @@
             android:parentActivityName=".views.PlanetSelectionActivity"
             tools:ignore="UnusedAttribute">
         </activity>
+        <activity
+            android:name=".views.ShipStoreActivity"
+            android:parentActivityName=".views.generalStoreActivity"
+            tools:ignore="UnusedAttribute">
+        </activity>
     </application>
 </manifest>

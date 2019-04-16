@@ -30,10 +30,22 @@ public class Ship {
     public ShipType getType() { return type; }
 
     /**
+     * setter for the type of the ship
+     * @param temptype ShipType enum of the type
+     */
+    public void setType(ShipType temptype) { type = temptype; }
+
+    /**
      * getter for the amount of fuel able to be held by a particular ship
      * @return int representation of the fuel capacity
      */
     public int getFuel() { return fuelCapacity; }
+
+    /**
+     * setter for the amount of fuel able to be held by a particular ship
+     * @param int representation of the fuel capacity
+     */
+    public void setFuel(int fuel) { fuelCapacity = fuel; }
 
     /**
      * toString method for ships

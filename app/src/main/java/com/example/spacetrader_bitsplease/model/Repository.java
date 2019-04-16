@@ -2,6 +2,7 @@ package com.example.spacetrader_bitsplease.model;
 import com.example.spacetrader_bitsplease.entity.Condition;
 import com.example.spacetrader_bitsplease.entity.Planet;
 import com.example.spacetrader_bitsplease.entity.PlanetName;
+import com.example.spacetrader_bitsplease.entity.Player;
 import com.example.spacetrader_bitsplease.entity.Size;
 import com.example.spacetrader_bitsplease.entity.TechLevel;
 import com.example.spacetrader_bitsplease.entity.TradeGoods;
@@ -280,34 +281,34 @@ public class Repository {
 
             if (good == TradeGoods.WATER) {
                 planet.setWaterPrice(price);
-                planet.setWaterSell(price/2);
+                planet.setWaterSell(price * (Player.getTraderSkill() / 16));
             } else if (good == TradeGoods.FURS) {
                 planet.setFurPrice(price);
-                planet.setFurSell(price/2);
+                planet.setFurSell(price * (Player.getTraderSkill() / 16));
             } else if (good == TradeGoods.FOOD) {
                 planet.setFoodPrice(price);
-                planet.setFoodSell(price/2);
+                planet.setFoodSell(price * (Player.getTraderSkill() / 16));
             } else if (good == TradeGoods.ORE) {
                 planet.setOrePrice(price);
-                planet.setOreSell(price/2);
+                planet.setOreSell(price * (Player.getTraderSkill() / 16));
             } else if (good == TradeGoods.GAMES) {
                 planet.setGamePrice(price);
-                planet.setGameSell(price/2);
+                planet.setGameSell(price * (Player.getTraderSkill() / 16));
             } else if (good == TradeGoods.FIREARMS) {
                 planet.setFirearmPrice(price);
-                planet.setFirearmSell(price/2);
+                planet.setFirearmSell(price * (Player.getTraderSkill() / 16));
             } else if (good == TradeGoods.MEDICINE) {
                 planet.setMedicinePrice(price);
-                planet.setMedicineSell(price/2);
+                planet.setMedicineSell(price * (Player.getTraderSkill() / 16));
             } else if (good == TradeGoods.MACHINES) {
                 planet.setMachinePrice(price);
-                planet.setMachineSell(price/2);
+                planet.setMachineSell(price * (Player.getTraderSkill() / 16));
             } else if (good == TradeGoods.NARCOTICS) {
                 planet.setNarcoticPrice(price);
-                planet.setNarcoticSell(price/2);
+                planet.setNarcoticSell(price * (Player.getTraderSkill() / 16));
             } else if (good == TradeGoods.ROBOTS) {
                 planet.setRobotPrice(price);
-                planet.setRobotSell(price/2);
+                planet.setRobotSell(price * (Player.getTraderSkill() / 16));
             }
         }
     }

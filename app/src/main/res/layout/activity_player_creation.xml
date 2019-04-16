@@ -135,7 +135,7 @@
 
     <TextView
         android:id="@+id/int_trader_skill"
-        android:layout_width="9dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="24dp"
@@ -152,10 +152,10 @@
         android:layout_gravity="center"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="56dp"
         android:text="0"
         app:layout_constraintStart_toEndOf="@+id/MinusEngineeringSkill"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/int_pilot_skill" />
 
     <TextView
         android:id="@+id/int_pilot_skill"
@@ -164,10 +164,10 @@
         android:layout_gravity="center"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="305dp"
+        android:layout_marginTop="61dp"
         android:text="0"
         app:layout_constraintStart_toEndOf="@+id/MinusPilotSkill"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/int_fighter_skill" />
 
     <TextView
         android:id="@+id/int_fighter_skill"

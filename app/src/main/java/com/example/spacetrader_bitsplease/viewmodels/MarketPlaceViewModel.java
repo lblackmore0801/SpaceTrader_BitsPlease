@@ -16,9 +16,12 @@ import com.example.spacetrader_bitsplease.entity.Player;
 
 public class MarketPlaceViewModel {
 
-    public static int remainingStorageCapacity = 15;
-    //public static int money = 1000;
-    private static final int money = Player.getMoney();
+    public static int remainingStorageCapacity = Player.getShip().getType().getStorageCapacity();
+    public static Planet currentPlanet = new Planet();
+// --Commented out by Inspection START (4/15/2019 4:43 PM):
+//    //public static int money = 1000;
+//    private static final int money = Player.getMoney();
+// --Commented out by Inspection STOP (4/15/2019 4:43 PM)
 
     private static int waterResourceinHold;
     private static int furResourceinHold;
@@ -30,38 +33,6 @@ public class MarketPlaceViewModel {
     private static int medicineResourceinHold;
     private static int narcoticResourceinHold;
     private static int robotResourceinHold;
-
-// --Commented out by Inspection START (4/15/2019 3:37 PM):
-// --Commented out by Inspection START (4/15/2019 4:07 PM):
-//    /**
-//     * Constructor for MarketPlaceViewModel
-//     * @param  remainingStorageCapacity1 storage remaining
-//     */
-//    public MarketPlaceViewModel(int remainingStorageCapacity1) {
-//        remainingStorageCapacity = remainingStorageCapacity1;
-//    }
-// --Commented out by Inspection STOP (4/15/2019 4:07 PM)
-// --Commented out by Inspection STOP (4/15/2019 3:37 PM)
-
-
-//    public static int getNarcoticResourceinHold() {
-//        return narcoticResourceinHold;
-//    }
-//
-//    public static int getFirearmsResourceinHold() {
-//        return firearmsResourceinHold;
-//    }
-//
-//    public static void setNarcoticResourceinHold(int input) {
-//        narcoticResourceinHold = input;
-//    }
-
-    //public static void setFirearmsResourceinHold(int input) {
-    //    firearmsResourceinHold = input;
-    //}
-
-    //only buy a resource if you have sufficient funds and storage capacity
-
 
     /**
      * Constructor for MarketPlaceViewModel

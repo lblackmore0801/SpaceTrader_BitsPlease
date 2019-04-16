@@ -159,6 +159,12 @@ public class Player {
     }
 
     /**
+     * setter for the ship
+     * @param tempship Ship enum representation of the ship
+     */
+    public static void setShip(Ship tempship) { ship = tempship; }
+
+    /**
      * getter for the ship
      * @return Ship enum representation of the ship
      */
