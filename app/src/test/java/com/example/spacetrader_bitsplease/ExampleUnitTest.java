@@ -129,9 +129,6 @@ public class ExampleUnitTest {
         assertEquals(1, MarketPlaceViewModel.getWaterResourceinHold());
         //checks we add 1 storage (therfore making it less)
         assertEquals(14, MarketPlaceViewModel.remainingStorageCapacity);
-        //checks money is reduced
-        assertEquals(970, Player.getMoney());
-
     }
 
     @Test

@@ -164,7 +164,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         robotsQuantSell = findViewById(R.id.singleRobotSell_button);
 
         //set current planet stats
-        currentPlanet = new Planet();
+        currentPlanet = MarketPlaceViewModel.currentPlanet;
         Repository.assignPrices(currentPlanet);
         Repository.assignProductQuantity(currentPlanet);
         currentName.setText(currentPlanet.getPlanetName().toString());
@@ -174,6 +174,8 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         currentCoordinates.setText(currentPlanet.getCoordinates());
 
         remainingFuel.setText(""+Player.getShip().getFuel());
+        usedBays.setText("" + (Player.getShip().getType().getStorageCapacity() - MarketPlaceViewModel.remainingStorageCapacity));
+        credits.setText("" +Player.getMoney());
 
         waterPrice.setText(""+currentPlanet.getWaterPrice());
         furPrice.setText(""+currentPlanet.getFurPrice());
@@ -208,22 +210,23 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         narcoticQuant.setText(""+currentPlanet.getNarcoticQuant());
         robotsQuant.setText(""+currentPlanet.getRobotQuant());
 
-        waterQuantSell.setText(""+currentPlanet.getWaterQuantSell());
-        furQuantSell.setText(""+currentPlanet.getFurQuantSell());
-        foodQuantSell.setText(""+currentPlanet.getFoodQuantSell());
-        oreQuantSell.setText(""+currentPlanet.getOreQuantSell());
-        gamesQuantSell.setText(""+currentPlanet.getGameQuantSell());
-        firearmQuantSell.setText(""+currentPlanet.getFirearmQuantSell());
-        medicineQuantSell.setText(""+currentPlanet.getMedicineQuantSell());
-        machineQuantSell.setText(""+currentPlanet.getMachineQuantSell());
-        narcoticQuantSell.setText(""+currentPlanet.getNarcoticQuantSell());
-        robotsQuantSell.setText(""+currentPlanet.getRobotQuantSell());
+        waterQuantSell.setText(""+MarketPlaceViewModel.getWaterResourceinHold());
+        furQuantSell.setText(""+MarketPlaceViewModel.getFurResourceinHold());
+        foodQuantSell.setText(""+MarketPlaceViewModel.getFoodResourceinHold());
+        oreQuantSell.setText(""+MarketPlaceViewModel.getOreResourceinHold());
+        gamesQuantSell.setText(""+MarketPlaceViewModel.getGameResourceinHold());
+        firearmQuantSell.setText(""+MarketPlaceViewModel.getFirearmsResourceinHold());
+        medicineQuantSell.setText(""+MarketPlaceViewModel.getMedicineResourceinHold());
+        machineQuantSell.setText(""+MarketPlaceViewModel.getMachineResourceinHold());
+        narcoticQuantSell.setText(""+MarketPlaceViewModel.getNarcoticResourceinHold());
+        robotsQuantSell.setText(""+MarketPlaceViewModel.getRobotResourceinHold());
 
         //create and populate spinner for target planets
         ArrayAdapter<PlanetName> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, PlanetName.values());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Spinner planetSpinner = findViewById(R.id.planet_spinner);
         planetSpinner.setAdapter(adapter);
+
 
 
 
@@ -247,7 +250,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
         });
 
 
-        final int storageCapacity = 15;
+        final int storageCapacity = Player.getShip().getType().getStorageCapacity();
 
         final Button buySingleWater = findViewById(R.id.singleWaterBuy_button);
         final Button buyAllWater = findViewById(R.id.allWaterBuy_button);
@@ -1124,6 +1127,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                         AlertDialog alert = builder.create();
                         alert.show();
                     }
+                    MarketPlaceViewModel.currentPlanet = nextPlanet;
                     currentPlanet = nextPlanet;
                     Repository.assignPrices(currentPlanet);
                     Repository.assignProductQuantity(currentPlanet);
@@ -1265,6 +1269,8 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             }
 
             });
+
+
 
         final Button load = findViewById(R.id.load_button);
         load.setOnClickListener(new View.OnClickListener() {
@@ -1454,8 +1460,36 @@ public class PlanetSelectionActivity extends AppCompatActivity {
 
             }
 
-        })
+        });
 
+
+        final Button fuelButton = findViewById(R.id.FuelButton);
+
+        fuelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (Player.getShip().getFuel() < Player.getShip().getType().getFuelCapacity()) {
+                    Player.getShip().setFuel(Player.getShip().getType().getFuelCapacity());
+                    Player.setMoney(Player.getMoney() - 100);
+                    remainingFuel.setText("" + Player.getShip().getFuel());
+                    credits.setText("" + Player.getMoney());
+                } else {
+                    Toast.makeText(getApplicationContext(),
+                            "Fuel already full",
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        final Button general_Store_Button = findViewById(R.id.general_Store_Button);
+
+        general_Store_Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PlanetSelectionActivity.this, generalStoreActivity.class);
+                startActivityForResult(intent, 1);
+            }
+        });
 
     ;}
 }
