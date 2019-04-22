@@ -14,6 +14,7 @@ public class generalStoreActivity extends AppCompatActivity {
     private Button mapButton;
     private Button shipStoreButton;
     private Button weaponStoreButton;
+    private Button mercenarieStoreButton;
 
     /**
      * Maintains instance state in store
@@ -27,6 +28,7 @@ public class generalStoreActivity extends AppCompatActivity {
         mapButton = findViewById(R.id.game_button);
         shipStoreButton = findViewById(R.id.ShipStoreButton);
         weaponStoreButton = findViewById(R.id.WeaponStoreButton);
+        mercenarieStoreButton = findViewById(R.id.Mercenaries);
 
         mapButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +50,14 @@ public class generalStoreActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(generalStoreActivity.this, WeaponStoreActivity.class);
+                startActivityForResult(intent, 1);
+            }
+        });
+
+        mercenarieStoreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(generalStoreActivity.this, MercenaryStoreActivity.class);
                 startActivityForResult(intent, 1);
             }
         });

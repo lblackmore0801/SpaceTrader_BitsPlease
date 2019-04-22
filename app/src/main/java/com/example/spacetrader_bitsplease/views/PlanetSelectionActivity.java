@@ -1171,6 +1171,12 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                         AlertDialog alert = builder.create();
                         alert.show();
                     }
+                    int mercCosts = UniverseViewModel.mercCost();
+                    Player.setMoney(Player.getMoney() - mercCosts);
+                    Toast.makeText(getApplicationContext(),
+                            "" + mercCosts,
+                            Toast.LENGTH_SHORT).show();
+                    credits.setText("" + Player.getMoney());
                     MarketPlaceViewModel.currentPlanet = nextPlanet;
                     currentPlanet = nextPlanet;
                     Repository.assignPrices(currentPlanet);
