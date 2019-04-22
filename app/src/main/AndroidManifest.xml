@@ -38,5 +38,10 @@
             android:parentActivityName=".views.generalStoreActivity"
             tools:ignore="UnusedAttribute">
         </activity>
+        <activity
+            android:name=".views.WeaponStoreActivity"
+            android:parentActivityName=".views.generalStoreActivity"
+            tools:ignore="UnusedAttribute">
+        </activity>
     </application>
 </manifest>
