@@ -5,6 +5,7 @@ public class Ship {
 
     private ShipType type;
     private int fuelCapacity;
+    private int weaponDamage;
 
     /**
      * no params constructor for a Ship that assigns type, storage, and fuel
@@ -46,6 +47,18 @@ public class Ship {
      * @param int representation of the fuel capacity
      */
     public void setFuel(int fuel) { fuelCapacity = fuel; }
+
+    /**
+     * setter for the amount of weapon damage
+     * @param int representation of the weapon damage
+     */
+    public void setWeaponDamage(int weapon) { weaponDamage = weapon; }
+
+    /**
+     * getter for the amount of weapon damage
+     * @param int representation of the weapon damage
+     */
+    public int getWeaponDamage() { return weaponDamage; }
 
     /**
      * toString method for ships

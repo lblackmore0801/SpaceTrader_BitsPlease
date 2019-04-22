@@ -47,7 +47,7 @@ public class generalStoreActivity extends AppCompatActivity {
         weaponStoreButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(generalStoreActivity.this, PlanetSelectionActivity.class);
+                Intent intent = new Intent(generalStoreActivity.this, WeaponStoreActivity.class);
                 startActivityForResult(intent, 1);
             }
         });
