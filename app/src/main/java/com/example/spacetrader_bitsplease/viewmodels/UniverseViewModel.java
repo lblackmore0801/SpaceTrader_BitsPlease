@@ -1,5 +1,6 @@
 package com.example.spacetrader_bitsplease.viewmodels;
 
+import com.example.spacetrader_bitsplease.entity.PlanetName;
 import com.example.spacetrader_bitsplease.entity.Player;
 import com.example.spacetrader_bitsplease.entity.Ship;
 import com.example.spacetrader_bitsplease.entity.Planet;
@@ -52,22 +53,14 @@ public class UniverseViewModel {
      */
     public static int copEncounter() {
         int random = (int) (Math.random() * 100 + 1);
-        if (random < 30) {
+        if (random < 10) {
             return 1;
-        } else if (random > 30 && random < 60) {
+        } else if (random > 10 && random < 20) {
             return 2;
         }
         return 0;
     }
 
-    /**
-     * Method to check if the player encounters a cop.
-     * @return boolean run into cop or not
-     */
-    public static boolean pirateEncounter() {
-        int random = (int) (Math.random() * 100 + 1);
-        return random < 10;
-    }
 
     /**
      * Method to check if the player has illegal items in their hold.
@@ -92,8 +85,8 @@ public class UniverseViewModel {
         if (Player.traderMerc) {
             sum++;
         }
+        Planet curr = new Planet(PlanetName.HELENA);
+        curr.toString();
         return 5 * sum;
-
-
     }
 }
