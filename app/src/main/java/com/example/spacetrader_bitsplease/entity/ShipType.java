@@ -5,7 +5,7 @@ public enum ShipType {
     GNAT("Gnat", 15, 30, 1000),
     FIREFLY("Firefly", 20, 40, 2000),
     MOSQUITO("Mosquito", 30, 50, 5000),
-    BUMBLEBEE("Bumblebee", 65, 60, 10000),
+    BUMBLEBEE("Bumblebee", 50, 60, 10000),
     BEETLE("Beetle", 70, 70, 15000);
 //    HORNET("Hornet", 75, 80),
 //    GRASSHOPPER("Grasshopper", 80, 90),
