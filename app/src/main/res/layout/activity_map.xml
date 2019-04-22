@@ -1,7 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_galaxymap">
 
+    <Button
+        android:id="@+id/helena_button"
+        android:layout_width="78dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:text="Helena"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ferris_button"
+        android:layout_width="71dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="89dp"
+        android:layout_marginLeft="89dp"
+        android:layout_marginTop="10dp"
+        android:text="Ferris"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/helena_button" />
+
+    <Button
+        android:id="@+id/esmee_button"
+        android:layout_width="71dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="126dp"
+        android:layout_marginLeft="126dp"
+        android:layout_marginTop="15dp"
+        android:text="Esmee"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ferris_button" />
+
+    <Button
+        android:id="@+id/castor_button"
+        android:layout_width="78dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="166dp"
+        android:layout_marginLeft="166dp"
+        android:layout_marginTop="20dp"
+        android:text="Castor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/esmee_button" />
+
+    <Button
+        android:id="@+id/andevian_button"
+        android:layout_width="96dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="197dp"
+        android:layout_marginLeft="197dp"
+        android:layout_marginTop="24dp"
+        android:text="Andevian"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/castor_button" />
+
+    <Button
+        android:id="@+id/zuul_button"
+        android:layout_width="64dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="349dp"
+        android:layout_marginLeft="349dp"
+        android:layout_marginTop="272dp"
+        android:text="Zuul"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/sol_button"
+        android:layout_width="56dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="328dp"
+        android:layout_marginLeft="328dp"
+        android:layout_marginTop="27dp"
+        android:text="Sol"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/zuul_button" />
+
+    <Button
+        android:id="@+id/rhymus_button"
+        android:layout_width="81dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="277dp"
+        android:layout_marginLeft="277dp"
+        android:layout_marginTop="23dp"
+        android:text="Rhymus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sol_button" />
+
+    <Button
+        android:id="@+id/othello_button"
+        android:layout_width="86dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="25dp"
+        android:text="Othello"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rhymus_button" />
+
+    <Button
+        android:id="@+id/myrthe_button"
+        android:layout_width="82dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="417dp"
+        android:text="Myrthe"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ferris_button" />
 </android.support.constraint.ConstraintLayout>

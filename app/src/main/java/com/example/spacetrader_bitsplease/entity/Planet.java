@@ -621,7 +621,7 @@ public class Planet {
      * @return String representation of the planet
      */
     public String toString() {
-        return String.format("Coordinates: (%d,%d)\nPlanet: %s\n,Conditions: %s,Tech Level: %s",
+        return String.format("Coordinates: (%d,%d)\nPlanet: %s\nConditions: %s\nTech Level: %s",
                 xcoordinate, ycoordinate, planetName.toString(), condition.toString(), techLevel.toString());
     }
 }
