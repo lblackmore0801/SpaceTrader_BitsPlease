@@ -11,7 +11,7 @@ import com.example.spacetrader_bitsplease.R;
 
 public class generalStoreActivity extends AppCompatActivity {
 
-    private Button gameButton;
+    private Button mapButton;
     private Button shipStoreButton;
     private Button weaponStoreButton;
 
@@ -24,14 +24,14 @@ public class generalStoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_general_store);
 
-        gameButton = findViewById(R.id.game_button);
+        mapButton = findViewById(R.id.game_button);
         shipStoreButton = findViewById(R.id.ShipStoreButton);
         weaponStoreButton = findViewById(R.id.WeaponStoreButton);
 
-        gameButton.setOnClickListener(new View.OnClickListener() {
+        mapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(generalStoreActivity.this, PlanetSelectionActivity.class);
+                Intent intent = new Intent(generalStoreActivity.this, MapActivity.class);
                 startActivityForResult(intent, 1);
             }
         });
