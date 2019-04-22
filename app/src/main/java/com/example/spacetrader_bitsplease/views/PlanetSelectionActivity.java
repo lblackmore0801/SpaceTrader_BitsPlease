@@ -1075,7 +1075,8 @@ public class PlanetSelectionActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Ship ship = Player.getShip();
                 if (UniverseViewModel.inRange(currentPlanet, nextPlanet, ship)) {
-                    if (UniverseViewModel.copEncounter()) {
+                    int encounter = UniverseViewModel.copEncounter();
+                    if (encounter == 1) {
                         Context context = PlanetSelectionActivity.this;
                         AlertDialog.Builder builder = new AlertDialog.Builder(context);
                         builder.setTitle("Police Encounter");
@@ -1126,6 +1127,49 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                                 });
                         AlertDialog alert = builder.create();
                         alert.show();
+
+                    } else if (encounter == 2) {
+                        Context context = PlanetSelectionActivity.this;
+                        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                        builder.setTitle("Pirate Encounter");
+                        builder.setMessage("You have been stopped by pirates, would you like to fight or flee");
+                        builder.setCancelable(false);
+                        builder.setNeutralButton(
+                                "Fight",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        if ((Player.getShip().getWeaponDamage() * (Player.getFighterSkill() / 8) * (Math.random() * 10 + 1)) > 5) {
+                                            Player.setMoney(Player.getMoney() + 200);
+                                            Toast.makeText(getApplicationContext(),
+                                                    "You have defeated the pirates and took 200 of their credits",
+                                                    Toast.LENGTH_LONG).show();
+                                        } else {
+                                            Player.setMoney(Player.getMoney() - 100);
+                                            Toast.makeText(getApplicationContext(),
+                                                    "The pirates have taken 100 of your credits",
+                                                    Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                });
+                        credits.setText("" + Player.getMoney());
+                        builder.setPositiveButton(
+                                "Flee",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        if ((Player.getPilotSkill() / 8 * (Math.random() * 10 + 1)) > 5) {
+                                            Toast.makeText(getApplicationContext(),
+                                                    "You have escaped",
+                                                    Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            Player.setMoney(Player.getMoney() - 100);
+                                            Toast.makeText(getApplicationContext(),
+                                                    "The Pirates took 100 credits",
+                                                    Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+                        AlertDialog alert = builder.create();
+                        alert.show();
                     }
                     MarketPlaceViewModel.currentPlanet = nextPlanet;
                     currentPlanet = nextPlanet;
@@ -1137,6 +1181,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                     currentTech.setText(currentPlanet.getTechLevel().toString());
                     currentCoordinates.setText(currentPlanet.getCoordinates());
                     remainingFuel.setText("" + Player.getShip().getFuel());
+                    credits.setText("" + Player.getMoney());
 
                     waterPrice.setText(""+currentPlanet.getWaterPrice());
                     furPrice.setText(""+currentPlanet.getFurPrice());
@@ -1200,6 +1245,7 @@ public class PlanetSelectionActivity extends AppCompatActivity {
                     AlertDialog alert = builder.create();
                     alert.show();
                 }
+                credits.setText("" + Player.getMoney());
             }
         });
 

@@ -5,7 +5,8 @@ public class Ship {
 
     private ShipType type;
     private int fuelCapacity;
-    private int weaponDamage;
+    private int weaponDamage = 1;
+    private int shipHealth;
 
     /**
      * no params constructor for a Ship that assigns type, storage, and fuel
@@ -53,6 +54,18 @@ public class Ship {
      * @param int representation of the weapon damage
      */
     public void setWeaponDamage(int weapon) { weaponDamage = weapon; }
+
+    /**
+     * getter for the amount of ship health
+     * @param int representation of the ship health
+     */
+    public int getShipHealth() { return shipHealth; }
+
+    /**
+     * setter for the amount of ship health
+     * @param int representation of the ship health
+     */
+    public void setShipHealth(int health) { shipHealth = health; }
 
     /**
      * getter for the amount of weapon damage
