@@ -49,10 +49,25 @@ public class UniverseViewModel {
      * Method to check if the player encounters a cop.
      * @return boolean run into cop or not
      */
-    public static boolean copEncounter() {
+    public static int copEncounter() {
         int random = (int) (Math.random() * 100 + 1);
-        return random > 10;
+        if (random < 30) {
+            return 1;
+        } else if (random > 30 && random < 60) {
+            return 2;
+        }
+        return 0;
     }
+
+    /**
+     * Method to check if the player encounters a cop.
+     * @return boolean run into cop or not
+     */
+    public static boolean pirateEncounter() {
+        int random = (int) (Math.random() * 100 + 1);
+        return random < 10;
+    }
+
     /**
      * Method to check if the player has illegal items in their hold.
      * @return boolean if the player has illegal items or not

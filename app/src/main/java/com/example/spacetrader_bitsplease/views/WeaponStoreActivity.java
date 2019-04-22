@@ -35,7 +35,7 @@ public class WeaponStoreActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (Player.getMoney() > 2000) {
                     Player.setMoney(Player.getMoney() - 2000);
-                    Player.getShip().setWeaponDamage(1);
+                    Player.getShip().setWeaponDamage(2);
                     Toast.makeText(getApplicationContext(),
                         "Player weapon set to Phaser",
                         Toast.LENGTH_SHORT).show();
@@ -52,7 +52,7 @@ public class WeaponStoreActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (Player.getMoney() > 5000) {
                     Player.setMoney(Player.getMoney() - 5000);
-                    Player.getShip().setWeaponDamage(2);
+                    Player.getShip().setWeaponDamage(3);
                     Toast.makeText(getApplicationContext(),
                             "Player weapon set to Laser",
                             Toast.LENGTH_SHORT).show();
@@ -69,7 +69,7 @@ public class WeaponStoreActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (Player.getMoney() > 30000) {
                     Player.setMoney(Player.getMoney() - 30000);
-                    Player.getShip().setWeaponDamage(3);
+                    Player.getShip().setWeaponDamage(4);
                     Toast.makeText(getApplicationContext(),
                             "Player weapon set to Lazer",
                             Toast.LENGTH_SHORT).show();
