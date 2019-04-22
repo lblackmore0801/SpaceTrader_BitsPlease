@@ -1,5 +1,6 @@
 package com.example.spacetrader_bitsplease.viewmodels;
 
+import com.example.spacetrader_bitsplease.entity.Player;
 import com.example.spacetrader_bitsplease.entity.Ship;
 import com.example.spacetrader_bitsplease.entity.Planet;
 import java.lang.Math;
@@ -75,5 +76,24 @@ public class UniverseViewModel {
     public static boolean checkForIllegals() {
         return MarketPlaceViewModel.getNarcoticResourceinHold() > 0 ||
                 MarketPlaceViewModel.getFirearmsResourceinHold() > 0;
+    }
+
+    public static int mercCost() {
+        int sum = 0;
+        if (Player.pilotMerc) {
+            sum++;
+        }
+        if (Player.engineerMerc) {
+            sum++;
+        }
+        if (Player.fighterMerc) {
+            sum++;
+        }
+        if (Player.traderMerc) {
+            sum++;
+        }
+        return 5 * sum;
+
+
     }
 }

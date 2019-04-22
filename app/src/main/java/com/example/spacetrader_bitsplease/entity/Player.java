@@ -11,6 +11,11 @@ public class Player {
     private static int traderSkill;
     private static Ship ship;
     private static int money;
+    public static boolean pilotMerc;
+    public static boolean engineerMerc;
+    public static boolean fighterMerc;
+    public static boolean traderMerc;
+
 
     /**
      * Constructor required for making the new object
@@ -82,7 +87,7 @@ public class Player {
      * setter for the pilot skill
      * @param pilotSkill int representation of the pilot skill level
      */
-    public void setPilotSkill(int pilotSkill) {
+    public static void setPilotSkill(int pilotSkill) {
         Player.pilotSkill = pilotSkill;
     }
 
@@ -106,7 +111,7 @@ public class Player {
      * setter for the engineering skill
      * @param engineerSkill int representation of the engineering skill
      */
-    public void setEngineerSkill(int engineerSkill) {
+    public static void setEngineerSkill(int engineerSkill) {
         Player.engineerSkill = engineerSkill;
     }
 
@@ -114,7 +119,7 @@ public class Player {
      * setter for the trader skill
      * @param traderSkill int representation of the trader skill
      */
-    public void setTraderSkill(int traderSkill) {
+    public static void setTraderSkill(int traderSkill) {
         Player.traderSkill = traderSkill;
     }
 
@@ -130,7 +135,7 @@ public class Player {
      * setter for the fighter skill
      * @param fighterSkill int representation of the trader skill
      */
-    public void setFighterSkill(int fighterSkill) {
+    public static void setFighterSkill(int fighterSkill) {
         Player.fighterSkill = fighterSkill;
     }
 
